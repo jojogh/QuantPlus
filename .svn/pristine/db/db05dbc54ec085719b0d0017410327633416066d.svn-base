@@ -1,0 +1,246 @@
+{
+ "metadata": {
+  "name": "ShiborSwap"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Setup settlement date for Shibor swap and its corresponding valuation date\n",
+      "settlementDate = CAL.Date(31, CAL.January, 2013)\n",
+      "fixingDays = 1\n",
+      "print settlementDate\n",
+      "todaysDate = CAL.NullCalendar().advance(settlementDate, -fixingDays, CAL.Days)\n",
+      "CAL.Settings.instance().setEvaluationDate(todaysDate)\n",
+      "print CAL.Settings.instance().evaluationDate"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "January 31st, 2013\n",
+        "January 30th, 2013\n"
+       ]
+      }
+     ],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "type = CAL.VanillaSwap.Payer"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "nominal = 1000000"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "startDate = CAL.Date(31, CAL.January, 2013)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "swapTenor = CAL.Period(5, CAL.Years)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fixedTenor = CAL.Period(6, CAL.Months)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "floatTenor = CAL.Period(3, CAL.Months)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "fixedRate = 0.05"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Build up dummy curves both for forecasting and dsicouting\n",
+      "flatCurve = CAL.FlatForward(todaysDate, 0.05, CAL.Actual365Fixed())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "discountTermStructure = CAL.RelinkableYieldTermStructureHandle()\n",
+      "forecastTermStructure = CAL.RelinkableYieldTermStructureHandle()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Build Shibor swap with inputs\n",
+      "mySwap = CAL.ShiborSwap(type, nominal, startDate, swapTenor, fixedTenor, fixedRate, floatTenor, forecastTermStructure)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "swapEngine = CAL.DiscountingSwapEngine(discountTermStructure)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "mySwap.setPricingEngine(swapEngine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Link discounting and forecasting handles to the dummy curve\n",
+      "discountTermStructure.linkTo(flatCurve)\n",
+      "forecastTermStructure.linkTo(flatCurve)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 15
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "mySwap.fairRate()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "pyout",
+       "prompt_number": 16,
+       "text": [
+        "0.050630549239274625"
+       ]
+      }
+     ],
+     "prompt_number": 16
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "mySwap.NPV()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "pyout",
+       "prompt_number": 17,
+       "text": [
+        "2755.750259047898"
+       ]
+      }
+     ],
+     "prompt_number": 17
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 19
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

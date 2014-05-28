@@ -1,0 +1,220 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL\n",
+      "import matplotlib.pyplot as plt\n",
+      "import datetime as dt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "settleDate = CAL.Date(3, CAL.December, 2013);"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# \u4e2d\u56fd\u503a\u5238\u7f51\u56fa\u5b9a\u5229\u7387\u56fd\u503a\u6536\u76ca\u7387\uff0c 3rd Dec 2013, up to 50 years\n",
+      "# Here all the rates are assumed as continuous \uff08maybe compounded is more suitable. This will change in the future\uff09\n",
+      "\n",
+      "datePoints = [settleDate,\n",
+      "              settleDate + CAL.Period(1, CAL.Months),\n",
+      "              settleDate + CAL.Period(2, CAL.Months),\n",
+      "              settleDate + CAL.Period(3, CAL.Months),\n",
+      "              settleDate + CAL.Period(6, CAL.Months),\n",
+      "              settleDate + CAL.Period(9, CAL.Months),\n",
+      "              settleDate + CAL.Period(1, CAL.Years),\n",
+      "              settleDate + CAL.Period(2, CAL.Years),\n",
+      "              settleDate + CAL.Period(3, CAL.Years),\n",
+      "              settleDate + CAL.Period(4, CAL.Years),\n",
+      "              settleDate + CAL.Period(5, CAL.Years),\n",
+      "              settleDate + CAL.Period(6, CAL.Years),\n",
+      "              settleDate + CAL.Period(7, CAL.Years),\n",
+      "              settleDate + CAL.Period(8, CAL.Years),\n",
+      "              settleDate + CAL.Period(10, CAL.Years),\n",
+      "              settleDate + CAL.Period(15, CAL.Years),\n",
+      "              settleDate + CAL.Period(20, CAL.Years),\n",
+      "              settleDate + CAL.Period(30, CAL.Years),\n",
+      "              settleDate + CAL.Period(32, CAL.Years),\n",
+      "              settleDate + CAL.Period(40, CAL.Years),\n",
+      "              settleDate + CAL.Period(50, CAL.Years)]\n",
+      "\n",
+      "ratePoints = [0.046963,0.046963,\n",
+      "              0.043615,0.043614,\n",
+      "              0.041420,0.041619,\n",
+      "              0.040501,0.042652,\n",
+      "              0.043320,0.044041,\n",
+      "              0.043572,0.045359,\n",
+      "              0.044409,0.045048,\n",
+      "              0.044454,0.047578,\n",
+      "              0.050549,0.051172,\n",
+      "              0.051399,0.054370,\n",
+      "              0.056351]\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print ratePoints"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "[0.046963, 0.046963, 0.043615, 0.043614, 0.04142, 0.041619, 0.040501, 0.042652, 0.04332, 0.044041, 0.043572, 0.045359, 0.044409, 0.045048, 0.044454, 0.047578, 0.050549, 0.051172, 0.051399, 0.05437, 0.056351]\n"
+       ]
+      }
+     ],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Build as zero curve with linear interpolation\n",
+      "linearZeroCurve = CAL.LinearZeroCurve(datePoints, \n",
+      "                                      ratePoints, \n",
+      "                                      CAL.Actual365NoLeap())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Build as zero curve with cubic interpolation\n",
+      "cubicZeroCurve = CAL.CubicZeroCurve(datePoints,\n",
+      "                                    ratePoints,\n",
+      "                                    CAL.Actual365NoLeap())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Plot on forward rates to try to see the difference with different interpolation\n",
+      "forwardStart = settleDate\n",
+      "forwardPoints = [forwardStart]\n",
+      "for i in xrange(1, 201):\n",
+      "    forwardPoints.append(forwardStart + CAL.Period(3*i, CAL.Months))\n",
+      "\n",
+      "linerInterpForwardRates = [0.0]\n",
+      "cubicInterpForwardRates = [0.0]\n",
+      "\n",
+      "for i, date in enumerate(forwardPoints):\n",
+      "    if i != 0:\n",
+      "        linerInterpForwardRates.append(linearZeroCurve.forwardRate(forwardPoints[i-1], \n",
+      "                                                          forwardPoints[i],\n",
+      "                                                          CAL.Actual365NoLeap(),\n",
+      "                                                          CAL.Continuous).rate())\n",
+      "        cubicInterpForwardRates.append(cubicZeroCurve.forwardRate(forwardPoints[i-1], \n",
+      "                                                          forwardPoints[i],\n",
+      "                                                          CAL.Actual365NoLeap(),\n",
+      "                                                          CAL.Continuous).rate())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Transform CAL.Date to date type in python standard library\n",
+      "# Currently matplolib cant't recognize CAL.Date\n",
+      "standardDates = []\n",
+      "for date in forwardPoints:\n",
+      "    standardDates.append(dt.date(date.year(), date.month(), date.dayOfMonth()))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 28
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "p1, = plt.plot(standardDates, cubicInterpForwardRates, 'r', label = 'Cubic')\n",
+      "p2, = plt.plot(standardDates, linerInterpForwardRates, 'g', label = 'Linear')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 74
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "plt.legend([p1,p2], ['Cubic', 'Linear'], loc =5)\n",
+      "plt.ylim(0.03,0.07)\n",
+      "plt.title('Forward rates with different interpolations')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 75,
+       "text": [
+        "<matplotlib.text.Text at 0x10a6ae10>"
+       ]
+      }
+     ],
+     "prompt_number": 75
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "plt.show()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": "*"
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

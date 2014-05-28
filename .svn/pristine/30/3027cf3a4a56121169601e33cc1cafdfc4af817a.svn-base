@@ -1,0 +1,12 @@
+Flask==0.9
+Flask-SQLAlchemy==0.16
+Flask-WTF==0.8.3
+Jinja2==2.6
+SQLAlchemy==0.8.0
+WTForms==1.0.3
+Werkzeug==0.8.3
+ipython==0.13.1
+pyzmq==13.0.0
+tornado==2.4.1
+wsgiref==0.1.2
+pysqlite==2.6.3

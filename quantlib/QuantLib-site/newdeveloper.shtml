@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<!--#include virtual="qlmeta.inc"-->
+<meta name="author" content="Ferdinando Ametrano">
+<meta name="copyright" content=
+"Ferdinando Ametrano (c) 2000, 2001, 2002, 2003">
+<meta name="description" content="QuantLib Developer Introduction">
+<link rel="stylesheet" href="./styles/nosplash.css" type="text/css">
+<title>QuantLib - Developer intro</title>
+</head>
+<body>
+<div id="container">
+<!--#include virtual="header.inc"-->
+<div id="menu">
+<!--#include virtual="usermenu.inc"-->
+</div>
+<div id="content">
+
+<h1 class="center">Developer introduction</h1>
+<p>Developers willing to contribute to the QuantLib project should
+<a href="http://quantlib.org/mailinglists.shtml">subscribe</a> to the
+QuantLib-dev mailing list. Such list is where current and future
+developments are discussed; your contribution to the discussions, even
+if only an occasional one, will be useful.</p>
+<p>Should you want to get more involved, there are a number of things
+you can do. Possibilities include:
+<ul>
+<li>contribute code to the library. Submitting a patch would be the
+    easiest way to get your contribution into the QuantLib code tree;
+    see the <a href=
+    "http://quantlib.org/faq.shtml#Contributing%20to%20the%20project1">QuantLib
+    FAQ</a> for details. If you plan some non-trivial contribution,
+    you may want to post a proposal to the list and discuss it before
+    you start coding. It will be a very useful effort since it might
+    be re-cycled as documentation when you actually implement your
+    ideas.</li>
+<li>answer questions on the QuantLib-users mailing list.</li>
+<li><a href="http://quantlib.org/mailinglists.shtml">subscribe</a> to
+    the QuantLib-cvs mailing list and review the changes committed to
+    the repository. You might ask questions about the change, make
+    further suggestions, or report a bug you spotted. For this
+    purpose, the mailing list is set up so that replies to posts go to
+    QuantLib-dev.</li>
+<li>provide examples. Those are easier to write than new parts of the
+    library, and are immensely useful to new users as they can act as
+    documentation of library features and their usage. If you don't
+    have the time to provide examples, you can still contribute by
+    writing to QuantLib-dev and proposing examples to be written by
+    whoever accepts the task.</li>
+</ul>
+<p>Even if contributions were little, their cumulative effect would be a
+great help to improve the library. Moreover, each of the above are
+also ways to familiarize with the library (so that in time you'll
+become able to work on its internals) and to establish yourself as a
+trusted contributor. In the latter case, you might be granted write
+access to the Subversion repository tree.</p>
+<p>Finally, we might need to ask for a disclaimer from your employer
+stating that your contribution can be released under the QuantLib
+license. Such disclaimer won't be necessary if you own the copyright
+of the code, but you might want to check that with your employer. An
+example of such disclaimer can be downloaded <a href=
+"http://quantlib.org/templates/disclaimer.rtf">here</a>, but you can
+write your own along the same lines if the wording doesn't suit your
+employer.</p>
+</div>
+
+<div id="menuafter">
+<!--#include virtual="usermenu.inc"-->
+</div>
+
+<div class="footer">
+<!--#include virtual="footer.inc"-->
+</div>
+
+</div>
+
+</body>
+</html>

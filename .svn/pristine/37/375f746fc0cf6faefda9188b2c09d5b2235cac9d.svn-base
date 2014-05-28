@@ -1,0 +1,151 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "\u7f8e\u5f0f\u671f\u6743\u5b9a\u4ef7\u903c\u8fd1\u516c\u5f0f\n",
+      "-----------------\n",
+      "BaroneAdesi-Whaley \u7f8e\u5f0f\u671f\u6743\u903c\u8fd1\u516c\u5f0f\n",
+      "\n",
+      "Barone-Adesi, G.; R. Whaley (1987). Efficient Analytic Approximation of American Option Values. Journal of Derivatives 42 (2): 301\u2013320"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from CAL.PyCAL import *\n",
+      "import numpy as np\n",
+      "import pandas as pd"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "1. \u7f8e\u5f0f\u770b\u6da8\u671f\u6743\n",
+      "-------------\n",
+      "\u968f\u7740\u7ea2\u5229\u7387\u7684\u4e0a\u5347\uff0c\u7f8e\u5f0f\u671f\u6743\u4e0e\u6b27\u5f0f\u671f\u6743\u7684\u4ef7\u5dee\u589e\u5927\u3002\u5728\u7ea2\u5229\u7387\u4e3a0\u65f6\uff0c\u7f8e\u5f0f\u671f\u6743\u7b49\u4e8e\u6b27\u5f0f\u671f\u6743\u3002"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "optionType = 1\n",
+      "strike = 105.0\n",
+      "spot = 100.0\n",
+      "riskFree = 0.05 \n",
+      "dividend = np.linspace(0.0, 0.10,101)\n",
+      "volatility = 0.25\n",
+      "maturity = 5.0\n",
+      "\n",
+      "europeanPrice = BSMPrice(optionType = optionType,\n",
+      "strike = strike, \n",
+      "spot = spot, \n",
+      "riskFree = riskFree, \n",
+      "dividend = dividend,\n",
+      "volatility = volatility,\n",
+      "maturity = maturity)\n",
+      "\n",
+      "americanPrice= BaroneAdesiWhaleyPrice(optionType = optionType,\n",
+      "strike = strike, \n",
+      "spot = spot, \n",
+      "riskFree = riskFree, \n",
+      "dividend = dividend,\n",
+      "volatility = volatility,\n",
+      "maturity = maturity)\n",
+      "\n",
+      "comparingDF = pd.DataFrame({'dividend':dividend, 'European':europeanPrice['price'].values, 'American':americanPrice['price'].values})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(comparingDF, settings = {'x':'dividend', 'y':['European', 'American'],  'xlim':(0.0,0.1), 'title':u'\u770b\u6da8\u671f\u6743\u6b27\u5f0f\u4e0e\u7f8e\u5f0f\u6bd4\u8f83'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "1. \u7f8e\u5f0f\u770b\u8dcc\u671f\u6743\n",
+      "-------------\n",
+      "\u968f\u7740\u65e0\u98ce\u9669\u5229\u7387\u7684\u4e0a\u5347\uff0c\u7f8e\u5f0f\u671f\u6743\u4e0e\u6b27\u5f0f\u671f\u6743\u7684\u4ef7\u5dee\u589e\u5927\u3002\u5728\u65e0\u98ce\u9669\u7387\u4e3a0\u65f6\uff0c\u7f8e\u5f0f\u671f\u6743\u7b49\u4e8e\u6b27\u5f0f\u671f\u6743\u3002"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "optionType = -1\n",
+      "strike = 105.0\n",
+      "spot = 100.0\n",
+      "riskFree = np.linspace(0.0, 0.10,101) \n",
+      "dividend = 0.05\n",
+      "volatility = 0.25\n",
+      "maturity = 5.0\n",
+      "\n",
+      "europeanPrice = BSMPrice(optionType = optionType,\n",
+      "strike = strike, \n",
+      "spot = spot, \n",
+      "riskFree = riskFree, \n",
+      "dividend = dividend,\n",
+      "volatility = volatility,\n",
+      "maturity = maturity)\n",
+      "\n",
+      "americanPrice= BaroneAdesiWhaleyPrice(optionType = optionType,\n",
+      "strike = strike, \n",
+      "spot = spot, \n",
+      "riskFree = riskFree, \n",
+      "dividend = dividend,\n",
+      "volatility = volatility,\n",
+      "maturity = maturity)\n",
+      "\n",
+      "comparingDF = pd.DataFrame({'riskFree':riskFree, 'European':europeanPrice['price'].values, 'American':americanPrice['price'].values})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(comparingDF, settings = {'x':'riskFree', 'y':['European', 'American'], 'xlim':(0.0,0.1), 'title':u'\u770b\u6da8\u671f\u6743\u6b27\u5f0f\u4e0e\u7f8e\u5f0f\u6bd4\u8f83'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

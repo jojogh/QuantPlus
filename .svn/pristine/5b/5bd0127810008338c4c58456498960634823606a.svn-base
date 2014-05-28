@@ -1,0 +1,11 @@
+# Config file for ipydra
+
+[ipydra]
+# URI for DB connection
+DB_URI = sqlite:///ipydra.db
+# Base url for notebook server urls
+BASE_URL = http://127.0.0.1
+# Root of user workspace directory tree
+DATA_DIR = ~/.ipydra
+# Initial data to copy to user's notebook folder
+INITDATA_DIR = ~/dev/silver/container/ipydra-silver/ipydra/templates/notebooks

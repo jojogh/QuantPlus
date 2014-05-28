@@ -1,0 +1,153 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "1. \u4f7f\u7528BSMPrice\u51fd\u6570\u8ba1\u7b97\u671f\u6743\u4ef7\u683c\uff08\u57fa\u4e8eBlack-Scholes-Merton\u6a21\u578b\uff09\n",
+      "------------------------------------------------------\n",
+      "Black, Fischer; Myron Scholes (1973). The Pricing of Options and Corporate Liabilities. Journal of Political Economy 81 (3): 637\u2013654"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from CAL.PyCAL import *\n",
+      "import numpy as np"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "strikes = np.linspace(1,200, 200)\n",
+      "priceList = BSMPrice(optionType = 1, \n",
+      "                     strike = strikes, \n",
+      "                     spot = 100.0, \n",
+      "                     riskFree = 0.05, \n",
+      "                     dividend = 0.02, \n",
+      "                     volatility = 0.25, \n",
+      "                     maturity = 5.0)\n",
+      "priceList['strike'] = strikes"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(priceList, settings = {'x':'strike', 'y':'price', 'kind':'Line', 'title':u'\u6d4b\u8bd5\u671f\u6743\u4ef7\u683c'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(priceList, settings = {'x':'strike', 'y':'delta', 'kind':'Line', 'title':u'\u6d4b\u8bd5\u671f\u6743delta'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(priceList, settings = {'x':'strike', 'y':'gamma', 'kind':'Line', 'title':u'\u6d4b\u8bd5\u671f\u6743gamma'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(priceList, settings = {'x':'strike', 'y':'vega', 'kind':'Line', 'title':u'\u6d4b\u8bd5\u671f\u6743vega'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "2. \u6839\u636e\u671f\u6743\u4ef7\u683c\u8ba1\u7b97\u9690\u542b\u6ce2\u52a8\u7387"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "strikes = np.array([90.0, 91.0, 92.0, 93.0, 94.0, 95.0, 96.0, 97.0, 98.0, 99.0, 100.0])\n",
+      "volatilities = np.array([0.26, 0.24, 0.23, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.30])\n",
+      "priceList = BSMPrice(optionType = 1, \n",
+      "                     strike = strikes, \n",
+      "                     spot = 100.0, \n",
+      "                     riskFree = 0.05, \n",
+      "                     dividend = 0.02, \n",
+      "                     volatility = volatilities, \n",
+      "                     maturity = 5.0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "impliedVol = BSMImpliedVolatity(optionType = 1, \n",
+      "                                strike = strikes, \n",
+      "                                spot = 100.0, \n",
+      "                                riskFree = 0.05,\n",
+      "                                dividend = 0.02,\n",
+      "                                maturity = 5.0,\n",
+      "                                quotePrice = priceList['price'])\n",
+      "impliedVol['strike'] = strikes"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(impliedVol, settings = {'x':'strike', 'y':'vol', 'title':u'\u9690\u542b\u6ce2\u52a8\u7387\u5fae\u7b11'})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ipython-deps",
+  "version": "0.0.1",
+  "dependencies": {
+    "backbone": "components/backbone#~1.1",
+    "bootstrap": "~2.3",
+    "bootstrap-tour": "0.9.0",
+    "codemirror": "~3",
+    "font-awesome": "components/font-awesome#~3.2",
+    "google-caja": "5669",
+    "highlight.js": "~7",
+    "jquery": "components/jquery#~2.0",
+    "jquery-ui": "components/jqueryui#~1.10",
+    "marked": "~0.3",
+    "requirejs": "~2.1",
+    "underscore": "components/underscore#~1.5"
+  }
+}

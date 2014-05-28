@@ -1,0 +1,370 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL\n",
+      "import pprint"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "optionType = CAL.Option.Put\n",
+      "underlying = 36.0\n",
+      "spreadRate = 0.005\n",
+      "dividendYield = 0.02\n",
+      "riskFreeRate = 0.06\n",
+      "volatility = 0.20\n",
+      "\n",
+      "settlementDays = 3\n",
+      "length = 5\n",
+      "redemption = 100.0\n",
+      "conversionRatio = redemption / underlying\n",
+      "\n",
+      "calendar = CAL.TARGET()\n",
+      "today = calendar.adjust(CAL.Date.todaysDate())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "CAL.Settings.instance(). setEvaluationDate(today)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "settlementDate = calendar.advance(today, settlementDays, CAL.Days)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "exerciseDate = calendar.advance(settlementDate, length, CAL.Years)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "issueDate = calendar.advance(exerciseDate, -length, CAL.Years)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "convention = CAL.ModifiedFollowing\n",
+      "frequency = CAL.Annual\n",
+      "schedule = CAL.Schedule(issueDate, exerciseDate,\n",
+      "                          CAL.Period(frequency), calendar,\n",
+      "                          convention, convention,\n",
+      "                          CAL.DateGeneration.Backward, False)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "dividends = CAL.DividendSchedule()\n",
+      "callability = CAL.CallabilitySchedule()\n",
+      "coupons = [0.05]\n",
+      "bondDayCount = CAL.Thirty360()\n",
+      "callLength = [2, 4]\n",
+      "putLength = [3]\n",
+      "callPrices = [101.5, 100.85]\n",
+      "putPrices = [105.0]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Load call schedules\n",
+      "for i in xrange(len(callLength)):\n",
+      "    callability.push_back(CAL.SoftCallability(CAL.CallabilityPrice(callPrices[i], CAL.CallabilityPrice.Clean), schedule[callLength[i]], 1.20))\n",
+      "    \n",
+      "for i in xrange(len(putLength)):\n",
+      "    callability.push_back(CAL.Callability(CAL.CallabilityPrice(putPrices[i], CAL.CallabilityPrice.Clean), CAL.Callability.Put, schedule[putLength[i]]))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Assume dividends are paid every 6 months.\n",
+      "d = today + CAL.Period(6, CAL.Months)\n",
+      "while d < exerciseDate:\n",
+      "    dividends.push_back(CAL.FixedDividend(1.0, d))\n",
+      "    d = d + CAL.Period(6, CAL.Months)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "dayCounter = CAL.Actual365Fixed()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "maturity = dayCounter.yearFraction(settlementDate, exerciseDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "maturity"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 13,
+       "text": [
+        "5.002739726027397"
+       ]
+      }
+     ],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print \"option type = \"  + str(optionType)\n",
+      "print '%s%06.4f' %(\"Time to maturity = \", maturity)\n",
+      "print '%s%06.4f' %(\"Underlying price = \", underlying)\n",
+      "print '%s%04.2f' %(\"Risk-free interest rate = \", riskFreeRate)\n",
+      "print '%s%04.2f' %(\"Dividend yield = \", dividendYield)\n",
+      "print '%s%04.2f' %(\"Volatility = \", volatility)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "option type = -1\n",
+        "Time to maturity = 5.0027\n",
+        "Underlying price = 36.0000\n",
+        "Risk-free interest rate = 0.06\n",
+        "Dividend yield = 0.02\n",
+        "Volatility = 0.20\n"
+       ]
+      }
+     ],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "exercise = CAL.EuropeanExercise(exerciseDate)\n",
+      "amExercise = CAL.AmericanExercise(settlementDate, exerciseDate)\n",
+      "underlyingH = CAL.QuoteHandle(CAL.SimpleQuote(underlying))\n",
+      "flatTermStructure = CAL.RelinkableYieldTermStructureHandle(CAL.FlatForward(settlementDate, riskFreeRate, dayCounter))\n",
+      "flatDividendTS = CAL.RelinkableYieldTermStructureHandle(CAL.FlatForward(settlementDate, dividendYield, dayCounter))\n",
+      "flatVolTS = CAL.RelinkableBlackVolTermStructureHandle(CAL.BlackConstantVol(settlementDate, calendar,volatility, dayCounter))\n",
+      "stochasticProcess = CAL.BlackScholesMertonProcess(underlyingH, flatDividendTS, flatTermStructure, flatVolTS)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 15
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "timeSteps = 801\n",
+      "creditSpread = CAL.QuoteHandle(CAL.SimpleQuote(spreadRate))\n",
+      "rate = CAL.SimpleQuote(riskFreeRate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 16
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "engine = CAL.BinomialConvertibleEngine(stochasticProcess, \"jr\", timeSteps)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 17
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "europeanBond = CAL.ConvertibleFixedCouponBond(\n",
+      "                            exercise, conversionRatio, dividends, callability,\n",
+      "                            creditSpread, issueDate, settlementDays,\n",
+      "                            coupons, bondDayCount, schedule, redemption)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 18
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "europeanBond.setPricingEngine(engine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 19
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "americanBond = CAL.ConvertibleFixedCouponBond(\n",
+      "                          amExercise, conversionRatio, dividends, callability,\n",
+      "                          creditSpread, issueDate, settlementDays,\n",
+      "                          coupons, bondDayCount, schedule, redemption)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 20
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "americanBond.setPricingEngine(engine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 21
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "europeanBond.NPV()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 22,
+       "text": [
+        "105.69563577685233"
+       ]
+      }
+     ],
+     "prompt_number": 22
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "americanBond.NPV()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 23,
+       "text": [
+        "108.14623370984376"
+       ]
+      }
+     ],
+     "prompt_number": 23
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 29
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

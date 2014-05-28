@@ -1,0 +1,9 @@
+1. swig -java -c++ -outdir org/CAL -package org.CAL -o CAL_wrap.cpp ../SWIG/CAL.i
+
+2. Build CALJava.dll using Visual Studio
+
+3. Under org/CAL build CAL java project
+
+4. cd org/CAL
+
+5. jar cf ../../CAL.jar -C bin org

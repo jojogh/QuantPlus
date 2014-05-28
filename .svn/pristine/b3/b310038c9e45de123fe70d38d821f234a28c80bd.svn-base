@@ -1,0 +1,237 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL\n",
+      "import math\n",
+      "import numpy\n",
+      "import matplotlib.pyplot as plt"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 119
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Initilize a solver\n",
+      "solver = CAL.Brent()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 86
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Define object function\n",
+      "# function object can be used here\n",
+      "class ObjectFunction:\n",
+      "    def __call__(self, x):\n",
+      "        return x**3 + math.sin(x) - x**2 + math.exp(x)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 87
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "objFun = ObjectFunction()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 88
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Try to find the zeros\n",
+      "solution = solver.solve(objFun, 1e-8, 0, 0.05)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 89
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print solution"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "-0.419591092402\n"
+       ]
+      }
+     ],
+     "prompt_number": 90
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Also plain function definition can be used her\n",
+      "def f(x):\n",
+      "     return -x**3 - math.sin(x) + x**2 - math.exp(x)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 91
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "solution = solver.solve(f, 1e-8, 0, 0.05)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 92
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print solution"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "-0.41959109059\n"
+       ]
+      }
+     ],
+     "prompt_number": 93
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# plot the function shape to make it more visable.\n",
+      "x = numpy.linspace(-1.0, 1.0, 1000)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 116
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "ufunc1 = numpy.frompyfunc(f,1,1)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 114
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "y = ufunc1(x)\n",
+      "zeroLine = numpy.zeros([1000,1])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 125
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "p1, = plt.plot(x,y)\n",
+      "p2, = plt.plot(x,zeroLine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 140
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "plt.xlabel(\"x\")\n",
+      "plt.ylabel(\"y\")\n",
+      "plt.legend([p1,p2], [\"f(x)\", \"zero line\"])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 141,
+       "text": [
+        "<matplotlib.legend.Legend at 0x84e3f50>"
+       ]
+      }
+     ],
+     "prompt_number": 141
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "plt.show()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 142
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 143
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

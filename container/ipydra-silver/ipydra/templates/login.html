@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>通联量化分析库</title>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favico.png') }}">
+ 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wakari.css') }}">
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/require.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+        
+        <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+    </head>
+    <body>
+        <div class="wrapper">
+
+            
+
+            
+            {% set messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div id="messages" class="container">
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} fade in">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            {% endif %}  
+            
+            <!--Body Block -->
+            
+<div class="full-background"></div>
+<div class="login-form">
+    <h1>通联量化分析库</h1>
+    <form method="POST" class="form" action="/login">
+        <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="20140324211810##e7e95ea1c6cef656397311187df3694317deff44"></div>
+        
+    
+    <div class="form-group  ">
+        
+        
+        
+        
+            <input autocomplete="" class="input-with-feedback form-control" id="username" name="username" placeholder="用户名" tabindex="" type="text" value="">
+        
+        <span class="help-block"></span>
+    </div>
+        
+    
+        
+    
+    <div class="form-group  ">
+        
+        
+        
+        
+            <input autocomplete="" class="input-with-feedback form-control" id="password" name="password" placeholder="密码" tabindex="" type="password" value="">
+        
+        <span class="help-block"></span>
+    </div>
+        
+    
+        
+        <input type="submit" value="登录" class="btn btn-default">
+        
+    </form>
+</div>
+
+            <!--End Body -->
+
+        </div>
+        <!-- wrapper -->
+
+        
+
+    
+
+    
+
+</body></html>

@@ -1,0 +1,305 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from CAL import *\n",
+      "import time\n",
+      "import datetime"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "asofdate = Date(31, August, 2006)\n",
+      "Settings.instance().setEvaluationDate(asofdate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "hazardLambda = 0.1\n",
+      "hazardQuote = SimpleQuote(hazardLambda)\n",
+      "hazardHandler = QuoteHandle(hazardQuote)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "ptr = FlatHazardRate(asofdate, hazardHandler, ActualActual(ActualActual.ISMA))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "basket = DefaultProbabilityTermStructureVec()\n",
+      "issuers = IssuerVec()\n",
+      "probabilities = key_curve_pair_vec()\n",
+      "pool = Pool()\n",
+      "names = StrVector()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "probabilities.push_back(key_curve_pair(NorthAmericaCorpDefaultKey(EURCurrency(), SecDom, Period(0, Weeks), 10.), \n",
+      "                      DefaultProbabilityTermStructureHandle(ptr)))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "poolSize = 100\n",
+      "for i in xrange(poolSize):\n",
+      "    o = \"Issuer-\" + str(i)\n",
+      "    names.push_back(o)\n",
+      "    basket.push_back(DefaultProbabilityTermStructureHandle(ptr))\n",
+      "    issuers.push_back(Issuer(probabilities))\n",
+      "    pool.add(names.back(), issuers.back())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "correlation = 0.2\n",
+      "correlationQuote = SimpleQuote(correlation)\n",
+      "correlationHandler= QuoteHandle(correlationQuote)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "pGaussianCopula = OneFactorGaussianCopula(correlationHandler)\n",
+      "hCopula = RelinkableOneFactorCopulaeHandle(pGaussianCopula)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "sampleData = NorthAmericaCorpDefaultKey(EURCurrency(), SecDom)\n",
+      "defaultProbKeyVec = DefaultProbKeyVec(poolSize, sampleData)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "myModel = GaussianRandomDefaultModel(pool, defaultProbKeyVec, hCopula, 1e-6, 42)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "myModel.nextSequence(5)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "myPool = myModel.pool()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "for name in myPool.names():\n",
+      "    print myPool.getTime(name)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "6.0\n",
+        "6.0\n",
+        "1.87562660626\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "1.59567644081\n",
+        "6.0\n",
+        "1.59543271945\n",
+        "1.03834163947\n",
+        "0.627070650419\n",
+        "6.0\n",
+        "6.0\n",
+        "3.5520044196\n",
+        "6.0\n",
+        "1.46334191587\n",
+        "6.0\n",
+        "6.0\n",
+        "0.247631182015\n",
+        "0.610561987223\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "2.17779376108\n",
+        "0.0147663493631\n",
+        "1.85902043114\n",
+        "6.0\n",
+        "1.8753140694\n",
+        "6.0\n",
+        "3.20002483389\n",
+        "6.0\n",
+        "6.0\n",
+        "0.0974471952912\n",
+        "4.83655015755\n",
+        "0.273765632975\n",
+        "3.0486983665\n",
+        "6.0\n",
+        "6.0\n",
+        "4.39597621448\n",
+        "1.42958287176\n",
+        "0.513900414822\n",
+        "3.05926616725\n",
+        "6.0\n",
+        "3.95859265135\n",
+        "2.39639324094\n",
+        "6.0\n",
+        "0.94638903686\n",
+        "6.0\n",
+        "6.0\n",
+        "2.04442542386\n",
+        "4.16609180877\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "0.51175501806\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "1.74305571731\n",
+        "6.0\n",
+        "0.695702793443\n",
+        "0.168424084457\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "4.20470549786\n",
+        "3.20438100006\n",
+        "0.198075000219\n",
+        "1.01572334276\n",
+        "2.37611993691\n",
+        "6.0\n",
+        "2.48598675097\n",
+        "4.95298083734\n",
+        "6.0\n",
+        "1.25590366723\n",
+        "6.0\n",
+        "6.0\n",
+        "6.0\n",
+        "0.390501397531\n",
+        "1.7721057724\n",
+        "6.0\n",
+        "4.27894620548\n",
+        "2.68137767921\n",
+        "1.86325924493\n",
+        "6.0\n",
+        "6.0\n",
+        "3.28798700886\n",
+        "4.74142347884\n",
+        "6.0\n",
+        "2.13130992751\n",
+        "6.0\n",
+        "6.0\n",
+        "1.89028981493\n",
+        "0.359159432763\n",
+        "6.0\n"
+       ]
+      }
+     ],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 14
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

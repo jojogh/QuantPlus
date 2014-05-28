@@ -1,0 +1,2294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{928F98EE-7D50-457F-9304-A6818DCF1079}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>NCAL</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NCAL</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\vc110\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\vc110\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\vc110\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actual360.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actual365Fixed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Actual365NoLeap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActualActual.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActualActualNoLeap.cs" />
+    <Compile Include="AmericanExercise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AmortizingFixedRateBond.cs" />
+    <Compile Include="AmortizingPayment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticBarrierEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticCapFloorEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticContinuousGeometricAveragePriceAsianEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticDigitalAmericanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticDiscreteGeometricAveragePriceAsianEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticDiscreteGeometricAverageStrikeAsianEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticDividendEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticHaganPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalyticHestonEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Argentina.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Array2DMatrix.cs" />
+    <Compile Include="ARSCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssetOrNothingPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssetSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AtomicDefault.cs" />
+    <Compile Include="ATSCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AUDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AUDLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Australia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Average.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AverageBasketPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BackwardFlat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BackwardFlatDiscountCurve.cs" />
+    <Compile Include="BackwardFlatForwardCurve.cs" />
+    <Compile Include="BackwardFlatInterpolation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BackwardFlatZeroCurve.cs" />
+    <Compile Include="BaroneAdesiWhaleyEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Barrier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BarrierOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasketOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasketPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BatesEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BatesModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BatesProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BDTCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BEFCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BermudanExercise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BespokeCalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BFGS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BGLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BicubicSpline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BilinearInterpolation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BinomialConvertibleEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BinomialDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BinomialVanillaEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bisection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BivariateCumulativeNormalDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BivariateCumulativeNormalDistributionDr78.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BivariateCumulativeNormalDistributionWe04DP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BjerksundStenslandEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackCalculator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackCapFloorEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackConstantVol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackFormula.cs" />
+    <Compile Include="BlackIborCouponPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackKarasinski.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackScholesMertonProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackScholesProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackSwaptionEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackVarianceCurve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackVarianceSurface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackVolTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackVolTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BondFunctions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoolVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoundaryCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoundaryConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxMullerKnuthGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxMullerLecuyerGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BoxMullerMersenneTwisterGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Brazil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Brent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BRLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business252.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessDayConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BYRCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CADCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CADLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Calendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalibratedModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalibrationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalibrationHelperVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Callability.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallabilityPrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallabilitySchedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallableFixedRateBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Canada.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapFloor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapFloorTermVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapFloorTermVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapFloorTermVolCurve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CapHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CappedFlooredCmsCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CappedFlooredCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CashFlow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CashFlows.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CashOrNothingPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cash_flow_pair.cs" />
+    <Compile Include="Cdor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CeilingTruncation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CentralLimitKnuthGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CentralLimitLecuyerGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CentralLimitMersenneTwisterGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CHFCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CHFLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="China.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChiSquareDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClosestRounding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CLPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CmsCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CmsCouponPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CmsRateBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CNYCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColletralFlowGenerator.cs" />
+    <Compile Include="CompositeInstrument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Compounding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConjugateGradient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConstantEstimator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConstantOptionletVolatility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConstantSwaptionVolatility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Constraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContinuousArithmeticAsianLevyEngine.cs" />
+    <Compile Include="ContinuousAveragingAsianOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConvertibleFixedCouponBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConvertibleFloatingRateBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConvertibleZeroCouponBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="COPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Coupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoxIngersollRoss.cs" />
+    <Compile Include="CPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreditDefaultSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CTBFixedBond.cs" />
+    <Compile Include="CTBFixedBondHelper.cs" />
+    <Compile Include="CTBZeroBond.cs" />
+    <Compile Include="CTBZeroBondHelper.cs" />
+    <Compile Include="Cubic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CubicDiscountCurve.cs" />
+    <Compile Include="CubicForwardCurve.cs" />
+    <Compile Include="CubicNaturalSpline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CubicZeroCurve.cs" />
+    <Compile Include="CumulativeBinomialDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CumulativeNormalDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CumulativePoissonDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CumulativeStudentDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomRegion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CYPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CzechRepublic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CZKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Date.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DateGeneration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DateParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DateVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DayCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultDensity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultDensityCurve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultEvent.cs" />
+    <Compile Include="DefaultProbabilityHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultProbabilityHelperVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultProbabilityTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultProbabilityTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DefaultProbabilityTermStructureVec.cs" />
+    <Compile Include="DefaultProbKey.cs" />
+    <Compile Include="DefaultProbKeyVec.cs" />
+    <Compile Include="DefaultType.cs" />
+    <Compile Include="DefaultTypeVec.cs" />
+    <Compile Include="DEMCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Denmark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositRateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirichletBC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DiscountingBondEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DiscountingSwapEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DiscreteAveragingAsianOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dividend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DividendSchedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DividendVanillaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DKKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DKKLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DMinus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DoubleVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DownRounding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DPlus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DPlusDMinus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Duration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DZero.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EEKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EndCriteria.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ESPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EUHICP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EUHICPXT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor10M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor11M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor1M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor1Y.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor2M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor2W.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_10M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_11M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_1M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_1Y.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_2M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_2W.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_3M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_3W.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_4M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_5M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_6M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_7M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_8M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_9M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor365_SW.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor3M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor3W.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor4M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor5M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor6M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor7M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor8M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Euribor9M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuriborSW.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuriborSwapIfrFix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuriborSwapIsdaFixA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuriborSwapIsdaFixB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor10M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor11M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor1M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor1Y.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor2M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor2W.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor3M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor4M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor5M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor6M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor7M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor8M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLibor9M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EURLiborSW.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EurLiborSwapIfrFix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EurLiborSwapIsdaFixA.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EurLiborSwapIsdaFixB.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuropeanExercise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EuropeanOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EverestOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExchangeRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExchangeRateManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exercise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExtendedCoxIngersollRoss.cs" />
+    <Compile Include="FalsePosition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FDAmericanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FDBermudanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FdBlackScholesAsianEngine.cs" />
+    <Compile Include="FdBlackScholesBarrierEngine.cs" />
+    <Compile Include="FdBlackScholesVanillaEngine.cs" />
+    <Compile Include="FDDividendAmericanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FDDividendEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FDEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FdHestonBarrierEngine.cs" />
+    <Compile Include="FdmSchemeDesc.cs" />
+    <Compile Include="FDShoutEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FFTVarianceGammaEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FIMCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Finland.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FixedDividend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FixedRateBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FixedRateBondHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FixedRateCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlatForward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FlatHazardRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FloatingRateBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FloatingRateCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FloatingRateCouponPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Floor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FloorTruncation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardFlat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardFlatDiscountCurve.cs" />
+    <Compile Include="ForwardFlatForwardCurve.cs" />
+    <Compile Include="ForwardFlatInterpolation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardFlatZeroCurve.cs" />
+    <Compile Include="ForwardRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardRateAgreement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardSpreadedTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForwardVanillaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FractionalDividend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FraRateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Frequency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FRFCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FRHICP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FritschButlandCubic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FritschButlandLogCubic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FuturesRateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="G2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="G2SwaptionEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GammaDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GammaFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GapPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKlassSigma1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKlassSigma3.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKlassSigma4.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKlassSigma5.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKlassSigma6.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GarmanKohlagenProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussChebyshev2ndIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussChebyshevIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussGegenbauerIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussHermiteIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussHyperbolicIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianLowDiscrepancySequenceGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianMultiPathGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianPathGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianRandomDefaultModel.cs" />
+    <Compile Include="GaussianRandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianRandomSequenceGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussianSobolPathGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussJacobiIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussKronrodAdaptive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussKronrodNonAdaptive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussLaguerreIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussLegendreIntegration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GaussLobattoIntegral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GBPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GBPLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralizedBlackScholesProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralizedHullWhite.cs" />
+    <Compile Include="GeometricBrownianMotionProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Germany.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GFunctionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GRDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HaltonRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HazardRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HazardRateCurve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HestonModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HestonModelHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HestonProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HimalayaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HKDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HongKong.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HUFCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HullWhite.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HullWhiteProcess.cs" />
+    <Compile Include="Hungary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IBFRSwap.cs" />
+    <Compile Include="IBFRSwapRateHelper.cs" />
+    <Compile Include="IborCoupon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IborCouponPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IborIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Iceland.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IEPCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ILSCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IMM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImpliedTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IncrementalStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Index.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndexManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="India.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Indonesia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InflationIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="INRCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Instrument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InstrumentVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IntegralEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterestRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterestRateIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterestRateVector.cs" />
+    <Compile Include="IntervalPrice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IntervalPriceTimeSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IntervalPriceVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IntVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeHaltonGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeKnuthGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeKnuthGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeLecuyerGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeLecuyerGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeMersenneTwisterGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeMersenneTwisterGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvCumulativeSobolGaussianRsg.cs" />
+    <Compile Include="InverseCumulativeNormal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InverseCumulativePoisson.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InverseCumulativeStudent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InverseNonCentralChiSquareDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IQDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRRCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Issuer.cs" />
+    <Compile Include="IssuerVec.cs" />
+    <Compile Include="Italy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JamshidianSwaptionEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Japan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Jibar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JointCalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JointCalendarRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JPYCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JPYLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="key_curve_pair.cs" />
+    <Compile Include="key_curve_pair_vec.cs" />
+    <Compile Include="KnuthUniformRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KnuthUniformRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KrugerCubic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KrugerLogCubic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KRWCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KWDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LecuyerUniformRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LecuyerUniformRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Leg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LevenbergMarquardt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LexicographicalView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Linear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinearDiscountCurve.cs" />
+    <Compile Include="LinearForwardCurve.cs" />
+    <Compile Include="LinearInterpolation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinearZeroCurve.cs" />
+    <Compile Include="LoansPool.cs" />
+    <Compile Include="LocalConstantVol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LocalVolTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LocalVolTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogCubicNaturalSpline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogLinear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogLinearDiscountCurve.cs" />
+    <Compile Include="LogLinearForwardCurve.cs" />
+    <Compile Include="LogLinearInterpolation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogLinearZeroCurve.cs" />
+    <Compile Include="LogParabolic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LsmBasisSystem.cs" />
+    <Compile Include="LTLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LUFCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LVLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Matrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxBasketPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCAmericanBasketEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCAmericanEngine.cs" />
+    <Compile Include="MCBarrierEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCDiscreteArithmeticAPEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCDiscreteArithmeticASEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCDiscreteGeometricAPEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCEuropeanBasketEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCEverestEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCHimalayaEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MersenneTwisterUniformRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MersenneTwisterUniformRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Merton76Process.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mexico.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MidPointCdsEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MinBasketPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Money.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonotonicCubicNaturalSpline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonotonicLogCubicNaturalSpline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonotonicLogParabolic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonotonicParabolic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Month.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeHaltonGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeKnuthGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeKnuthGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeLecuyerGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeLecuyerGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeMersenneTwisterGaussianRng.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeMersenneTwisterGaussianRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MoroInvCumulativeSobolGaussianRsg.cs" />
+    <Compile Include="MoroInverseCumulativeNormal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MTLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultiAssetOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultiPath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultipleIncrementalStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultipleStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MultiplicativePriceSeasonalityPtr.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MXNCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NCALc.cs" />
+    <Compile Include="NCALcPINVOKE.cs" />
+    <Compile Include="NeumannBC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewZealand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NLGCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NoConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodePair.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NodeVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NOKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NonCentralChiSquareDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NormalDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NorthAmericaCorpDefaultKey.cs" />
+    <Compile Include="Norway.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NPRCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NullCalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NumericHaganPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NZDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NZDLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Observable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OneDayCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OneFactorCopula.cs" />
+    <Compile Include="OneFactorCopulaHandle.cs" />
+    <Compile Include="OneFactorGaussianCopula.cs" />
+    <Compile Include="OneFactorStudentCopula.cs" />
+    <Compile Include="OptimizationMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Optimizer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OptionletVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OptionletVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parabolic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkinsonSigma.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Path.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Payoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PEHCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PEICurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PENCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PercentageStrikePayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Period.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PeriodParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PeriodVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PerturbativeBarrierOptionEngine.cs" />
+    <Compile Include="PiecewiseCubicDiscount.cs" />
+    <Compile Include="PiecewiseCubicForward.cs" />
+    <Compile Include="PiecewiseCubicZero.cs" />
+    <Compile Include="PiecewiseFlatDiscount.cs" />
+    <Compile Include="PiecewiseFlatForward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PiecewiseFlatHazardRate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PiecewiseFlatZero.cs" />
+    <Compile Include="PiecewiseLinearDiscount.cs" />
+    <Compile Include="PiecewiseLinearForward.cs" />
+    <Compile Include="PiecewiseLinearZero.cs" />
+    <Compile Include="PiecewiseLogLinearDiscount.cs" />
+    <Compile Include="PiecewiseYoYInflation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PiecewiseZeroInflation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKRCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlainFloatingRateBond.cs" />
+    <Compile Include="PlainVanillaPayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PLNCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PoissonDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Poland.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pool.cs" />
+    <Compile Include="Position.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PositiveConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PricingEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PTECurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QlArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuantoEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuantoForwardEuropeanEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuantoForwardVanillaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuantoVanillaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuoteHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuoteHandleVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuoteHandleVectorVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuoteVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuoteVectorVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RandomDefaultModel.cs" />
+    <Compile Include="RateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RateHelperVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RealTimeSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Redemption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Region.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableBlackVolTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableCapFloorTermVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableDefaultProbabilityTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableLocalVolTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableOneFactorCopulaeHandle.cs" />
+    <Compile Include="RelinkableOptionletVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableQuoteHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableQuoteHandleVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableQuoteHandleVectorVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableShortRateModelHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableSwaptionVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableYieldTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableYoYInflationTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RelinkableZeroInflationTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepoChina.cs" />
+    <Compile Include="Restructuring.cs" />
+    <Compile Include="Ridder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RiskReport.cs" />
+    <Compile Include="RiskStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ROLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RONCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rounding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Russia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalvagingAlgorithm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampledCurve.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleMultiPath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleNumber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SamplePath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleRealVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SARCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SaudiArabia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Schedule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seasonality.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Secant.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SegmentIntegral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SEKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SEKLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Seniority.cs" />
+    <Compile Include="SensitivityAnalysis.cs" />
+    <Compile Include="SequenceStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Settlement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SGDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shibor.cs" />
+    <Compile Include="ShiborSwap.cs" />
+    <Compile Include="ShiborSwapRateHelper.cs" />
+    <Compile Include="ShortRateModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShortRateModelHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleCashFlow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleDayCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpleQuote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Simplex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SimpsonIntegral.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Singapore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SITCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SKKCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Slovakia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SobolRsg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SoftCallability.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SouthAfrica.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SouthKorea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpreadCdsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpreadedLinearZeroInterpolatedTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SteepestDescent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StochasticProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StochasticProcess1D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StochasticProcessArray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StochasticProcessVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StrVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StudentDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StulzEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuperSharePayoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SVD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Swap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwapIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwapRateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Swaption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionVolatilityMatrix.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionVolatilityStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionVolCube1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SwaptionVolCube2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sweden.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_BlackVolTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_boost__shared_ptrT_EndCriteria_t.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_boost__shared_ptrT_IborIndex_t.cs" />
+    <Compile Include="SWIGTYPE_p_boost__shared_ptrT_OptimizationMethod_t.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_CalibratedModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_CapFloorTermVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_CashFlow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_DefaultEvent.cs" />
+    <Compile Include="SWIGTYPE_p_DefaultProbabilityHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_DefaultProbabilityTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_DefaultProbKey.cs" />
+    <Compile Include="SWIGTYPE_p_DefaultType.cs" />
+    <Compile Include="SWIGTYPE_p_Dividend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_EndCriteria__Type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_FloatingRateCouponPricer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Index.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_InflationTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Instrument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_LocalVolTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Observable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_OneFactorCopula.cs" />
+    <Compile Include="SWIGTYPE_p_OptionletVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Payoff.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_PricingEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_RateHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_Seasonality.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_ShortRateModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_std__size_t.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_StochasticProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_SwaptionVolatilityStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_YieldTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_YoYHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_YoYInflationTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_ZeroHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SWIGTYPE_p_ZeroInflationTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Switzerland.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Taiwan.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TARGET.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="THBCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Thirty360.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeBasket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrapezoidIntegralDefault.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrapezoidIntegralMidPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeCallableFixedRateBondEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeCapFloorEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TreeSwaptionEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TridiagonalOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TRLCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TRLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TRYCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TTDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Turkey.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TWDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ukraine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UKRPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformLowDiscrepancySequenceGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformRandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformRandomSequenceGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitedKingdom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnitedStates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedIntVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UpfrontCdsHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UpRounding.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="USCPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="USDCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="USDLibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VanillaOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VanillaSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VarianceGammaEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VarianceGammaProcess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vasicek.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VEBCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Weekday.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WeekendsOnly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YearOnYearInflationSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YearOnYearInflationSwapHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YieldTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YieldTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYHelperVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationCap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationCapFloor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationCollar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationFloor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YoYInflationTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YYEUHICP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YYEUHICPXT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YYFRHICP.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YYUKRPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="YYUSCPI.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZARCurrency.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroCouponBond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroCouponInflationSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroCouponInflationSwapHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroHelperVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroInflationIndex.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroInflationTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroInflationTermStructureHandle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroSpreadedTermStructure.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ZeroYield.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Zibor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_AmortizingFixedRateBond.cs" />
+    <Compile Include="_BlackVarianceSurface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_BoundaryCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_CalibrationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_Callability.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_Exercise.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_IBFRSwap.cs" />
+    <Compile Include="_VanillaSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_YearOnYearInflationSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_ZeroCouponInflationSwap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

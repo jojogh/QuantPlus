@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<!--#include virtual="qlmeta.inc"-->
+<meta name="author" content="Luigi Ballabio">
+<meta name="copyright" content="Luigi Ballabio (c) 2007">
+<meta name="description" content="QuantLib Style Guidelines">
+<link rel="stylesheet" href="./styles/nosplash.css" type="text/css">
+<title>QuantLib Style Guidelines</title>
+</head>
+<body>
+<div id="container">
+<!--#include virtual="header.inc"-->
+<div id="menu">
+<!--#include virtual="usermenu.inc"-->
+</div>
+<div id="content">
+
+<h1 class="center">QuantLib Style Guidelines</h1>
+
+The standard style for QuantLib code is shown in the following
+listing.  You can write in your own style if you don't feel
+comfortable with this one; however, keep in mind that consistency
+would enhance readability for developers accustomed to the existing
+body of code.  Also, there should be no real tabs in the code; four
+spaces should be used instead.  If you don't follow this convention,
+other developers are likely to see your code with the wrong
+indentation.
+
+<div class="fragment"><pre class="fragment">
+#define <span class="keyword">SOME_MACRO</span>                            <span class="comment">// all uppercase</span>
+
+typedef double <span class="keyword">SomeType</span>;                      <span class="comment">// camelcase, starting capital</span>
+
+class <span class="keyword">SomeClass</span> {                             <span class="comment">// camelcase, starting capital</span>
+  public:
+    void method();
+    Real <span class="keyword">anotherMethod</span>(Real x,                <span class="comment">// camelcase, starting lowercase</span>
+                       Real y) const;
+    Real <span class="keyword">member</span>() const;                      <span class="comment">// getter, no leading "get"</span>
+    void <span class="keyword">setMember</span>(Real);                     <span class="comment">// setter, leading "set"</span>
+  private:
+    Real <span class="keyword">member_</span>;                             <span class="comment">// camelcase, starting lowercase,</span>
+    Integer <span class="keyword">anotherMember_</span>;                   <span class="comment">// trailing underscore</span>
+};
+
+struct SomeStruct {
+    Real <span class="keyword">foo</span>;                                 <span class="comment">// struct members:</span>
+    Integer <span class="keyword">bar</span>;                              <span class="comment">// no trailing underscore</span>
+};
+
+class SomeOtherClass {
+  public:
+    typedef Real* <span class="keyword">iterator</span>;                   <span class="comment">// no camelcase for consistency</span>
+    typedef const Real* <span class="keyword">const_iterator</span>;       <span class="comment">// with STL conventions</span>
+};
+
+Size someFunction(Real <span class="keyword">parameter</span>,             <span class="comment">// one parameter per line,</span>
+                  Real <span class="keyword">anotherParameter</span>) {    <span class="comment">// camelcase, starting lowercase</span>
+    Real localVariable = 0.0;
+    if (condition) <span class="keyword">{</span>                          <span class="comment">// brackets here...</span>
+        localVariable += 3.14159;
+    <span class="keyword">}</span> else <span class="keyword">{</span>                                  <span class="comment">// ...here...</span>
+        localVariable -= 2.71828;
+    <span class="keyword">}</span>                                         <span class="comment">// ...and here.</span>
+    return 42;
+}
+</pre></div>
+</div>
+
+<div id="menuafter">
+<!--#include virtual="usermenu.inc"-->
+</div>
+
+<div class="footer">
+<!--#include virtual="footer.inc"-->
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>通联量化分析库</title>
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favico.png') }}">
+ 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/wakari.css') }}">
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='js/require.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+        
+        <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+    </head>
+    <body>
+        <div class="wrapper">
+
+            
+                <div id="wakari-top-nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="header-logo"><img src="/static/img/header-logo.png"/></div>
+        <ul class="nav navbar-nav pull-left">
+        
+            <li><a href="#" target="_blank">量化分析库CAL</a></li>
+        
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            
+                <li id="userinfo">
+                    <a href="/login" title="Login">登录</a>
+                </li>
+
+        </ul>
+    </div>
+</div>
+
+
+        {% set messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div id="messages" class="container">
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} fade in">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            {% endif %}    
+
+            
+            
+            
+            <!--Body Block -->
+            
+<div class="full-background"></div>
+<div class="container-fluid header">
+    <div class="row">
+        <div class="col-md-7" style="margin-left: 30px;"> 
+            
+              <h1 class="title">Common Analytics Library™</h1>
+              <h2>Financial Analytics and Data Engine ™</h2>
+              <h3>Next generation browser-based data and quantitative analysis.</h3>
+	    
+        </div>
+        <div class="col-md-4 ">
+              
+                <form method="post" action="/" id="signup-box">
+                <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="20140324211033##b2565b5c6da4c4166819afb57970eff5d1b225f6"></div>
+                
+    
+    <div class="form-group  ">
+        
+        
+        
+        
+            <input autocomplete="" class="input-with-feedback form-control" id="username" name="username" placeholder="用户名" tabindex="" type="text" value="">
+        
+        <span class="help-block"></span>
+    </div>
+        
+    
+                
+    
+    <div class="form-group  ">
+        
+        
+        
+        
+            <input autocomplete="" class="input-with-feedback form-control" id="email" name="email" placeholder="邮箱" tabindex="" type="text" value="">
+        
+        <span class="help-block"></span>
+    </div>
+        
+    
+                
+    
+    <div class="form-group  ">
+        
+        
+        
+        
+            <input autocomplete="" class="input-with-feedback form-control" id="password" name="password" placeholder="密码" tabindex="" type="password" value="">
+        
+        <span class="help-block"></span>
+    </div>
+        
+    
+		<h6> </h6>
+                <div class="control-group">
+                    <div class="controls">
+                      
+                        <button type="submit" name="signup" class="btn btn-large btn-block btn-primary">创建分析库账号</button>
+	              
+                    </div>
+                </div>
+                </form>
+             
+        </div>
+    </div>
+    </div>
+
+   
+
+    </div>
+
+
+
+            <!--End Body -->
+
+        
+        <!-- wrapper -->
+
+        
+            
+        
+
+    
+
+    
+
+</body></html>

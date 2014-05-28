@@ -1,0 +1,1218 @@
+commit 56eb434163d39a4f0a898ce535c2313c6722a0e9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 1 Jul 2013 09:45:30 +0200
+
+    Removed explicit conversions from pointer to shared_ptr.
+    
+    They're no longer valid on all compilers.
+
+commit 0c659e510ff06ebd0d92809b0ee9864e6e193053
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 28 Jun 2013 10:35:43 +0200
+
+    Added namespace qualification to some math function calls.
+    
+    These calls were causing compilation errors on Solaris.
+    Thanks to Paul Rädle for the heads-up.
+
+commit 000c052c89092f27357fdbe055a1d7bbb93232f7
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 28 Jun 2013 10:35:12 +0200
+
+    Avoid exiting upon error.
+
+commit 651de1701da684191e6f6a0dea7a478f2ebdbaf9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 27 Jun 2013 18:22:06 +0200
+
+    Ensure that the correct overload of fabs is used.
+    
+    Older versions of gcc would pick int abs(int) instead of the
+    floating-point overload.
+
+commit 676e31d9b2f86c2907669747c697f0ec6b62ce64
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 27 Jun 2013 17:09:38 +0200
+
+    Prevent warnings about unused or uninitialized variables.
+
+commit 48db7277aa62417ee3342c7ea4cd2e90786a7ab6
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 27 Jun 2013 17:08:27 +0200
+
+    Fixed order of data member initialization.
+
+commit e133273f2078e5188ab3ff236d7cfcb70e792df3
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 27 Jun 2013 14:14:13 +0200
+
+    Updated VC++ and Dev-C++ projects.
+    
+    A couple of header files were moved around, which didn't affect
+    the build but left a couple of dangling file references into
+    the projects.
+
+commit 71657da35f71f5b305c5d5d59703aa73f7b8b7b9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 27 Jun 2013 09:23:02 +0200
+
+    Increased tolerance for numerical errors in tests.
+
+commit b30dceb7650dbe8b6e567a2399d73b01e6b5e2fc
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 26 Jun 2013 17:51:52 +0200
+
+    Disabled a few test cases when using older Boost versions.
+    
+    The test cases are using features which are only available in
+    newer versions.
+
+commit 0468858c24a240fbc9e459dd9a42e2472086c985
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 25 Jun 2013 15:57:30 +0200
+
+    Prevent a few warnings and errors in VC++.
+    
+    Problems included:
+    - math macro redefinitions;
+    - suspicious conversions from int to bool;
+    - extended scope of for-loop variables;
+    - ambiguous resolution of symbols in older Boost versions.
+
+commit c8d3a1599ed9afee48980905d93c9ff81fb9fb80
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 26 Jun 2013 13:42:36 +0200
+
+    Fixed missing spaces in test messages.
+
+commit 6ece64648793897ebba58227826c6c5f24a19431
+Merge: 2540ab4 da93efb
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 25 Jun 2013 10:31:07 +0200
+
+    Merge pull request #9 from Peter Caspers.
+    
+    Fixes to experimental Markov functional model.
+    Additional fixes in this commit:
+    - fixed C++11-only syntax;
+    - replaced hard tabs with spaces;
+    - reordered included headers.
+
+commit da93efb4ff9c0f51deed79522cf4059907316c12
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Mon, 24 Jun 2013 10:06:39 +0200
+
+    adaption to new smile section utils
+
+commit ecfdcb7c96453126a2a12234a29ac976d3196bb2
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Mon, 24 Jun 2013 10:00:46 +0200
+
+    redesign smile section utils and adaption to that in markov model
+
+commit 94a73de4dca5f3905d955e011f0d002423ece532
+Merge: 8b70d7b 84643e8
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 16:43:21 +0200
+
+    Merge branch 'vendor' into markovfixes
+
+commit 8b70d7b4b4e58974ebbbd22bef51cf6079a00109
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 13:41:51 +0200
+
+    removed smile pretreatment constants (moved to adjustments)
+
+commit a9f175c9670d5862320f8c1dc576d6ae31504d14
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 12:43:55 +0200
+
+    added test case for Kahale smile section,
+    
+    removed code for debug outputs
+
+commit 81d593486197f7a671c7262ae8e37bd4d675fe9c
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 12:42:13 +0200
+
+    corrected arbitrage check w.r.t. right strike
+
+commit a93d07162d3bb42d9b5f0240905a3f385847b2f7
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 12:41:27 +0200
+
+    trim precondition check
+
+commit 7744ff3eada304df15240e74c7de80221ef79d90
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Sun, 23 Jun 2013 12:40:59 +0200
+
+    adjusted accuracy constants,
+    
+    relabeled minAfStrike and maxAfStrike to leftCoreStrike and
+    rightCoreStrike to reflect that this is the effective
+    region outside which extrapolation is done, which may be smaller than
+    the actual arbitrage free region,
+    
+    explicitly call the helper functions after zero search, because it
+    may not be ensured by the solver that the last function evaluation is
+    done at the solution
+
+commit 4d6854548fe9f087544421e3c0a9506ad1a5fa93
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Tue, 18 Jun 2013 13:55:58 +0200
+
+    make moneynessGrid and strikeGrid consistent
+
+commit 44d565027041952fe900cad38ffad367bc3f4e30
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Tue, 18 Jun 2013 13:55:22 +0200
+
+    unify model settings, reformat code, reauthor warnings section
+
+commit b66411fa5498b19a0f9927e5770bd80fdcad8840
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Tue, 18 Jun 2013 13:54:47 +0200
+
+    adapt code to new handling of model settings
+
+commit b2c2a905930b33c67931a979a50343ab1270299c
+Author: Peter Caspers <pcaspers1973@gmail.com>
+Date:   Tue, 18 Jun 2013 13:54:19 +0200
+
+    added exponential extrapolation; added option to delete arbitrage points
+    from smile and then interpolate instead of cutting the smile at the
+    first arbitrage point and extrapolate from this point; make code more robust
+
+commit 44ab690cf56e09a3398485073e27e3d34c0770a6
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 14 Jun 2013 11:42:16 +0200
+
+    Replaced hard tabs with spaces.
+
+commit 7283a7c7543dc09df26050ee7e559dbb4452003c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 14 Jun 2013 11:20:41 +0200
+
+    Updated list of copyright holders.
+    
+    Also, a few copyright attributions were cleaned up of typos
+    and alternative spellings.
+
+commit 3678f3eafcea5cad6b788ff32eac4fc8db8b299f
+Merge: 6db8f1f 4a37ebf
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 14 Jun 2013 10:22:53 +0200
+
+    Merged branch heads.
+
+commit 6db8f1feca63585ddb37416e45f879c2090ea625
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 14 Jun 2013 09:28:52 +0200
+
+    Enforce self-consistency of headers.
+    
+    Headers should compile even when included alone.
+
+commit cfbd9d274137b7ba0d607859108b39ed8fce7e0a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 13 Jun 2013 17:28:28 +0200
+
+    Moved FFT and autocovariance implementations into core library.
+
+commit 4a37ebf4b13be465484faa20677a859d6de0ba3c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 13 Jun 2013 21:52:55 +0200
+
+    Prevented compilation error with old g++ version on Mac OS X.
+
+commit 8f9a70973589dec6cbdb1cc8bae61c322b9eb21c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 13 Jun 2013 17:00:50 +0200
+
+    Changed inclusion order according to project custom.
+    
+    We usually include QuantLib headers first, then Boost ones, then those
+    from the standard library. This is to make sure that macros are properly
+    defined before including other stuff.
+
+commit 55d10cba5f23a29da82329ceaae47ab1f8128133
+Merge: 596b8c7 2e3ec98
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 11 Jun 2013 17:55:28 +0200
+
+    Merged Jamshidian swaption changes from Peter Caspers.
+
+commit da862212568b8d83b3f3e57244a0619cbe7a0591
+Author: peter <peter@peter-ThinkPad-W520.(none)>
+Date:   Mon, 10 Jun 2013 21:29:09 +0200
+
+    enable extrapolation in spreaded curve if enabled in discount curve
+
+commit 2e3ec98378bdce3ae6b74a477e52861d87c4a72e
+Author: peter <peter@peter-ThinkPad-W520.(none)>
+Date:   Sun, 9 Jun 2013 18:33:15 +0200
+
+    added test cases for swaption pricing with underlying start delay
+
+commit 737880a9fb44cfe17d8659e80a6630870823dbfc
+Author: peter <peter@peter-ThinkPad-W520.(none)>
+Date:   Sun, 9 Jun 2013 18:31:46 +0200
+
+    added discountBondOption with underlying start delay
+
+commit 5bc8951148eca1e1127c1b29ba74134ab30d4fbd
+Author: peter <peter@peter-ThinkPad-W520.(none)>
+Date:   Sun, 9 Jun 2013 18:31:16 +0200
+
+    respect underlying start delay
+
+commit 6b44d13c789b71e9894c034978fd88a65111e0c5
+Author: peter <peter@peter-ThinkPad-W520.(none)>
+Date:   Sun, 9 Jun 2013 18:26:45 +0200
+
+    added discountBondOption with underlying start delay
+
+commit 24e80e0b323119c15a7eb9aa4a21d30a87c27099
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 3 Jun 2013 15:21:40 +0000
+
+    Implicit conversions of shared_ptr to bool are now explicit.
+    
+    The implicit conversion has been removed in C++11.
+    Thanks to Scott Condit.
+
+commit fdc78d24c743b36665006d7defd0895b98c5e3cb
+Author: Mark Joshi <markjoshi@users.sf.net>
+Date:   Fri, 31 May 2013 00:41:37 +0000
+
+    now builds with VC9
+
+commit 413a5c4dcab2d3996c7e3c0ae3087bed84b649c4
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 26 May 2013 12:16:40 +0000
+
+    added further matrix exponential tests
+
+commit 4800f1b349f7a9e746b2ec5df9c4636eff155f05
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 26 May 2013 12:10:00 +0000
+
+    added further matrix exponential tests
+
+commit 5f3313be573ef7f30f3986ade43519d5821976fd
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 21 May 2013 09:47:02 +0000
+
+    Prevented macro redefinitions in VC++.
+    
+    This should be a bit more robust against inclusions of standard
+    headers before or after QuantLib headers.
+
+commit 3c584052dfb11be7b2a40ca03684fed773530129
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 21 May 2013 09:46:58 +0000
+
+    Removed another VC++ warning on x64.
+    
+    Thanks to Johannes Göttker-Schnetmann.
+
+commit 0a2068e678bdb6f1e039372f5f816a4a390352de
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 16 May 2013 14:34:41 +0000
+
+    Removed most warnings for VC++ under x64.
+    
+    Thanks to Johannes Göttker-Schnetmann.
+
+commit bed8122bca45f27beccc5f276148916df59eeed1
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 16 May 2013 14:34:27 +0000
+
+    Added x64 target to VC++10 and VC++11 projects.
+    
+    Thanks to Johannes Göttker-Schnetmann.
+
+commit 1764236aa9148e11284b844ea4b513c4b2813d64
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 16 May 2013 14:34:15 +0000
+
+    Updated VC++ and Dev-C++ projects.
+
+commit 3ff13ea18232e2aa7e372ec28243183696c5ab7c
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 12 May 2013 11:03:33 +0000
+
+    updated msvc-10 project files
+
+commit 411e9c457d70bad27c8ca0e3dca4e3ae793fc682
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 11 May 2013 20:59:56 +0000
+
+    added matrix exponential
+
+commit b916fd7af241cf70a4efec242ccf6972e1847b95
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 10 May 2013 12:49:58 +0000
+
+    Avoided warnings in VC++ when compiling in x64 configuration.
+    
+    Thanks to Johannes Göttker-Schnetmann.
+
+commit 28369135a1e61f2a059b6aa141d29f40c19460c0
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 10 May 2013 12:49:23 +0000
+
+    Avoid conversion to Array to stream vectors to error messages.
+    
+    Thanks to Johannes Göttker-Schnetmann for the heads-up.
+
+commit 04738d23290d55f2fee04f41fd511a60e3a4aa44
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 6 May 2013 08:29:48 +0000
+
+    Updated VC++ and Dev-C++ projects.
+
+commit 67f7168851e0bf3dd060e53ced2f082f1cb26197
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 5 May 2013 08:48:31 +0000
+
+    fixed multi dimensional definition of square root Fokker-Planck operator
+
+commit a08d7ff195492135e324279892aba9878cec6048
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 4 May 2013 20:27:52 +0000
+
+    updated vc10 project files
+
+commit 3eedd47bd3fa25b6622be51bf7ba2004c5348928
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 4 May 2013 19:20:55 +0000
+
+    improved boundary conditions for the Fokker-Planck equations
+
+commit 4fc52a1280dab6e63c8ef2dc16b9e671db7be7c5
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 29 Apr 2013 16:08:44 +0000
+
+    Prevent out-of-bound access to degenerate schedule.
+
+commit 33977ec100926734f55460c9b6541b6dbc77f248
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 27 Apr 2013 22:15:57 +0000
+
+    fixed g++ warnings (thanks to Peter Caspers)
+
+commit c85ce4f34188ebb6a218f8865592e50104168fb8
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 27 Apr 2013 15:35:16 +0000
+
+    ensure backward compatibility of ublas extension
+
+commit 8c848da73798d101671b19da25c5d6abf32607f6
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 27 Apr 2013 15:08:33 +0000
+
+    fixed g++ warnings
+
+commit 13081d5da9fd30539a50a7d1cbc66614cd7e4872
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 16 Apr 2013 16:22:14 +0000
+
+    Added moving holidays for 2013.
+
+commit fab0164056c89a6d8d9dba7631c656ae4f5b6e4a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 16 Apr 2013 16:22:03 +0000
+
+    Fixed a few Mexican holidays.
+
+commit 9625059d1b82f2d564f86569a2dc2131ec61a30e
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:56:12 +0000
+
+    Added experimental Markov functional model (thanks to Peter Caspers).
+
+commit f3faf149d8ef0ead78f6c63022d213215475cece
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:47 +0000
+
+    Filtered out negative strikes (thanks to Peter Caspers).
+    
+    Also, calibration results were improved by using the functionality
+    recently added to SABR interpolation.
+
+commit 46962259cba742aec7ab123562972d9dd0e532ab
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:41 +0000
+
+    Floored the strike at 0.1bp for volatility computation.
+    
+    This avoids problems for strikes near zero.
+    
+    Thanks to Peter Caspers.
+
+commit e174fb0da3fc6f2d18de47d33cd705b7d72616a9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:35 +0000
+
+    Added smileSectionImpl() implementation using cubic interpolation.
+    
+    Thanks to Peter Caspers.
+
+commit 00c75adfeb003dae1322508ede7ff904fb031fe3
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:29 +0000
+
+    Replaced update() call during calibration with explicit method calls.
+    
+    The generateArguments() and notifyObservers() methods are called directly.
+    This allows to separate the smile update triggered by market data change
+    from the numeraire update triggered by model volatility changes.
+    
+    Thanks to Peter Caspers.
+
+commit cd25a4f71a7f5a3a5c30767f8e2a75dac458bdd2
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:23 +0000
+
+    Inherited CalibrationHelper from LazyObject (thanks to Peter Caspers).
+
+commit 53fab5597420b066e16d50dd9625c9edcd56923f
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 15 Apr 2013 11:55:16 +0000
+
+    Improved calibration by allowing different starting points.
+    
+    A result is returned as soon as the calibration error is below
+    the given value; otherwise, the parameters yielding the least
+    error are returned.
+    
+    Thanks to Peter Caspers.
+
+commit c5417136e328ca066f51b9a10e6b86106450507c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 25 Mar 2013 15:54:50 +0000
+
+    Fixed start and end dates for in-arrears convexity adjustment.
+    
+    Thanks to Peter Caspers.
+
+commit f5122eca848c724a5772ff40442cc4c67e93f536
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 10:28:51 +0000
+
+    Updated VC++ and Dev-C++ projects.
+
+commit 48e26a40b1f576a12fafeee00f2f21e98bba9f93
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:28:38 +0000
+
+    Enforce static requirement at compile time.
+    
+    Thanks to Michael Sharpe.
+
+commit 593142a0ebf0e9b623dd40f2943412b978fc03db
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:28:23 +0000
+
+    Avoided warnings for constant conditional expressions in VC++.
+    
+    Thanks to Michael Sharpe.
+
+commit 273cb02fd5d649bf724b1921c7c7b777cdaae81f
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:28:01 +0000
+
+    Removed or commented out unreachable code.
+    
+    Thanks to Michael Sharpe.
+
+commit 15511eed763bf6c6c9dd70ab9d8f8670e2c796af
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:27:37 +0000
+
+    Prevented uninitialized-variable warning.
+    
+    Extracted if/else clause in Concentrating1dMesher constructor outside
+    the for loop and improved scope of variables so that c1 and c2 are
+    initialized at declaration time.
+    
+    Thanks to Michael Sharpe.
+
+commit a648d0f9b1408803ae385d55dd1fc2462a3919ad
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:27:20 +0000
+
+    Declared a few methods as inline to work around a VC++ bug.
+    
+    See <http://stackoverflow.com/questions/3051992/compiler-warning-at-c-template-base-class>.
+    
+    Thanks to Michael Sharpe.
+
+commit 0d2cd3800bee2f4b24885613ecc461135abba277
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:27:01 +0000
+
+    Add explicit static_cast to silence VC++ warning.
+    
+    Thanks to Michael Sharpe.
+
+commit fad3ff06dfd006636a6cfbd23c65c6cfa62245a3
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:26:48 +0000
+
+    Fixed unused-variable warnings in VC++ warning level 4.
+    
+    Thanks to Michael Sharpe.
+
+commit 646a0fa71b3195cb847614d37ac2c9332771267c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:26:28 +0000
+
+    Fixed uninitialized-variable warnings in VC++ warning level 4.
+    
+    Thanks to Michael Sharpe.
+
+commit 68b8208624394364881c6569795e971788793d0b
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 22 Mar 2013 09:26:05 +0000
+
+    Fixed unused-parameter warnings for VC++ warning level 4.
+    
+    Thanks to Michael Sharpe.
+
+commit 62580454e9e57c56663e70031ab54549949876fd
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 19 Mar 2013 14:28:35 +0000
+
+    Increased precision in tail of West's bivariate cumulative normal.
+    
+    Thanks to Fabien Le Floc'h.
+
+commit ebd2786e06488b99dc73540b3ab33b5d87a95d2e
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 19 Mar 2013 11:58:50 +0000
+
+    Added exogenous discount to OptionletStripper1 (thanks to Peter Caspers).
+
+commit db0bf8b352d2186ad5ba22006313fadb367cf7d9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 18 Mar 2013 15:16:41 +0000
+
+    Pass correct ATM forward rate to smile section (thanks to Peter Caspers).
+
+commit a9d8ccc912129ac5ca2c00b98e8a6a1bbc94ba5f
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 12 Mar 2013 12:44:46 +0000
+
+    Prevented warning in VC++10.
+
+commit 6a9f318dd7ef6b88c7f325f471b250b06acbfb4a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 12 Mar 2013 10:21:52 +0000
+
+    Fixed array access in tests.
+
+commit 89faaabd8f0c35a69eeeab1fb5e87779de4279cc
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 8 Mar 2013 15:16:58 +0000
+
+    Deprecated features of Boost.Test are no longer used
+
+commit 6be4473fa67df4a19e97ff1e58490ec49e415f1c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 8 Mar 2013 15:14:33 +0000
+
+    Moved test from boost::random to our generators.
+    
+    This prevents results from changing when the Boost implementation
+    changes (which I wouldn't have expected, but seems to have happened
+    in development after Boost 1.53).
+
+commit 6ce441f1fc35bc833b22c75221784d94b3c7d4a9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 8 Mar 2013 06:37:10 +0000
+
+    Merged latest changes from 1.2.x branch
+
+commit 0db631f246b3d98cf54f865fbf2396c65278cfc1
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:07:09 +0000
+
+    Fixed a forward-looking bias issue in Garch11 calculation.
+    
+    Thanks to Slava Mazur.
+
+commit 9049add6f78da2a89d966d4bd820ed85fb9ace67
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:06:45 +0000
+
+    Fixed precision issue in calculation of autocovariances.
+    
+    Thanks to Slava Mazur.
+
+commit 56f52d34a35f859add9943fdd4c713188ee95b98
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:05:51 +0000
+
+    Relaxed extrapolation check for default-probability curves.
+    
+    When calculating default probabilities between two dates or times,
+    allow the first to precede the reference date. This effectively
+    assumes that the default probability before the reference is null,
+    and helps in cases where a coupon protection extends a couple of
+    days before the reference due to adjustments (for instance, when
+    the protection starts on a Saturday and the reference is rolled to
+    the following Monday).
+
+commit b3839d9863f74c66b4a256e4dc6eca889c146538
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:05:36 +0000
+
+    Implemented Lagrange boundary condition for cubic interpolation.
+    
+    Thanks to Peter Caspers.
+
+commit c14231287287ab160c9368cdb0be92d38e7b00ad
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:05:18 +0000
+
+    Yield-based NPV calculation now uses coupon reference dates.
+    
+    This fixes small discrepancies when using day counters such
+    as ISMA act/sact.
+    
+    Thanks to Henri Gough for the heads-up.
+
+commit 34d82cfc0d05d006ff14311e586f67ca44c5233e
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 2 Mar 2013 18:44:51 +0000
+
+    updated vc10 project file
+
+commit ae090833fff63140d5b3b83d1b1538753520f15c
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 11 Feb 2013 12:28:26 +0000
+
+    updated vc10 project file
+
+commit 8d0aa19e7c16d1cbef3479279f52560e542f2beb
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 2 Feb 2013 23:38:52 +0000
+
+    added Fokker-Planck finite difference operator for BS, square root and Heston processes
+
+commit c9ac134272aa0a76c63eb12c9c2df0511ce9ac77
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Thu, 27 Dec 2012 14:07:47 +0000
+
+    reduce integration order to enable more aggressive compiler optimization flags
+
+commit 14d94f3553e91fad09ca7ba7e09d79846a706a37
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Thu, 27 Dec 2012 13:11:38 +0000
+
+    added sparse matrix assignment tests
+
+commit 5d2f139dc84ae3c4446ae53b37723a8461e5cc42
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 24 Dec 2012 15:55:37 +0000
+
+    fixed order of operators
+
+commit 7e1cd85f2b2783f2ba514b68c61a309b3221983d
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 18 Dec 2012 21:08:51 +0000
+
+    added benchmark results for i7 870
+
+commit 2642193f1e2980eea2ca0cdbe8df7d11aa041cef
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 18 Dec 2012 16:06:57 +0000
+
+    Added missing virtual destructor to base class.
+
+commit fa3976c500e6bee81cf3a0acfb44d574d09c36d5
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 16 Dec 2012 18:30:26 +0000
+
+    do not keep references to shared ptr
+
+commit e787fdf872c30f6592f6d5e5d983cf441d42facb
+Author: Ferdinando Ametrano <nando@ametrano.net>
+Date:   Thu, 6 Dec 2012 15:11:53 +0000
+
+    avoided warning
+
+commit 00803369b5fad78807554aaf5624a382919e9d98
+Author: Ferdinando Ametrano <nando@ametrano.net>
+Date:   Thu, 6 Dec 2012 11:59:47 +0000
+
+    Merging revisions 1-HEAD of branches/R01020x-branch/QuantLib into trunk\QuantLib, respecting ancestry
+
+commit 6d597f7aea8b999e207e7428110d316fe9d72b29
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 6 Dec 2012 07:56:35 +0000
+
+    Ensure that the last function call inside a solver is passed the root.
+    
+    Thanks to Francis Duffy.
+
+commit afb717af6df6fe1ebe77afc0a16f99a4105211ca
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 5 Dec 2012 14:18:55 +0000
+
+    Added VC++11 projects (thanks to Edouard Tallent).
+
+commit f82edb7fa70cdfcf2b8a67ad371605f3eecff9dd
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 3 Dec 2012 13:24:04 +0000
+
+    Avoided size mismatch warning (thanks to Marcello Pietrobon).
+
+commit f157baf6f8add49bc42b50cdc7d4213bce101a10
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 3 Dec 2012 11:37:43 +0000
+
+    Prevented warning under VC++10 (thanks to Marcello Pietrobon).
+
+commit 6d9c155b8dd050b52869a77fcee5cf131029aa87
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 30 Nov 2012 14:57:34 +0000
+
+    Avoid invalidating iterators.
+
+commit 54f657197732815c8483a7e451c4982d4ea41cfb
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 27 Nov 2012 21:59:25 +0000
+
+    improved ublas interface for the finite difference operator splitting methods
+
+commit e5c595dcd3db3e89c078812ae9ddddbce7a85742
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 27 Nov 2012 21:46:35 +0000
+
+    improved ublas interface for the finite difference operator splitting methods
+
+commit 27676f97c7f7b4cbd05939541939cea7e1ac7782
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 27 Nov 2012 21:34:21 +0000
+
+    improved ublas interface to the finite difference operator splitting methods
+
+commit 617aeeb7aa9ddbf17b5fe6985e0ce3dd3ac8fafd
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 27 Nov 2012 15:44:23 +0000
+
+    Fixed Gamma distribution tail (thanks to Ian Qsong).
+
+commit 9caff7a5f478f60847985885d4a5a6f7bd63c282
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 27 Nov 2012 09:46:46 +0000
+
+    Replaced struct initialization with constructor for compatibility.
+
+commit 09b53851ec49d50b8cf12f087efa8f319c34a058
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 26 Nov 2012 16:58:35 +0000
+
+    Correct limit for stdDev -> 0 (thanks to Peter Caspers).
+
+commit 53b948324ea3824a5630cae6b2556f85e83c5e5f
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 21 Nov 2012 09:18:57 +0000
+
+    Added new implementation from Mateusz Kapturski.
+
+commit d87710d879dee5d10269f14f9862ac77d7badc4a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 20 Nov 2012 08:09:39 +0000
+
+    Fixed outdated link to OMG document (thanks to Tawanda Gwena).
+
+commit 0ca5eea60215237e6065a46d487fa1f4af126a38
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 20 Nov 2012 08:09:21 +0000
+
+    Use correct default for evaluation date in a few CashFlows methods.
+    
+    Thanks to Peter Caspers for the fix.
+
+commit 628238f57a68aaeae6e02e7e10580ead1549fc78
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Fri, 16 Nov 2012 14:21:22 +0000
+
+    Updated Windows projects
+
+commit af64e748e7f82b4686fa33a72c279f5c20c75566
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 13 Nov 2012 11:58:51 +0000
+
+    Added calibration to GARCH model (thanks to Slava Mazur).
+
+commit 5c81c18a8159500144dcbc218224ef311aba58eb
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 6 Nov 2012 11:33:07 +0000
+
+    Updated South-Korean calendar for 2013 (thanks to Faycal El Karaa).
+
+commit dd6096e791b663aa1760ea54c3190aeb2b0b7054
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 6 Nov 2012 11:29:50 +0000
+
+    Added Epiphany (introduced in 2011) to Polish calendar.
+    
+    Thanks to katastrofa, whoever that is.
+
+commit 371e23ea838d9262f0548919ba4d98ab94a05a4e
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 6 Nov 2012 11:29:30 +0000
+
+    Updated Chinese calendar for 2012 (thanks to Cheng Li).
+
+commit aad2991ce811096da451d3692304a5351f580f38
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 6 Nov 2012 11:29:12 +0000
+
+    Fixed holiday for Japanese calendar (thanks to Sebastien Gurrieri).
+    
+    When two holidays are on a consecutive Saturday and Sunday, only the
+    one falling on Sunday is moved to the following business day.
+
+commit 91e6853a1ac767d36955011612ace75e79d21678
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 15:21:39 +0000
+
+    Fixed degenerate case for ABCD volatility (thanks to Peter Caspers).
+    
+    Tests added.
+
+commit 5352192c7da8e56cdcc96612dda84e91edc31ea2
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 14:47:39 +0000
+
+    Re-enabled test.
+
+commit aa06dce25d1e03c880336b3cf02cdba7076e5924
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 07:57:49 +0000
+
+    Grouped together tests for experimental code
+
+commit c349de399328289b3be2da97e51d4536057adbcd
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 07:57:22 +0000
+
+    Added experimental ODE solver (thanks to Peter Caspers).
+    
+    A few tests are included.
+
+commit 2a254bb81a9d5bccf9a7584884a4b177c2888705
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 07:56:40 +0000
+
+    Added special case to close()/close_enough() when either value is 0.
+    
+    Previously, they would always return false which could be surprising.
+    Thanks to Simon Shakeshaft for the fix.
+
+commit 7d43bb3c143692636fc31ff59faf2373b9571081
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 24 Oct 2012 07:56:24 +0000
+
+    Don't use floating-point comparison to check for Null<Real>.
+    
+    Thanks to Simon Shakeshaft for the heads-up.
+
+commit 241b14dbcc810649fdb7f6c1274d4ef5c0a20dd2
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 21 Oct 2012 16:45:56 +0000
+
+    refactoring of FdmMesherComposite
+
+commit 3d65113e9b062f36bda045d56585ddbd1d5bc069
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 21 Oct 2012 16:42:00 +0000
+
+    refactoring of FdmMesherComposite
+
+commit d165afbb295bdd55ed2758d1dfd8c30fecf86324
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 21 Oct 2012 15:47:11 +0000
+
+    fixed broken test cases
+
+commit 6a441ef10adcd5011a9415e9c9731bad1d2c490d
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 18 Oct 2012 11:18:46 +0000
+
+    Added experimental two-asset barrier option.
+    
+    Thanks to Qingxiao Wang and Nabila Barkati from
+    IMAFA, Polytech'Nice Sophia.
+
+commit 0558b05d986ba04908449db73a8b87965d2ff146
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 3 Oct 2012 20:55:28 +0000
+
+    Merged latest changes from 1.2.x branch into trunk.
+    
+    QuantLib and QuantLib-SWIG only.  I'll leave the rest to
+    more knowledgeable people.
+
+commit 81112885767c2180772f8b784fb3a0acf073d8b0
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 25 Sep 2012 11:10:31 +0000
+
+    added differential evolution optimization (thanks to Ralph Schreyer)
+
+commit c305069ddf4402e2822256534f9c97cff93aba16
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Wed, 5 Sep 2012 21:37:10 +0000
+
+    fd black scholes pricing engines are now observers of the BS process.
+
+commit 09ce78ebc5fd540079eb912ad6089ddfad1bfb00
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 3 Sep 2012 11:25:26 +0000
+
+    Fixed build for MinGW (thanks to Bojan Nikolic).
+
+commit 3d29f2fd911b2e8c637b1372846328ea86d1bd91
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Wed, 22 Aug 2012 22:25:17 +0000
+
+    removed useless include statement
+
+commit 4fda3afdd36a9b9e8880426321b3ea57272d4a28
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Fri, 10 Aug 2012 22:40:49 +0000
+
+    support g++ version 4.7 with -std=c++11 enabled
+
+commit c80afcdfff4ac22ad4a544cbce4578420ee620dd
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 4 Aug 2012 16:13:16 +0000
+
+    added Heston-Hull-White pricing engine using the H1HW approximation
+
+commit 83f9941390741d92aa1d771755fa04e656115072
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 4 Aug 2012 12:11:15 +0000
+
+    added benchmark result for Raspberry Pi
+
+commit 43529990156a503760ebdab9a97f4e7cc05f8ea9
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 17 Jul 2012 12:22:45 +0000
+
+    Added method to clone a swap index with a different discount curve.
+    
+    Thanks to Peter Caspers.
+
+commit 6cf26fea1a3137ec0f1979bee0b42a13ef9c6e83
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 17 Jul 2012 12:22:31 +0000
+
+    Added inspector for the joint calendar used by Libor indexes.
+
+commit cdc82d15866e54ddc4774b4c056707edfe847c20
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 17 Jul 2012 12:22:15 +0000
+
+    Fixed access specifiers for Calendar::WesternImpl.
+    
+    Thanks to Mike Jake for the heads-up.
+
+commit 26b5f63cbc95e582c0aaf0037a134085d4d4b319
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 1 Jul 2012 12:34:10 +0000
+
+    improved interface of RichardsonExtrapolation
+
+commit 0e6eb42b3220c414b920f61d4e0d750c6ccbcfe8
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Fri, 29 Jun 2012 21:17:35 +0000
+
+    replaced double with Real to keep header and source files in sync.
+
+commit ca032c4d01c21c18a9e251bd7147c6325e3132ed
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Fri, 29 Jun 2012 21:15:52 +0000
+
+    replaced double with Real to keep header and source files in sync.
+
+commit 691b8d87aa0d559a62aef5f7a1db06de338906f1
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 23 Jun 2012 21:01:58 +0000
+
+    enable g++ -std=c++0x or g++ -std=c++11
+
+commit 012ddcd01be7a9a9b06d67772bad2f860e524bcd
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 18 Jun 2012 19:41:42 +0000
+
+    added time dependent Dirichlet boundary condition (thanks to Peter Caspers)
+
+commit b9450cf6a475fcf68cbf24c68fa941d91283bdb3
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 17 Jun 2012 12:04:24 +0000
+
+    small refactoring of fdm schemes
+
+commit 42162004c9ac3adf6c12296fff64461ebafa7bcc
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 17 Jun 2012 11:49:00 +0000
+
+    removed obsolete includes
+
+commit a462cad032ad3e8f65a090744869c26d677acf2c
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 16 Jun 2012 14:37:20 +0000
+
+    changed type of FdmBoundaryConditionSet to OperatorTraits<FdmLinearOp>::bc_set (thanks to Peter Caspers)
+
+commit 3b894143bf5618a6971ba4ad36eb53dc81bbf917
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 10 Jun 2012 08:56:09 +0000
+
+    added Richardson extrapolation
+
+commit 42f809aeed446f26ed6f1dbc0bb1ec9f40cfee19
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Wed, 30 May 2012 22:32:14 +0000
+
+    added test for Heston Model: compare QL results with Alan Lewis reference results
+
+commit 4bb6ac11093bdbe5d9232768deffe0b9f01c2662
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Wed, 30 May 2012 21:00:48 +0000
+
+    fixed MultiCubicSpline boundary issue
+
+commit 2d66db7fce973fb6689b40c5c83f6b11c1f4a8c3
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 23 Apr 2012 11:04:37 +0000
+
+    added Glued1dMesher (thanks to Peter Caspers)
+
+commit b03fdd0f240108f10757d8ec64e490d71fd43e82
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 8 Mar 2012 07:57:18 +0000
+
+    Increased version number to 1.3.
+
+commit dfd83cb5929e6ea8e1cdfe25dddecbbc1e56c07a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 7 Mar 2012 08:27:53 +0000
+
+    Merged R01020x-branch/QuantLib
+
+commit f23dd82d5d681486b1484dbdbc6785de969daba0
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 26 Feb 2012 10:24:13 +0000
+
+    fixed gcc 4.6.2 warnings
+
+commit 0de936ed1a09428cec42c63f20f52599ea6bdd1e
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 26 Feb 2012 10:21:36 +0000
+
+    fixed gcc 4.6.2 warnings
+
+commit 02faf8c5b84e9ea2638f5edc4f64661c54af5a5e
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 25 Feb 2012 21:17:43 +0000
+
+    fixed gcc 4.6.2 warnings
+
+commit e210586e1aa093c34f01e509c436a422094b08a7
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 25 Feb 2012 20:50:45 +0000
+
+    delete circular references in inflation test cases
+
+commit 43cac330058fbf8317060cc986239c1f9bc65170
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 25 Feb 2012 14:09:23 +0000
+
+    reverse inheritance order to avoid g++ linker problem
+
+commit 174c41439c50c23065787f03fdbbc5d9383c3b52
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Wed, 8 Feb 2012 20:02:36 +0000
+
+    use public inheritance
+
+commit b3bab5eb383acb3089f8ce9990b45d1a56574c8c
+Author: Ferdinando Ametrano <nando@ametrano.net>
+Date:   Mon, 6 Feb 2012 09:43:15 +0000
+
+    in synch with R01020x-branch
+
+commit 7bc21a3c69c7df9cbaead7567795a9a8cdfa6865
+Author: Ferdinando Ametrano <nando@ametrano.net>
+Date:   Mon, 6 Feb 2012 09:33:50 +0000
+
+    added Luca Billi's comment about preventing infinite recursion
+
+commit c3196cafed442d02b937920264f8d690577a14db
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 24 Jan 2012 22:35:43 +0000
+
+    Updated VC++ 10  projects
+
+commit 477a272783de585b4d4aaa2f43d48076de19bc71
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 24 Jan 2012 22:10:57 +0000
+
+    replaced generalized_vector_of_vector by compressed sparse matrix (vc 10 fix)
+
+commit 34987c47de4fffc13f6d7a37633b1ea11da34981
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 24 Jan 2012 21:37:23 +0000
+
+    replaced generalized_vector_of_vector by SparseMatrix (vc 10 fix)
+
+commit 7a1801388fcacd269634be51f3005644ae3f1cc5
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 24 Jan 2012 21:21:06 +0000
+
+    VC 10 fix
+
+commit 8498a6ff19b31f4f8b4009f240cab048dbd8e2e1
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Tue, 24 Jan 2012 17:27:11 +0000
+
+    qldefines.hpp must be included before checking QL_NO_UBLAS_SUPPORT.
+
+commit 84a4488ec8fd4ff80584352b07044e43f39d86e5
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sat, 21 Jan 2012 12:57:30 +0000
+
+    added sparse matrix support for finite difference operators
+
+commit 4ebcfe26b318db482186e77aec87b0a36c0fb3fd
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 16 Jan 2012 14:26:22 +0000
+
+    added sobol brownian bridge interface for MC framework
+
+commit 3a790fb80050f9a9d7994fb7de43bb91df92ca3f
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 15 Jan 2012 13:18:10 +0000
+
+    fixed initialization order
+
+commit 957484ac793253141e452cdfaf3ff3b836f14fd9
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 19 Dec 2011 21:13:19 +0000
+
+    finite difference based Bermudan swaption engines for the G2++ and the Hull-White model
+
+commit b2fa58ae618bb05b67a78bb8de2d64c1c6b3033d
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 18 Dec 2011 20:02:30 +0000
+
+    fixed test suite (removed todaysDate)

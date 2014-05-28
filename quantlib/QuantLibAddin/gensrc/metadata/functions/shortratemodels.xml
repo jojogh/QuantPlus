@@ -1,0 +1,434 @@
+<Category name='shortratemodels'>
+  <description>functions to construct and use short-rate model objects.</description>
+  <displayName>Short Rate Models</displayName>
+  <xlFunctionWizardCategory>QuantLib - Financial</xlFunctionWizardCategory>
+  <serializationIncludes>
+    <include>qlo/shortratemodels.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/vasicek.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/hullwhite.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/blackkarasinski.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/coxingersollross.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/extendedcoxingersollross.hpp</include>
+    <include>ql/experimental/shortrate/generalizedhullwhite.hpp</include>
+    <include>ql/termstructures/yieldtermstructure.hpp</include>
+  </serializationIncludes>
+  <addinIncludes>
+    <include>qlo/shortratemodels.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/vasicek.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/hullwhite.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/blackkarasinski.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/coxingersollross.hpp</include>
+    <include>ql/models/shortrate/onefactormodels/extendedcoxingersollross.hpp</include>
+    <include>ql/experimental/shortrate/generalizedhullwhite.hpp</include>
+    <include>ql/termstructures/yieldtermstructure.hpp</include>
+  </addinIncludes>
+  <copyright>
+    Copyright (C) 2006 Ferdinando Ametrano
+    Copyright (C) 2005 Aurelien Chanudet
+    Copyright (C) 2005 Eric Ehlers
+    Copyright (C) 2006 Chiara Fornarola
+    Copyright (C) 2013 Cheng Li
+  </copyright>
+
+  <Functions>
+
+    <Constructor name='CALHullWhite'>
+      <libraryFunction>HullWhite</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>a.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALGeneralizedHullWhite'>
+      <libraryFunction>GeneralizedHullWhite</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>a.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALVasicek'>
+      <libraryFunction>Vasicek</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reverting speed.</description>
+          </Parameter>
+          <Parameter name='B' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>short-rate limit value.</description>
+          </Parameter>
+          <Parameter name='Lambda' exampleValue ='0.0'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>risk premium.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALCIR'>
+      <libraryFunction>CIR</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='R0' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>initial value of short rate.</description>
+          </Parameter>
+          <Parameter name='Theta' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion level.</description>
+          </Parameter>
+          <Parameter name='K' exampleValue ='0.1'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion speed.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALExtendedCIR'>
+      <libraryFunction>ExtendedCIR</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='Theta' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion level.</description>
+          </Parameter>
+          <Parameter name='K' exampleValue ='0.1'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion speed.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+          <Parameter name='X0' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>initial value of short rate.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+    
+    <Constructor name='CALHullWhiteShortRate'>
+      <libraryFunction>HullWhiteShortRate</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>a.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALGeneralizedHullWhiteShortRate'>
+      <libraryFunction>GeneralizedHullWhiteShortRate</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>a.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALBlackKarasinski'>
+      <libraryFunction>BlackKarasinski</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>a.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALVasicekShortRate'>
+      <libraryFunction>VasicekShortRate</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='A' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reverting speed.</description>
+          </Parameter>
+          <Parameter name='B' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>short-rate limit value.</description>
+          </Parameter>
+          <Parameter name='Lambda' exampleValue ='0.0'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>risk premium.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALCIRShortRate'>
+      <libraryFunction>CIRShortRate</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='R0' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>initial value of short rate.</description>
+          </Parameter>
+          <Parameter name='Theta' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion level.</description>
+          </Parameter>
+          <Parameter name='K' exampleValue ='0.1'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion speed.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Constructor name='CALExtendedCIRShortRate'>
+      <libraryFunction>ExtendedCIRShortRate</libraryFunction>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <SupportedPlatform name='Cpp'/>
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='YieldCurve'   exampleValue ='EURYC'>
+            <type>QuantLib::YieldTermStructure</type>
+            <superType>libToHandle</superType>
+            <tensorRank>scalar</tensorRank>
+            <description>YieldTermStructure object ID.</description>
+          </Parameter>
+          <Parameter name='Theta' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion level.</description>
+          </Parameter>
+          <Parameter name='K' exampleValue ='0.1'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>mean reversion speed.</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.15'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>volatility.</description>
+          </Parameter>
+          <Parameter name='X0' exampleValue ='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>initial value of short rate.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+    </Constructor>
+
+    <Procedure name='CALFuturesConvexityBias'>
+      <description>Returns Futures convexity bias (ForwardRate = FuturesImpliedRate - ConvexityBias) calculated as in G. Kirikos, D. Novak, 'Convexity Conundrums', Risk Magazine, March 1997.</description>
+      <alias>QuantLib::HullWhite::convexityBias</alias>
+      <SupportedPlatforms>
+        <!--SupportedPlatform name='Excel' calcInWizard='false'/-->
+        <SupportedPlatform name='Excel'/>
+        <!--SupportedPlatform name='Cpp'/-->
+      </SupportedPlatforms>
+      <ParameterList>
+        <Parameters>
+          <Parameter name='FuturesPrice' exampleValue ='94.56'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Futures price (e.g. 94.56).</description>
+          </Parameter>
+          <Parameter name='T1' exampleValue ='5.0'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Maturity date of the futures contract in years(e.g. 5.0).</description>
+          </Parameter>
+          <Parameter name='T2' exampleValue ='5.25'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Maturity of the underlying Libor deposit in years (e.g. 5.25).</description>
+          </Parameter>
+          <Parameter name='Sigma' exampleValue ='0.015'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Hull-White volatility (e.g. 0.015).</description>
+          </Parameter>
+          <Parameter name='A' default='0.03'>
+            <type>double</type>
+            <tensorRank>scalar</tensorRank>
+            <description>Hull-White mean reversion.</description>
+          </Parameter>
+        </Parameters>
+      </ParameterList>
+      <ReturnValue>
+        <type>QuantLib::Rate</type>
+        <tensorRank>scalar</tensorRank>
+      </ReturnValue>
+    </Procedure>
+
+  </Functions>
+</Category>

@@ -1,0 +1,178 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#13\u8d34\u73b003\uff0cBond's remaining maturiy less than 1, Discout bond, 139903\uff0cData Source: \u4e2d\u503a\u767b\t\n",
+      "#\t\t\t\tStatic Info\n",
+      "#\t\t\t\tCode:         139903\n",
+      "#\t\t\t\tIssue Date:   2013/5/13\n",
+      "#\t\t\t\tMaturity:     2014/2/10\n",
+      "#\t\t\t\tFrequency:    Annual\n",
+      "#\t\t\t\tCoupon:       0.00%\n",
+      "#\t\t\t\tFace  :       100\n",
+      "#\t\t\t\tIssuePrice:   97.9030\n",
+      "#\n",
+      "#\t\t\t\tQuote\n",
+      "#\t\t\t\tQuote Date:   2013/12/2\n",
+      "#\t\t\t\tSettle Date:  2013/12/3\n",
+      "#\t\t\t\tDirty Price:  99.166\n",
+      "#\t\t\t\tClean Price:  97.5988 \n",
+      "#\t\t\t\tYTM:          4.4500%\t\n",
+      "#\t\t\t\tAcccrued:     1.567"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "issueDate = CAL.Date(13, CAL.May, 2013)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "maturity = CAL.Date(10, CAL.February, 2014)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "bond139903 = CAL.CTBZeroBond(settlementDays = 1,\n",
+      "                             calendar = CAL.NullCalendar(),\n",
+      "                             faceAmount = 100.0,\n",
+      "                             issuePrice = 97.9030,\n",
+      "                             issueDate = issueDate,\n",
+      "                             accrualDayCounter = CAL.ActualActualNoLeap(),\n",
+      "                             maturityDate = maturity,\n",
+      "                             paymentConvention = CAL.Following,\n",
+      "                             redemption = 100.0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "settleDate = CAL.Date(3, CAL.December, 2013)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Calculate accrued interest\n",
+      "bond139903.accruedAmount(settlement = settleDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 7,
+       "text": [
+        "1.5669890109890068"
+       ]
+      }
+     ],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "cleanPrice = 97.5988"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Calculate bond yield based on known clean price\n",
+      "bond139903.bondYield(cleanPrice,\n",
+      "                     CAL.ActualActualNoLeap(),\n",
+      "                     CAL.Simple,\n",
+      "                     CAL.Annual,\n",
+      "                     settleDate)*100"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 9,
+       "text": [
+        "4.449977731797215"
+       ]
+      }
+     ],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

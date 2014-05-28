@@ -1,0 +1,270 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# test case, 12\u9644\u606f14\uff0cAnnual bond, 120014\uff0cData Source: \u4e2d\u503a\u767b\n",
+      "#\n",
+      "\t\t\n",
+      "#\t\t\t\tStatic Info\n",
+      "#\t\t\t\tCode:         120014\n",
+      "#\t\t\t\tIssue Date:   2012/8/16\n",
+      "#\t\t\t\tMaturity:     2017/8/16\n",
+      "#\t\t\t\tFrequency:    Annual\n",
+      "#\t\t\t\tCoupon:       2.95%\n",
+      "#\t\t\t\tFace  :       100\n",
+      "\n",
+      "#\t\t\t\tQuote\n",
+      "#\t\t\t\tQuote Date:   2013/12/2\n",
+      "#\t\t\t\tSettle Date:  2013/12/3\n",
+      "#\t\t\t\tDirty Price:  96.314\n",
+      "#\t\t\t\tClean Price:  95.4326\n",
+      "#\t\t\t\tYTM:          4.3074%\n",
+      "#\t\t\t\tAcccrued:     0.881"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "issueDate = CAL.Date(16, CAL.August, 2012)\n",
+      "startDate = CAL.Date(16, CAL.August, 2012)\n",
+      "maturity = CAL.Date(16, CAL.August, 2017)\n",
+      "tenor = CAL.Period(1, CAL.Years)\n",
+      "coupon = 0.0295\n",
+      "cleanPrice = 95.4326"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "settleDate = CAL.Date(3, CAL.December, 2013)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "bond120014 = CAL.CTBFixedBond(issueDate = issueDate,\n",
+      "                              settlementDays = 1,\n",
+      "                              faceAmount = 100,\n",
+      "                              startDate = startDate,\n",
+      "                              maturity = maturity,\n",
+      "                              tenor = tenor,\n",
+      "                              coupons = [coupon])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# accrued amount\n",
+      "print bond120014.accruedAmount(settleDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "0.88095890411\n"
+       ]
+      }
+     ],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Calculate yield based on clean price\n",
+      "print bond120014.bondYield(cleanPrice, CAL.ActualActualNoLeap(), CAL.Compounded, CAL.Annual, settleDate)*100"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "4.3074192524\n"
+       ]
+      }
+     ],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Do the reverse. Calculate clean price from yield\n",
+      "print CAL.BondFunctions.cleanPrice(bond120014, 4.3074/100.0, CAL.ActualActualNoLeap(), CAL.Compounded, CAL.Annual, settleDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "95.4326640524\n"
+       ]
+      }
+     ],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Calcuate Bond Z-Spread against a dummy curve\n",
+      "dummyCurve = CAL.FlatForward(settleDate, 0.05, CAL.Actual360())\n",
+      "spread = CAL.BondFunctions.zSpread(bond120014, cleanPrice, dummyCurve, \n",
+      "                                   dummyCurve.dayCounter(), CAL.Continuous, CAL.Annual, settleDate)\n",
+      "print spread\n",
+      "\n",
+      "# Calculate Bond Price based on dummy curve\n",
+      "print CAL.BondFunctions.cleanPrice(bond120014, dummyCurve, settleDate)\n",
+      "\n",
+      "# Try to add the spread to the dummy curve to test the correctness of Z-Spread\n",
+      "discountCurve = CAL.RelinkableYieldTermStructureHandle()\n",
+      "spreadQuote = CAL.QuoteHandle(CAL.SimpleQuote(spread))\n",
+      "discountCurve.linkTo(dummyCurve)\n",
+      "spreadedCurve = CAL.ZeroSpreadedTermStructure(discountCurve, spreadQuote, CAL.Continuous, CAL.Annual, dummyCurve.dayCounter())\n",
+      "\n",
+      "# Calculate Bond Price based on spread dummy curve\n",
+      "print CAL.BondFunctions.cleanPrice(bond120014, spreadedCurve, settleDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "-0.00843579066559\n",
+        "92.5691622302\n",
+        "95.4326\n"
+       ]
+      }
+     ],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Risk statistics\n",
+      "print CAL.BondFunctions.duration(bond120014, 4.3074/100.0, CAL.ActualActualNoLeap(), CAL.Compounded, CAL.Annual, CAL.Duration.Macaulay, settleDate)\n",
+      "print CAL.BondFunctions.duration(bond120014, 4.3074/100.0, CAL.ActualActualNoLeap(), CAL.Compounded, CAL.Annual, CAL.Duration.Modified, settleDate)\n",
+      "print CAL.BondFunctions.convexity(bond120014, 4.3074/100.0, CAL.ActualActualNoLeap(), CAL.Compounded, CAL.Annual, settleDate)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "3.52781254863\n",
+        "3.38213065289\n",
+        "15.0294980153\n"
+       ]
+      }
+     ],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Extract Cash flow report\n",
+      "print \"Payment date, \", \"Amount, \", \"Accrued start, \", \"Accrued end, \", \"Coupon Rates\"\n",
+      "loopDate = settleDate\n",
+      "while loopDate <= CAL.BondFunctions.maturityDate(bond120014):\n",
+      "    paymentDate = CAL.BondFunctions.nextCashFlowDate(bond120014, loopDate)\n",
+      "    amount = CAL.BondFunctions.nextCashFlowAmount(bond120014, loopDate)\n",
+      "    accStart = CAL.BondFunctions.accrualStartDate(bond120014, loopDate)\n",
+      "    accEnd = CAL.BondFunctions.accrualEndDate(bond120014, loopDate)\n",
+      "    coupon = CAL.BondFunctions.nextCouponRate(bond120014, loopDate)\n",
+      "    print paymentDate.ISO(), \", \", amount, \", \", accStart.ISO(), \", \", accEnd.ISO(),  \",\",  coupon\n",
+      "    loopDate = paymentDate + CAL.Period(1, CAL.Days)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "Payment date,  Amount,  Accrued start,  Accrued end,  Coupon Rates\n",
+        "2014-08-16 ,  2.95 ,  2013-08-16 ,  2014-08-16 , 0.0295\n",
+        "2015-08-16 ,  2.95 ,  2014-08-16 ,  2015-08-16 , 0.0295\n",
+        "2016-08-16 ,  2.95 ,  2015-08-16 ,  2016-08-16 , 0.0295\n",
+        "2017-08-16 ,  102.95 ,  2016-08-16 ,  2017-08-16 , 0.0295\n"
+       ]
+      }
+     ],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "CAL.BondFunctions.zSpread?"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

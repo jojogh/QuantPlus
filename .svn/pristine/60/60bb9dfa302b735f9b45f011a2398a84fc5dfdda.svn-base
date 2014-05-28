@@ -1,0 +1,309 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from CAL import *\n",
+      "import datetime"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# First example. A fixed rate vanilla bond\n",
+      "\n",
+      "referenceDate = Date.todaysDate()\n",
+      "startDate = Date(21, 1, 2014)\n",
+      "endDate = Date(21,1,2018)\n",
+      "coupons = [0.05]\n",
+      "marketPrice = 91.5\n",
+      "yieldCurve = FlatForward(referenceDate, 0.05, Actual360()) \n",
+      "\n",
+      "fixedRateBond = CTBFixedBond(startDate, 0, 100.0, startDate, endDate, Period(6, Months), coupons)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "termStructure = RelinkableYieldTermStructureHandle(yieldCurve)\n",
+      "discountEngine = DiscountingBondEngine(termStructure)\n",
+      "fixedRateBond.setPricingEngine(discountEngine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# For fixed rate vanilla bond. OAS == zSpread\n",
+      "modelPrice = fixedRateBond.cleanPrice()\n",
+      "zSpread = BondFunctions.zSpread(fixedRateBond, marketPrice, yieldCurve, yieldCurve.dayCounter(), Continuous, Annual)\n",
+      "oas = fixedRateBond.optionAdjustedSpread(marketPrice, termStructure)\n",
+      "\n",
+      "print \"\\nVanilla Fixed Rate Bond\"\n",
+      "formatString = \"%-15s%s%15.4f\"\n",
+      "print formatString % (\"Market Price\",\":\" , marketPrice)\n",
+      "print formatString % (\"Model Price\",\":\" , modelPrice)\n",
+      "print formatString % (\"zSpread\", \":\" ,zSpread * 100.0)\n",
+      "print formatString % (\"OAS\", \":\" ,oas * 100.0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "Vanilla Fixed Rate Bond\n",
+        "Market Price   :        91.5000\n",
+        "Model Price    :        99.5102\n",
+        "zSpread        :         2.2903\n",
+        "OAS            :         2.2903\n"
+       ]
+      }
+     ],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Second example. A fixed rate callable bond\n",
+      "# set up the call schedule\n",
+      "# call for every 3 months\n",
+      "callSchedule = CAL.CallabilitySchedule()\n",
+      "callPrice = 100.0\n",
+      "numberOfCallDates = 8\n",
+      "callDate = startDate\n",
+      "nullCalendar = CAL.NullCalendar();\n",
+      "for i in xrange(numberOfCallDates):\n",
+      "    myPrice = CAL.CallabilityPrice(callPrice, CAL.CallabilityPrice.Clean)\n",
+      "    callSchedule.push_back(CAL.Callability(myPrice, CAL.Callability.Call, callDate))\n",
+      "    callDate = nullCalendar.advance(callDate, 6, CAL.Months);\n",
+      "    \n",
+      "# set up the callable bond\n",
+      "dated = startDate\n",
+      "issue = dated\n",
+      "maturity = endDate\n",
+      "settlementDays = 0\n",
+      "bondCalendar = NullCalendar()\n",
+      "coupon = .05;\n",
+      "frequency = CAL.Semiannual;\n",
+      "redemption = 100.0;\n",
+      "faceAmount = 100.0;\n",
+      "bondDayCounter = CAL.ActualActualNoLeap();\n",
+      "accrualConvention = CAL.Unadjusted;\n",
+      "paymentConvention = CAL.Unadjusted;\n",
+      "sch = CAL.Schedule(dated, maturity, CAL.Period(frequency), bondCalendar,\n",
+      "                     accrualConvention, accrualConvention,\n",
+      "                     CAL.DateGeneration.Backward, False);"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "maxIterations = 1000\n",
+      "accuracy = 1e-8\n",
+      "gridIntervals = 40\n",
+      "reversionParameter = .03\n",
+      "\n",
+      "# Setup Hull-White model\n",
+      "sigma = 0.03\n",
+      "hw0 = CAL.HullWhite(termStructure,reversionParameter,sigma)\n",
+      "engine0 = CAL.TreeCallableFixedRateBondEngine(hw0,gridIntervals)\n",
+      "callableBond = CAL.CallableFixedRateBond(settlementDays, faceAmount, sch,\n",
+      "                                           [coupon],\n",
+      "                                           bondDayCounter, callSchedule, paymentConvention,\n",
+      "                                           redemption, issue)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "callableBond.setPricingEngine(engine0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# For fixed rate callable bond. OAS != zSpread\n",
+      "modelPrice = callableBond.cleanPrice()\n",
+      "zSpread = BondFunctions.zSpread(callableBond, marketPrice, yieldCurve, yieldCurve.dayCounter(), Continuous, Annual)\n",
+      "oas = callableBond.optionAdjustedSpread(marketPrice, termStructure)\n",
+      "\n",
+      "formatString = \"%-15s%s%15.4f\"\n",
+      "print \"\\nCallable Fixed Rate Bond\"\n",
+      "print formatString % (\"Market Price\",\":\" , marketPrice)\n",
+      "print formatString % (\"Model Price\",\":\" , modelPrice)\n",
+      "print formatString % (\"zSpread\", \":\" ,zSpread * 100.0)\n",
+      "print formatString % (\"OAS\", \":\" ,oas * 100.0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "Callable Fixed Rate Bond\n",
+        "Market Price   :        91.5000\n",
+        "Model Price    :        95.6395\n",
+        "zSpread        :         2.2903\n",
+        "OAS            :         1.7036\n"
+       ]
+      }
+     ],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# OAS calculation is rather time consuming\n",
+      "starttime = datetime.datetime.now()\n",
+      "print \"\\nPerformance test starts: \"\n",
+      "for i in xrange(100):\n",
+      "    callableBond.optionAdjustedSpread(marketPrice, termStructure)\n",
+      "    \n",
+      "endtime = datetime.datetime.now()\n",
+      "interval=(endtime - starttime)\n",
+      "\n",
+      "print \"\\nRun completed in: \", interval"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "Performance test starts: \n",
+        "\n",
+        "Run completed in: "
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        " 0:00:00.802867\n"
+       ]
+      }
+     ],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "testBond = CTBZeroBond(0, NullCalendar(), 100.0, 97, Date(8,5, 2013), Actual365NoLeap(), Date(8,5, 2014))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "testBond.setPricingEngine(discountEngine)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "testBond.cleanPrice()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 12,
+       "text": [
+        "96.5360330274402"
+       ]
+      }
+     ],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "testBond.optionAdjustedSpread(96.5360330274402, termStructure)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 14,
+       "text": [
+        "0.0"
+       ]
+      }
+     ],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
