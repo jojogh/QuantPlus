@@ -22,7 +22,6 @@
 */
 
 #include <ql/indexes/ibor/shibor.h>
-#include <ql/time/calendars/jointcalendar.hpp>
 #include <ql/currencies/asia.hpp>
 #include <ql/time/calendars/china.hpp>
 #include <ql/time/daycounters/actual360.hpp>
@@ -44,18 +43,6 @@ namespace QuantLib {
 			}
 		}
 
-		bool shiborEOM(const Period& p) {
-			switch (p.units()) {
-			case Days:
-			case Weeks:
-				return false;
-			case Months:
-			case Years:
-				return true;
-			default:
-				QL_FAIL("invalid time units");
-			}
-		}
 	}
 
 		Shibor::Shibor(
@@ -63,38 +50,9 @@ namespace QuantLib {
 			const Handle<YieldTermStructure>& h) 
 			: IborIndex("shibor", tenor, (tenor.units()==Days && tenor.length()==1)? 0:1, CNYCurrency(),
 			China(China::IB),
-			shiborConvention(tenor), shiborEOM(tenor),
-			Actual360(), h),
-			financialCenterCalendar_(China(China::IB)),
-			jointCalendar_(JointCalendar(China(China::IB),
-			China(China::IB),
-			JoinHolidays)) {
+			shiborConvention(tenor), false,
+			Actual360(), h) {
 
-		}
-
-		Date Shibor::valueDate(const Date& fixingDate) const {
-
-			QL_REQUIRE(isValidFixingDate(fixingDate),
-				"Fixing date " << fixingDate << " is not valid");
-
-			Date d = fixingCalendar().advance(fixingDate, fixingDays_, Days);
-			return jointCalendar_.adjust(d);
-		}
-
-		Date Shibor::maturityDate(const Date& valueDate) const {
-			return jointCalendar_.advance(valueDate, tenor_, convention_,
-				endOfMonth());
-		}
-
-		Calendar Shibor::jointCalendar() const {
-			return jointCalendar_;
-		}
-
-		boost::shared_ptr<IborIndex> Shibor::clone(
-			const Handle<YieldTermStructure>& h) const {
-				return boost::shared_ptr<IborIndex>(new Shibor(
-					tenor(),
-					h));
 		}
 
 }

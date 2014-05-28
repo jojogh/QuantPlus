@@ -36,17 +36,6 @@ namespace QuantLib {
 			  const Handle<YieldTermStructure>& h =
 			  Handle<YieldTermStructure>());
 
-		Date valueDate(const Date& fixingDate) const;
-		Date maturityDate(const Date& valueDate) const;
-
-		boost::shared_ptr<IborIndex> clone(
-			const Handle<YieldTermStructure>& h) const;
-
-		Calendar jointCalendar() const;
-
-	private:
-		Calendar financialCenterCalendar_;
-		Calendar jointCalendar_;
 	};
 
 	class DailyTenorShibor : public Shibor {
