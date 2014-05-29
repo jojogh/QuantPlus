@@ -377,11 +377,17 @@
     <ClCompile Include="vpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="writerextensibleoption.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="quantlibtestsuite.cpp" />
     <ClCompile Include="creditriskplus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extensibleoptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="partialtimebarrieroption.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="twoassetcorrelationoption.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -755,10 +761,16 @@
     <ClInclude Include="vpp.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="writerextensibleoption.hpp">
+    <ClInclude Include="creditriskplus.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="creditriskplus.hpp">
+    <ClInclude Include="extensibleoptions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="partialtimebarrieroption.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="twoassetcorrelationoption.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

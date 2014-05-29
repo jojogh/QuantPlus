@@ -268,9 +268,6 @@
     <Filter Include="experimental\convertiblebonds">
       <UniqueIdentifier>{c8f5fb33-e14a-4880-b985-6377963a2edf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="experimental\compoundoption">
-      <UniqueIdentifier>{410bb8f6-ce1c-4e79-956c-85239a8ffcb2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="experimental\inflation">
       <UniqueIdentifier>{c046c970-45d0-4156-b587-ff2bc881bf04}</UniqueIdentifier>
     </Filter>
@@ -3192,15 +3189,6 @@
     <ClInclude Include="ql\experimental\convertiblebonds\tflattice.hpp">
       <Filter>experimental\convertiblebonds</Filter>
     </ClInclude>
-    <ClInclude Include="ql\experimental\compoundoption\all.hpp">
-      <Filter>experimental\compoundoption</Filter>
-    </ClInclude>
-    <ClInclude Include="ql\experimental\compoundoption\analyticcompoundoptionengine.hpp">
-      <Filter>experimental\compoundoption</Filter>
-    </ClInclude>
-    <ClInclude Include="ql\experimental\compoundoption\compoundoption.hpp">
-      <Filter>experimental\compoundoption</Filter>
-    </ClInclude>
     <ClInclude Include="ql\experimental\inflation\all.hpp">
       <Filter>experimental\inflation</Filter>
     </ClInclude>
@@ -3794,6 +3782,36 @@
     </ClInclude>
     <ClInclude Include="ql\math\interpolations\backwardflatlinearinterpolation.hpp">
       <Filter>methods\math\interpolations</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\analyticcomplexchooserengine.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\analyticcompoundoptionengine.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\analyticholderextensibleoptionengine.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\analyticpartialtimebarrieroptionengine.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\analytictwoassetcorrelationengine.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\complexchooseroption.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\compoundoption.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\holderextensibleoption.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\partialtimebarrieroption.hpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\experimental\exoticoptions\twoassetcorrelationoption.hpp">
+      <Filter>experimental\exoticoptions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -5660,12 +5678,6 @@
     <ClCompile Include="ql\experimental\convertiblebonds\discretizedconvertible.cpp">
       <Filter>experimental\convertiblebonds</Filter>
     </ClCompile>
-    <ClCompile Include="ql\experimental\compoundoption\analyticcompoundoptionengine.cpp">
-      <Filter>experimental\compoundoption</Filter>
-    </ClCompile>
-    <ClCompile Include="ql\experimental\compoundoption\compoundoption.cpp">
-      <Filter>experimental\compoundoption</Filter>
-    </ClCompile>
     <ClCompile Include="ql\experimental\inflation\yoycapfloortermpricesurface.cpp">
       <Filter>experimental\inflation</Filter>
     </ClCompile>
@@ -6104,6 +6116,36 @@
     </ClCompile>
     <ClCompile Include="ql\pricingengines\vanilla\hestonexpansionengine.cpp">
       <Filter>pricingengines\vanilla</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\analyticcomplexchooserengine.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\analyticcompoundoptionengine.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\analyticholderextensibleoptionengine.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\analyticpartialtimebarrieroptionengine.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\analytictwoassetcorrelationengine.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\complexchooseroption.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\compoundoption.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\holderextensibleoption.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\partialtimebarrieroption.cpp">
+      <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\experimental\exoticoptions\twoassetcorrelationoption.cpp">
+      <Filter>experimental\exoticoptions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
