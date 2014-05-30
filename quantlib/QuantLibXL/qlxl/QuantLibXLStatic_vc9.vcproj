@@ -384,7 +384,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="libboost_thread-vc90-mt-1_55.lib libboost_system-vc90-mt-1_55.lib odbc32.lib odbccp32.lib Ws2_32.lib advapi32.lib"
-				OutputFile="..\xll\QuantLibXL-vc90-mt-1_1_0.xll"
+				OutputFile="..\xll\CAL-vc90-mt-0_1_0.xll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../../ObjectHandler/lib,../../QuantLib/lib,../../QuantLibAddin/lib,../../log4cxx/msvc/lib"
