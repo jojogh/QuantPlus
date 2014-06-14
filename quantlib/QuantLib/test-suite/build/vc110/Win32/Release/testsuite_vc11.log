@@ -1,23 +1,18 @@
-﻿Build started 2014/5/29 17:02:39.
+﻿Build started 2014/6/14 23:06:17.
      1>Project "D:\dev\GitHub\CAL\quantlib\QuantLib\test-suite\testsuite_vc11.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(344,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W3 /WX- /O2 /Ob2 /Ot /Oy- /D NDEBUG /D WIN32 /D _CONSOLE /D _SCL_SECURE_NO_DEPRECATE /D _CRT_SECURE_NO_DEPRECATE /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\build\vc110\Win32\Release\\" /Fd".\build\vc110\Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /MP chooseroption.cpp compoundoption.cpp extensibleoptions.cpp partialtimebarrieroption.cpp twoassetcorrelationoption.cpp quantlibtestsuite.cpp
-         chooseroption.cpp
-     1>chooseroption.cpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-         compoundoption.cpp
-         extensibleoptions.cpp
-         partialtimebarrieroption.cpp
-     1>d:\dev\github\cal\quantlib\quantlib\test-suite\chooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
-     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/simplechooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
-     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/analyticsimplechooserengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
-     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/writerextensibleoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (extensibleoptions.cpp)
-     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/analyticwriterextensibleoptionengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (extensibleoptions.cpp)
-         twoassetcorrelationoption.cpp
-         quantlibtestsuite.cpp
-     1>d:\dev\github\cal\quantlib\quantlib\test-suite\chooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
-     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
-     1>d:\dev\github\cal\quantlib\quantlib\test-suite\spreadoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W3 /WX- /O2 /Ob2 /Ot /Oy- /D NDEBUG /D WIN32 /D _CONSOLE /D _SCL_SECURE_NO_DEPRECATE /D _CRT_SECURE_NO_DEPRECATE /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\build\vc110\Win32\Release\\" /Fd".\build\vc110\Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /MP cdo.cpp piecewiseyieldcurve.cpp
+         cdo.cpp
+         piecewiseyieldcurve.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/armijo.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/linesearch.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/time/calendars/argentina.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (cdo.cpp)
      1>Project "D:\dev\GitHub\CAL\quantlib\QuantLib\test-suite\testsuite_vc11.vcxproj" (1) is building "D:\dev\GitHub\CAL\quantlib\QuantLib\QuantLib_vc11.vcxproj" (2:3) on node 2 (GetResolvedLinkLibs target(s)).
      2>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(344,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
      2>Done Building Project "D:\dev\GitHub\CAL\quantlib\QuantLib\QuantLib_vc11.vcxproj" (GetResolvedLinkLibs target(s)).
@@ -746,7 +741,7 @@
          Testing caplet LMM lambda bootstrapping...
          Testing caplet LMM Monte-Carlo caplet pricing...
           
-         Tests completed in 14 m 58 s
+         Tests completed in 15 m 25 s
          
          
          Test suite "Master Test Suite" passed with:
@@ -757,4 +752,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:15:21.85
+Time Elapsed 00:15:54.15

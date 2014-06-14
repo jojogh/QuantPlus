@@ -20,6 +20,6 @@
 #include <ql/indexes/ibor/trlibor.hpp>
 #include <ql/indexes/ibor/usdlibor.hpp>
 #include <ql/indexes/ibor/zibor.hpp>
-#include <ql/indexes/ibor/shibor.h>
+#include <ql/indexes/ibor/shibor.hpp>
 #include <ql/indexes/ibor/repochina.h>
 

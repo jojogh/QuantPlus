@@ -23,7 +23,7 @@ this_include_HEADERS = \
     trlibor.hpp \
     usdlibor.hpp \
     zibor.hpp \
-    shibor.h \
+    shibor.hpp \
 	repochina.h
 
 libIborIndexes_la_SOURCES = \

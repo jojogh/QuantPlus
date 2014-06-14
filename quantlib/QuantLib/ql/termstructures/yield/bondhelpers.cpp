@@ -23,6 +23,7 @@
 #include <ql/pricingengines/bond/discountingbondengine.hpp>
 #include <ql/time/schedule.hpp>
 #include <ql/settings.hpp>
+#include <boost/make_shared.hpp>
 
 namespace QuantLib {
 
@@ -30,18 +31,21 @@ namespace QuantLib {
         void no_deletion(YieldTermStructure*) {}
     }
 
-    BondHelper::BondHelper(const Handle<Quote>& cleanPrice,
-                           const boost::shared_ptr<Bond>& bond)
-    : RateHelper(cleanPrice), bond_(new Bond(*bond)) {
+    BondHelper::BondHelper(const Handle<Quote>& price,
+                           const boost::shared_ptr<Bond>& bond,
+                           const bool useCleanPrice)
+    : RateHelper(price), bond_(boost::make_shared<Bond>(*bond)) {
+
 
         // the bond's last cashflow date, which can be later than
         // bond's maturity date because of adjustment
         latestDate_ = bond_->cashflows().back()->date();
         earliestDate_ = bond_->nextCashFlowDate();
 
-        boost::shared_ptr<PricingEngine> bondEngine(new
-            DiscountingBondEngine(termStructureHandle_));
-        bond_->setPricingEngine(bondEngine);
+        bond_->setPricingEngine(
+             boost::make_shared<DiscountingBondEngine>(termStructureHandle_));
+
+        useCleanPrice_ = useCleanPrice;
     }
 
     void BondHelper::setTermStructure(YieldTermStructure* t) {
@@ -57,7 +61,7 @@ namespace QuantLib {
         QL_REQUIRE(termStructure_ != 0, "term structure not set");
         // we didn't register as observers - force calculation
         bond_->recalculate();
-        return bond_->cleanPrice();
+        return useCleanPrice_ ? bond_->cleanPrice() : bond_->dirtyPrice();
     }
 
     void BondHelper::accept(AcyclicVisitor& v) {
@@ -70,7 +74,7 @@ namespace QuantLib {
     }
 
     FixedRateBondHelper::FixedRateBondHelper(
-                                    const Handle<Quote>& cleanPrice,
+                                    const Handle<Quote>& price,
                                     Natural settlementDays,
                                     Real faceAmount,
                                     const Schedule& schedule,
@@ -83,18 +87,14 @@ namespace QuantLib {
 									const Period& exCouponPeriod,
 									const Calendar& exCouponCalendar,
 									const BusinessDayConvention exCouponConvention,
-									bool exCouponEndOfMonth)
+									bool exCouponEndOfMonth,
+                                    bool useCleanPrice)
 
-    : BondHelper(cleanPrice, boost::shared_ptr<Bond>(new
+    : BondHelper(price, boost::shared_ptr<Bond>(new
         FixedRateBond(settlementDays, faceAmount, schedule,
                       coupons, dayCounter, paymentConvention,
-                      redemption, issueDate))) {
-        fixedRateBond_ = boost::shared_ptr<FixedRateBond>(new
-            FixedRateBond(settlementDays, faceAmount, schedule,
-                          coupons, dayCounter, paymentConvention,
-						  redemption, issueDate, paymentCalendar,
-						  exCouponPeriod, exCouponCalendar,
-						  exCouponConvention, exCouponEndOfMonth));
+                      redemption, issueDate)),useCleanPrice) {
+        fixedRateBond_ = boost::dynamic_pointer_cast<FixedRateBond>(bond_);
 
     }
 
@@ -125,16 +125,8 @@ namespace QuantLib {
 																		 accrualDayCounter,
 																		 maturityDate,
 																		 paymentConvention,
-																		 redemption))) {
-		ctbZeroBond_ = boost::shared_ptr<CTBZeroBond>(new CTBZeroBond(settlementDays,
-																				 calendar,
-																				 faceAmount,
-																				 issuePrice,
-																				 issueDate,
-																				 accrualDayCounter,
-																				 maturityDate,
-																				 paymentConvention,
-																				 redemption));
+																		 redemption)), true) {
+		ctbZeroBond_ = boost::dynamic_pointer_cast<CTBZeroBond>(bond_);
 	}
 
 	void CTBZeroBondHelper::accept(AcyclicVisitor& v) {
@@ -181,24 +173,8 @@ namespace QuantLib {
 																		  redemption,
 																		  firstDate,
 																		  nextToLastDate)
-		                                                 )) {
-				ctbFixedBond_ = boost::shared_ptr<CTBFixedBond>(new CTBFixedBond(issueDate,
-																 settlementDays,
-																 faceAmount,
-																 startDate,
-																 maturity,
-																 tenor,
-																 coupons,
-																 accrualDayCounter,
-																 endOfMonth,
-																 calendar,
-																 paymentCalendar,
-																 convention,
-																 rule,
-																 paymentConvention,
-																 redemption,
-																 firstDate,
-																 nextToLastDate));
+		                                                 ), true) {
+				ctbFixedBond_ = boost::dynamic_pointer_cast<CTBFixedBond>(bond_);
 	}
 
 
