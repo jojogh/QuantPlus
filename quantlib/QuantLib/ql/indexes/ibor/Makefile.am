@@ -9,6 +9,7 @@ this_include_HEADERS = \
     cdor.hpp \
     chflibor.hpp \
     dkklibor.hpp \
+    fedfunds.hpp \
     eonia.hpp \
     euribor.hpp \
     eurlibor.hpp \
@@ -30,6 +31,7 @@ libIborIndexes_la_SOURCES = \
     eonia.cpp \
     euribor.cpp \
     eurlibor.cpp \
+    fedfunds.cpp \
     libor.cpp \
     sonia.cpp \
     shibor.cpp \

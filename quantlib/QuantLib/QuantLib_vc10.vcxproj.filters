@@ -3678,9 +3678,6 @@
     <ClInclude Include="ql\time\daycounters\actualactualnl.h">
       <Filter>time\daycounters</Filter>
     </ClInclude>
-    <ClInclude Include="ql\indexes\ibor\shibor.h">
-      <Filter>indexes\ibor</Filter>
-    </ClInclude>
     <ClInclude Include="ql\instruments\shiborswap.h">
       <Filter>instruments</Filter>
     </ClInclude>
@@ -3812,6 +3809,12 @@
     </ClInclude>
     <ClInclude Include="ql\experimental\exoticoptions\twoassetcorrelationoption.hpp">
       <Filter>experimental\exoticoptions</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\indexes\ibor\fedfunds.hpp">
+      <Filter>indexes\ibor</Filter>
+    </ClInclude>
+    <ClInclude Include="ql\indexes\ibor\shibor.hpp">
+      <Filter>indexes\ibor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -6146,6 +6149,9 @@
     </ClCompile>
     <ClCompile Include="ql\experimental\exoticoptions\twoassetcorrelationoption.cpp">
       <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\indexes\ibor\fedfunds.cpp">
+      <Filter>indexes\ibor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

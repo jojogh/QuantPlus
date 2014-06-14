@@ -1842,6 +1842,14 @@
 					>
 				</File>
 				<File
+					RelativePath=".\ql\indexes\ibor\fedfunds.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ql\indexes\ibor\fedfunds.hpp"
+					>
+				</File>
+				<File
 					RelativePath=".\ql\indexes\ibor\gbplibor.hpp"
 					>
 				</File>
@@ -1882,7 +1890,7 @@
 					>
 				</File>
 				<File
-					RelativePath=".\ql\indexes\ibor\shibor.h"
+					RelativePath=".\ql\indexes\ibor\shibor.hpp"
 					>
 				</File>
 				<File

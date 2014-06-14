@@ -31,7 +31,7 @@
 #include <ql/time/daycounters/actual365nl.hpp>
 #include <ql/time/daycounters/actual360.hpp>
 #include <ql/time/calendars/china.hpp>
-#include <ql/indexes/ibor/shibor.h>
+#include <ql/indexes/ibor/shibor.hpp>
 #include <ql/indexes/ibor/repochina.h>
 #include <ql/instruments/repocompoundingswap.h>
 #include <ql/experimental/coupons/subperiodcoupons.hpp>

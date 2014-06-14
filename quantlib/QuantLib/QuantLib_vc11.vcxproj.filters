@@ -3810,6 +3810,9 @@
     <ClInclude Include="ql\indexes\ibor\shibor.hpp">
       <Filter>indexes\ibor</Filter>
     </ClInclude>
+    <ClInclude Include="ql\indexes\ibor\fedfunds.hpp">
+      <Filter>indexes\ibor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ql\methods\montecarlo\brownianbridge.cpp">
@@ -6143,6 +6146,9 @@
     </ClCompile>
     <ClCompile Include="ql\experimental\exoticoptions\twoassetcorrelationoption.cpp">
       <Filter>experimental\exoticoptions</Filter>
+    </ClCompile>
+    <ClCompile Include="ql\indexes\ibor\fedfunds.cpp">
+      <Filter>indexes\ibor</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

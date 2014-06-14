@@ -22,7 +22,7 @@
 */
 
 #include <ql/instruments/shiborswap.h>
-#include <ql/indexes/ibor/shibor.h>
+#include <ql/indexes/ibor/shibor.hpp>
 #include <ql/time/calendars/china.hpp>
 #include <ql/time/daycounters/actual360.hpp>
 

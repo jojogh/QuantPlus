@@ -598,6 +598,7 @@
     <ClInclude Include="ql\experimental\processes\gemanroncoroniprocess.hpp" />
     <ClInclude Include="ql\experimental\processes\klugeextouprocess.hpp" />
     <ClInclude Include="ql\experimental\risk\creditriskplus.hpp" />
+    <ClInclude Include="ql\indexes\ibor\fedfunds.hpp" />
     <ClInclude Include="ql\indexes\ibor\repochina.h" />
     <ClInclude Include="ql\indexes\ibor\shibor.hpp" />
     <ClInclude Include="ql\instruments\bonds\cpibond.hpp" />
@@ -1777,6 +1778,7 @@
     <ClCompile Include="ql\experimental\processes\gemanroncoroniprocess.cpp" />
     <ClCompile Include="ql\experimental\processes\klugeextouprocess.cpp" />
     <ClCompile Include="ql\experimental\risk\creditriskplus.cpp" />
+    <ClCompile Include="ql\indexes\ibor\fedfunds.cpp" />
     <ClCompile Include="ql\indexes\ibor\repochina.cpp" />
     <ClCompile Include="ql\indexes\ibor\shibor.cpp" />
     <ClCompile Include="ql\instruments\bonds\cpibond.cpp" />

@@ -456,6 +456,7 @@ export_xibor_instance(RepoChina);
 
 export_overnight_instance(Eonia);
 export_overnight_instance(Sonia);
+export_overnight_instance(FedFunds);
 
 export_swap_instance(EuriborSwapIsdaFixA);
 export_swap_instance(EuriborSwapIsdaFixB);

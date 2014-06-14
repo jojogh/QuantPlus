@@ -1,7 +1,7 @@
 /* -*- mode: c++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 
 /*
- Copyright (C) 2014 Cheng Li, DataYes
+ Copyright (C) 2014 StatPro Italia srl
 
  This file is part of QuantLib, a free-software/open-source library
  for financial quantitative analysts and developers - http://quantlib.org/
@@ -17,31 +17,24 @@
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 */
 
-/*! \file shibor.hpp
-    \brief China Shibor indexes
+/*! \file fedfunds.hpp
+    \brief %FedFunds index
 */
 
-#ifndef quantlib_shibor_hpp
-#define quantlib_shibor_hpp
+#ifndef quantlib_fed_funds_hpp
+#define quantlib_fed_funds_hpp
 
 #include <ql/indexes/iborindex.hpp>
 
 namespace QuantLib {
 
-    class Shibor : public IborIndex {
+    //! %Fed Funds rate fixed by the FED.
+    /*! (for balances held at the Federal Reserve) */
+    class FedFunds : public OvernightIndex {
       public:
-        Shibor(
-            const Period& tenor,
-            const Handle<YieldTermStructure>& h = Handle<YieldTermStructure>());
+        FedFunds(const Handle<YieldTermStructure>& h =
+                                                Handle<YieldTermStructure>());
     };
-
-    class DailyTenorShibor : public Shibor {
-    public:
-        DailyTenorShibor(
-            const Handle<YieldTermStructure>& h = Handle<YieldTermStructure>())
-            : Shibor(1*Days, h) {}
-    };
-
 
 }
 
