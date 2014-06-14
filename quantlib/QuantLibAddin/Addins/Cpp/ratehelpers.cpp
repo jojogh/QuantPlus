@@ -41,7 +41,7 @@
 #include <ql/indexes/swapindex.hpp>
 #include <ql/instruments/bonds/fixedratebond.hpp>
 #include <ql/indexes/ibor/euribor.hpp>
-#include <ql/indexes/ibor/shibor.h>
+#include <ql/indexes/ibor/shibor.hpp>
 #include <ql/indexes/ibor/repochina.h>
 #include <qlo/valueobjects/vo_ratehelpers.hpp>
 
@@ -52,8 +52,9 @@ namespace QuantLibAddinCpp {
 
     std::string CALBondHelper(
             const std::string &ObjectId,
-            const ObjectHandler::property_t &CleanPrice,
+            const ObjectHandler::property_t &Price,
             const std::string &Bond,
+            const ObjectHandler::property_t &UseCleanPrice,
             const ObjectHandler::property_t &Permanent,
             const ObjectHandler::property_t &Trigger,
             const bool &Overwrite) {
@@ -62,14 +63,17 @@ namespace QuantLibAddinCpp {
 
         // convert input datatypes to C++ datatypes
 
+        bool UseCleanPriceCpp = ObjectHandler::convert2<bool>(
+            UseCleanPrice, "UseCleanPrice", true);
+
         bool PermanentCpp = ObjectHandler::convert2<bool>(
             Permanent, "Permanent", false);
 
         // convert object IDs into library objects
 
-        QuantLib::Handle<QuantLib::Quote> CleanPriceLibObj = 
+        QuantLib::Handle<QuantLib::Quote> PriceLibObj = 
             ObjectHandler::convert2<QuantLib::Handle<QuantLib::Quote> >(
-                CleanPrice, "CleanPrice");
+                Price, "Price");
 
         OH_GET_REFERENCE(BondLibObjPtr, Bond,
             QuantLibAddin::Bond, QuantLib::Bond)
@@ -79,8 +83,9 @@ namespace QuantLibAddinCpp {
         boost::shared_ptr<ObjectHandler::ValueObject> valueObject(
             new QuantLibAddin::ValueObjects::CALBondHelper(
                 ObjectId,
-                CleanPrice,
+                Price,
                 Bond,
+                UseCleanPriceCpp,
                 PermanentCpp));
 
         // Construct the Object
@@ -88,8 +93,9 @@ namespace QuantLibAddinCpp {
         boost::shared_ptr<ObjectHandler::Object> object(
             new QuantLibAddin::BondHelper(
                 valueObject,
-                CleanPriceLibObj,
+                PriceLibObj,
                 BondLibObjPtr,
+                UseCleanPriceCpp,
                 PermanentCpp));
 
         // Store the Object in the Repository
@@ -619,7 +625,7 @@ namespace QuantLibAddinCpp {
 
     std::string CALFixedRateBondHelper(
             const std::string &ObjectId,
-            const ObjectHandler::property_t &CleanPrice,
+            const ObjectHandler::property_t &Price,
             const long &SettlementDays,
             const ObjectHandler::property_t &FaceAmount,
             const std::string &ScheduleID,
@@ -628,6 +634,12 @@ namespace QuantLibAddinCpp {
             const ObjectHandler::property_t &PaymentBDC,
             const ObjectHandler::property_t &Redemption,
             const ObjectHandler::property_t &IssueDate,
+            const std::string &PaymentCalendar,
+            const std::string &ExCouponPeriod,
+            const std::string &ExCouponCalendar,
+            const std::string &ExCouponBDC,
+            const bool &ExCouponEndOfMonth,
+            const ObjectHandler::property_t &UseCleanPrice,
             const ObjectHandler::property_t &Permanent,
             const ObjectHandler::property_t &Trigger,
             const bool &Overwrite) {
@@ -645,6 +657,9 @@ namespace QuantLibAddinCpp {
         double RedemptionCpp = ObjectHandler::convert2<double>(
             Redemption, "Redemption", 100.0);
 
+        bool UseCleanPriceCpp = ObjectHandler::convert2<bool>(
+            UseCleanPrice, "UseCleanPrice", true);
+
         bool PermanentCpp = ObjectHandler::convert2<bool>(
             Permanent, "Permanent", false);
 
@@ -656,6 +671,9 @@ namespace QuantLibAddinCpp {
         QuantLib::Date IssueDateLib = ObjectHandler::convert2<QuantLib::Date>(
             IssueDate, "IssueDate", QuantLib::Date());
 
+        QuantLib::Period ExCouponPeriodLib;
+        QuantLibAddin::cppToLibrary(ExCouponPeriod, ExCouponPeriodLib);
+
         // convert input datatypes to QuantLib enumerated datatypes
 
         QuantLib::DayCounter DayCounterEnum =
@@ -664,11 +682,20 @@ namespace QuantLibAddinCpp {
         QuantLib::BusinessDayConvention PaymentBDCEnum =
             ObjectHandler::Create<QuantLib::BusinessDayConvention>()(PaymentBDCCpp);
 
+        QuantLib::Calendar PaymentCalendarEnum =
+            ObjectHandler::Create<QuantLib::Calendar>()(PaymentCalendar);
+
+        QuantLib::Calendar ExCouponCalendarEnum =
+            ObjectHandler::Create<QuantLib::Calendar>()(ExCouponCalendar);
+
+        QuantLib::BusinessDayConvention ExCouponBDCEnum =
+            ObjectHandler::Create<QuantLib::BusinessDayConvention>()(ExCouponBDC);
+
         // convert object IDs into library objects
 
-        QuantLib::Handle<QuantLib::Quote> CleanPriceLibObj = 
+        QuantLib::Handle<QuantLib::Quote> PriceLibObj = 
             ObjectHandler::convert2<QuantLib::Handle<QuantLib::Quote> >(
-                CleanPrice, "CleanPrice");
+                Price, "Price");
 
         OH_GET_REFERENCE(ScheduleIDLibObjPtr, ScheduleID,
             QuantLibAddin::Schedule, QuantLib::Schedule)
@@ -678,7 +705,7 @@ namespace QuantLibAddinCpp {
         boost::shared_ptr<ObjectHandler::ValueObject> valueObject(
             new QuantLibAddin::ValueObjects::CALFixedRateBondHelper(
                 ObjectId,
-                CleanPrice,
+                Price,
                 SettlementDays,
                 FaceAmountCpp,
                 ScheduleID,
@@ -687,6 +714,12 @@ namespace QuantLibAddinCpp {
                 PaymentBDCCpp,
                 RedemptionCpp,
                 IssueDate,
+                PaymentCalendar,
+                ExCouponPeriod,
+                ExCouponCalendar,
+                ExCouponBDC,
+                ExCouponEndOfMonth,
+                UseCleanPriceCpp,
                 PermanentCpp));
 
         // Construct the Object
@@ -694,7 +727,7 @@ namespace QuantLibAddinCpp {
         boost::shared_ptr<ObjectHandler::Object> object(
             new QuantLibAddin::FixedRateBondHelper(
                 valueObject,
-                CleanPriceLibObj,
+                PriceLibObj,
                 SettlementDaysLib,
                 FaceAmountCpp,
                 ScheduleIDLibObjPtr,
@@ -703,6 +736,12 @@ namespace QuantLibAddinCpp {
                 PaymentBDCEnum,
                 RedemptionCpp,
                 IssueDateLib,
+                PaymentCalendarEnum,
+                ExCouponPeriodLib,
+                ExCouponCalendarEnum,
+                ExCouponBDCEnum,
+                ExCouponEndOfMonth,
+                UseCleanPriceCpp,
                 PermanentCpp));
 
         // Store the Object in the Repository

@@ -32,7 +32,7 @@
 #include <ql/indexes/ibor/sonia.hpp>
 #include <ql/indexes/ibor/chflibor.hpp>
 #include <ql/indexes/ibor/jpylibor.hpp>
-#include <ql/indexes/ibor/shibor.h>
+#include <ql/indexes/ibor/shibor.hpp>
 #include <ql/indexes/ibor/repochina.h>
 
 #include <ql/utilities/dataparsers.hpp>

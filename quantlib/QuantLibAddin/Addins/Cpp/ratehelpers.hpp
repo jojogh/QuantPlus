@@ -37,8 +37,9 @@ namespace QuantLibAddinCpp {
 
     std::string CALBondHelper(
             const std::string &ObjectId,
-            const ObjectHandler::property_t &CleanPrice,
+            const ObjectHandler::property_t &Price,
             const std::string &Bond,
+            const ObjectHandler::property_t &UseCleanPrice,
             const ObjectHandler::property_t &Permanent,
             const ObjectHandler::property_t &Trigger,
             const bool &Overwrite);
@@ -123,7 +124,7 @@ namespace QuantLibAddinCpp {
 
     std::string CALFixedRateBondHelper(
             const std::string &ObjectId,
-            const ObjectHandler::property_t &CleanPrice,
+            const ObjectHandler::property_t &Price,
             const long &SettlementDays,
             const ObjectHandler::property_t &FaceAmount,
             const std::string &ScheduleID,
@@ -132,6 +133,12 @@ namespace QuantLibAddinCpp {
             const ObjectHandler::property_t &PaymentBDC,
             const ObjectHandler::property_t &Redemption,
             const ObjectHandler::property_t &IssueDate,
+            const std::string &PaymentCalendar,
+            const std::string &ExCouponPeriod,
+            const std::string &ExCouponCalendar,
+            const std::string &ExCouponBDC,
+            const bool &ExCouponEndOfMonth,
+            const ObjectHandler::property_t &UseCleanPrice,
             const ObjectHandler::property_t &Permanent,
             const ObjectHandler::property_t &Trigger,
             const bool &Overwrite);
