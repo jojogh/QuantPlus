@@ -3,7 +3,7 @@ CLEANFILES = CAL_wrap.cpp libCALJNI.@JNILIB_EXTENSION@ CAL.jar
 
 BUILT_SOURCES = CAL_wrap.cpp CAL_wrap.h
 
-EXAMPLES = DiscreteHedging EquityOptions FRA UnaryFunctions
+EXAMPLES = Bonds DiscreteHedging EquityOptions FRA UnaryFunctions
 
 if HAVE_JAVA
 if BUILD_JAVA
