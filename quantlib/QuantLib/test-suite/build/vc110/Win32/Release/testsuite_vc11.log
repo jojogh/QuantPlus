@@ -1,17 +1,279 @@
-﻿Build started 2014/6/15 0:46:32.
+﻿Build started 2014/6/20 9:40:21.
      1>Project "D:\dev\GitHub\CAL\quantlib\QuantLib\test-suite\testsuite_vc11.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(344,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W3 /WX- /O2 /Ob2 /Ot /Oy- /D NDEBUG /D WIN32 /D _CONSOLE /D _SCL_SECURE_NO_DEPRECATE /D _CRT_SECURE_NO_DEPRECATE /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\build\vc110\Win32\Release\\" /Fd".\build\vc110\Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /MP assetswap.cpp bonds.cpp catbonds.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W3 /WX- /O2 /Ob2 /Ot /Oy- /D NDEBUG /D WIN32 /D _CONSOLE /D _SCL_SECURE_NO_DEPRECATE /D _CRT_SECURE_NO_DEPRECATE /D _MBCS /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\build\vc110\Win32\Release\\" /Fd".\build\vc110\Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /MP americanoption.cpp array.cpp asianoptions.cpp assetswap.cpp autocovariances.cpp barrieroption.cpp basketoption.cpp batesmodel.cpp bermudanswaption.cpp blackdeltacalculator.cpp blackformula.cpp bonds.cpp brownianbridge.cpp calendars.cpp capfloor.cpp capflooredcoupon.cpp cashflows.cpp catbonds.cpp cdo.cpp cdsoption.cpp chooseroption.cpp cliquetoption.cpp cms.cpp commodityunitofmeasure.cpp compoundoption.cpp convertiblebonds.cpp covariance.cpp creditdefaultswap.cpp creditriskplus.cpp curvestates.cpp dates.cpp daycounters.cpp defaultprobabilitycurves.cpp digitalcoupon.cpp digitaloption.cpp distributions.cpp dividendoption.cpp europeanoption.cpp everestoption.cpp exchangerate.cpp extendedtrees.cpp extensibleoptions.cpp functions.cpp fastfouriertransform.cpp fdheston.cpp fdmlinearop.cpp forwardoption.cpp garch.cpp gaussianquadratures.cpp gjrgarchmodel.cpp gsr.cpp hestonmodel.cpp himalayaoption.cpp hybridhestonhullwhiteprocess.cpp inflation.cpp inflationcapfloor.cpp inflationcapflooredcoupon.cpp inflationcpibond.cpp inflationcpicapfloor.cpp inflationcpiswap.cpp inflationvolatility.cpp instruments.cpp integrals.cpp interestrates.cpp interpolations.cpp jumpdiffusion.cpp libormarketmodel.cpp libormarketmodelprocess.cpp linearleastsquaresregression.cpp lookbackoptions.cpp lowdiscrepancysequences.cpp margrabeoption.cpp marketmodel.cpp marketmodel_cms.cpp marketmodel_smm.cpp marketmodel_smmcapletalphacalibration.cpp marketmodel_smmcapletcalibration.cpp marketmodel_smmcaplethomocalibration.cpp markovfunctional.cpp matrices.cpp mclongstaffschwartzengine.cpp mersennetwister.cpp money.cpp nthtodefault.cpp ode.cpp operators.cpp optimizers.cpp optionletstripper.cpp overnightindexedswap.cpp pagodaoption.cpp partialtimebarrieroption.cpp pathgenerator.cpp period.cpp piecewiseyieldcurve.cpp piecewisezerospreadedtermstructure.cpp quantooption.cpp quotes.cpp rangeaccrual.cpp riskstats.cpp rngtraits.cpp rounding.cpp sampledcurve.cpp schedule.cpp shortratemodels.cpp solvers.cpp spreadoption.cpp stats.cpp swap.cpp swapforwardmappings.cpp swaption.cpp swaptionvolatilitycube.cpp swaptionvolatilitymatrix.cpp swingoption.cpp termstructures.cpp timeseries.cpp tqreigendecomposition.cpp tracing.cpp transformedgrid.cpp twoassetbarrieroption.cpp twoassetcorrelationoption.cpp utilities.cpp variancegamma.cpp varianceoption.cpp varianceswaps.cpp volatilitymodels.cpp vpp.cpp quantlibtestsuite.cpp
+         americanoption.cpp
+         array.cpp
+         asianoptions.cpp
          assetswap.cpp
+         autocovariances.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/continuousarithmeticasianlevyengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (asianoptions.cpp)
+         barrieroption.cpp
+         basketoption.cpp
+         batesmodel.cpp
+         bermudanswaption.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (barrieroption.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (barrieroption.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (batesmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (batesmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (batesmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (batesmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (batesmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (bermudanswaption.cpp)
+         blackdeltacalculator.cpp
+         blackformula.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (blackformula.cpp)
          bonds.cpp
-         catbonds.cpp
+         brownianbridge.cpp
+         calendars.cpp
+         capfloor.cpp
      1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/time/calendars/argentina.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (bonds.cpp)
+         capflooredcoupon.cpp
+         cashflows.cpp
+         catbonds.cpp
+         cdo.cpp
+         cdsoption.cpp
      1>d:\local\boost_1_55_0\boost/format/alt_sstream_impl.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (catbonds.cpp)
-     1>Project "D:\dev\GitHub\CAL\quantlib\QuantLib\test-suite\testsuite_vc11.vcxproj" (1) is building "D:\dev\GitHub\CAL\quantlib\QuantLib\QuantLib_vc11.vcxproj" (2:3) on node 2 (GetResolvedLinkLibs target(s)).
-     2>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(344,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
-     2>Done Building Project "D:\dev\GitHub\CAL\quantlib\QuantLib\QuantLib_vc11.vcxproj" (GetResolvedLinkLibs target(s)).
-     1>Link:
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (cdo.cpp)
+         chooseroption.cpp
+     1>chooseroption.cpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\dev\github\cal\quantlib\quantlib\test-suite\chooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
+         cliquetoption.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/simplechooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/analyticsimplechooserengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (chooseroption.cpp)
+         cms.cpp
+         commodityunitofmeasure.cpp
+         compoundoption.cpp
+         convertiblebonds.cpp
+         covariance.cpp
+         creditdefaultswap.cpp
+         creditriskplus.cpp
+         curvestates.cpp
+         dates.cpp
+         daycounters.cpp
+         defaultprobabilitycurves.cpp
+         digitalcoupon.cpp
+         digitaloption.cpp
+         distributions.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (digitalcoupon.cpp)
+         dividendoption.cpp
+         europeanoption.cpp
+         everestoption.cpp
+         exchangerate.cpp
+         extendedtrees.cpp
+         extensibleoptions.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (exchangerate.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/writerextensibleoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (extensibleoptions.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/analyticwriterextensibleoptionengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (extensibleoptions.cpp)
+         functions.cpp
+         fastfouriertransform.cpp
+         fdheston.cpp
+         fdmlinearop.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (fdheston.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (fdmlinearop.cpp)
+     1>d:\local\boost_1_55_0\boost/format/alt_sstream_impl.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (fdheston.cpp)
+         forwardoption.cpp
+         garch.cpp
+     1>d:\local\boost_1_55_0\boost/math/distributions/non_central_chi_squared.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (fdheston.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (garch.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (garch.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (garch.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (garch.cpp)
+         gaussianquadratures.cpp
+         gjrgarchmodel.cpp
+         gsr.cpp
+         hestonmodel.cpp
+         himalayaoption.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gjrgarchmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gjrgarchmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gjrgarchmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gjrgarchmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gjrgarchmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gsr.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hestonmodel.cpp)
+     1>d:\local\boost_1_55_0\boost/format/alt_sstream_impl.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gsr.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hestonmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hestonmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hestonmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hestonmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gsr.cpp)
+         hybridhestonhullwhiteprocess.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gsr.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (gsr.cpp)
+         inflation.cpp
+         inflationcapfloor.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hybridhestonhullwhiteprocess.cpp)
+         inflationcapflooredcoupon.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hybridhestonhullwhiteprocess.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hybridhestonhullwhiteprocess.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (hybridhestonhullwhiteprocess.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflation.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcapfloor.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcapfloor.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcapflooredcoupon.cpp)
+         inflationcpibond.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcapflooredcoupon.cpp)
+         inflationcpicapfloor.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcpicapfloor.cpp)
+         inflationcpiswap.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcpibond.cpp)
+         inflationvolatility.cpp
+         instruments.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationcpiswap.cpp)
+         integrals.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (inflationvolatility.cpp)
+         interestrates.cpp
+         interpolations.cpp
+         jumpdiffusion.cpp
+         libormarketmodel.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (interpolations.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (interpolations.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (interpolations.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (interpolations.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (interpolations.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (libormarketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (libormarketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (libormarketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (libormarketmodel.cpp)
+         libormarketmodelprocess.cpp
+         linearleastsquaresregression.cpp
+         lookbackoptions.cpp
+         lowdiscrepancysequences.cpp
+         margrabeoption.cpp
+         marketmodel.cpp
+         marketmodel_cms.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/randomnumbers/primitivepolynomials.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (lowdiscrepancysequences.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel.cpp)
+         marketmodel_smm.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel.cpp)
+         marketmodel_smmcapletalphacalibration.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_cms.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smm.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletalphacalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletalphacalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletalphacalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletalphacalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletalphacalibration.cpp)
+         marketmodel_smmcapletcalibration.cpp
+         marketmodel_smmcaplethomocalibration.cpp
+         markovfunctional.cpp
+         matrices.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcapletcalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcaplethomocalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcaplethomocalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcaplethomocalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcaplethomocalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (marketmodel_smmcaplethomocalibration.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>d:\local\boost_1_55_0\boost/format/alt_sstream_impl.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+         mclongstaffschwartzengine.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/armijo.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/linesearch.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+         mersennetwister.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/conjugategradient.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (markovfunctional.cpp)
+         money.cpp
+         nthtodefault.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (money.cpp)
+         ode.cpp
+         operators.cpp
+         optimizers.cpp
+         optionletstripper.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/conjugategradient.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/steepestdescent.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optimizers.cpp)
+         overnightindexedswap.cpp
+         pagodaoption.cpp
+         partialtimebarrieroption.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optionletstripper.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optionletstripper.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optionletstripper.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optionletstripper.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (optionletstripper.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/armijo.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/linesearch.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (overnightindexedswap.cpp)
+         pathgenerator.cpp
+         period.cpp
+         piecewiseyieldcurve.cpp
+         piecewisezerospreadedtermstructure.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+         quantooption.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/armijo.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/linesearch.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/time/calendars/argentina.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewiseyieldcurve.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewisezerospreadedtermstructure.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewisezerospreadedtermstructure.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewisezerospreadedtermstructure.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewisezerospreadedtermstructure.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (piecewisezerospreadedtermstructure.cpp)
+         quotes.cpp
+         rangeaccrual.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/pricingengines/blackformula.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quotes.cpp)
+         riskstats.cpp
+         rngtraits.cpp
+         rounding.cpp
+         sampledcurve.cpp
+         schedule.cpp
+         shortratemodels.cpp
+         solvers.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (shortratemodels.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (shortratemodels.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (shortratemodels.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (shortratemodels.cpp)
+         spreadoption.cpp
+     1>d:\dev\github\cal\quantlib\quantlib\test-suite\spreadoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (spreadoption.cpp)
+         stats.cpp
+         swap.cpp
+         swapforwardmappings.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/kirkspreadoptionengine.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (spreadoption.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/experimental/exoticoptions/spreadoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (spreadoption.cpp)
+         swaption.cpp
+         swaptionvolatilitycube.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/currencies/europe.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (swap.cpp)
+         swaptionvolatilitymatrix.cpp
+         swingoption.cpp
+         termstructures.cpp
+         timeseries.cpp
+         tqreigendecomposition.cpp
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/armijo.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/linesearch.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/endcriteria.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/problem.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/method.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (termstructures.cpp)
+         tracing.cpp
+         transformedgrid.cpp
+         twoassetbarrieroption.cpp
+         twoassetcorrelationoption.cpp
+         utilities.cpp
+         variancegamma.cpp
+         varianceoption.cpp
+         varianceswaps.cpp
+         volatilitymodels.cpp
+         vpp.cpp
+         quantlibtestsuite.cpp
+     1>d:\dev\github\cal\quantlib\quantlib\test-suite\chooseroption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
+     1>D:\dev\GitHub\CAL\quantlib\QuantLib\ql/math/optimization/costfunction.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
+     1>d:\dev\github\cal\quantlib\quantlib\test-suite\spreadoption.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss (quantlibtestsuite.cpp)
+       Link:
          D:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\QuantLib-test-suite-vc110-mt.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\lib "libboost_thread-vc110-mt-1_55.lib" "libboost_system-vc110-mt-1_55.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:".\build\vc110\Win32\Release\QuantLib-test-suite-vc110-mt.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"bin\QuantLib-test-suite-vc110-mt.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"bin\QuantLib-test-suite-vc110-mt.lib" /MACHINE:X86 /SAFESEH .\build\vc110\Win32\Release\americanoption.obj
          .\build\vc110\Win32\Release\array.obj
          .\build\vc110\Win32\Release\asianoptions.obj
@@ -736,7 +998,7 @@
          Testing caplet LMM lambda bootstrapping...
          Testing caplet LMM Monte-Carlo caplet pricing...
           
-         Tests completed in 14 m 30 s
+         Tests completed in 14 m 40 s
          
          
          Test suite "Master Test Suite" passed with:
@@ -747,4 +1009,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:14:56.49
+Time Elapsed 00:21:44.58

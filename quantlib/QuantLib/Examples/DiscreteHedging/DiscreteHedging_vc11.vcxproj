@@ -176,20 +176,24 @@
     <LibraryPath>V:\local\boost_1_55_0\lib32-msvc-11.0;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>V:\local\boost_1_55_0;$(IncludePath)</IncludePath>
-    <LibraryPath>V:\local\boost_1_55_0\lib64-msvc-11.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\local\boost_1_55_0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\local\boost_1_55_0\lib64-msvc-11.0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>V:\local\boost_1_55_0;$(IncludePath)</IncludePath>
-    <LibraryPath>V:\local\boost_1_55_0\lib64-msvc-11.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\local\boost_1_55_0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\local\boost_1_55_0\lib64-msvc-11.0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\lib\x64;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|x64'">
-    <IncludePath>V:\local\boost_1_55_0;$(IncludePath)</IncludePath>
-    <LibraryPath>V:\local\boost_1_55_0\lib64-msvc-11.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\local\boost_1_55_0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\local\boost_1_55_0\lib64-msvc-11.0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug (static runtime)|x64'">
-    <IncludePath>V:\local\boost_1_55_0;$(IncludePath)</IncludePath>
-    <LibraryPath>V:\local\boost_1_55_0\lib64-msvc-11.0;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\local\boost_1_55_0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\local\boost_1_55_0\lib64-msvc-11.0;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release (static runtime)|Win32'">
     <Midl>
