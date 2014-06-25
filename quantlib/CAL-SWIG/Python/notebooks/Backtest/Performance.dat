@@ -1,0 +1,57 @@
+Start Balance,200.0
+Year Fraction,0.345205479452
+Commission Rate,0.0
+Slippage,0
+Min Tick Size ,0.01
+End Balance,398.51
+Total Raw Profit,198.51
+Total Commission Cost,0.0
+Total Slippage Cost,0.0
+Total Profit,198.51
+Total Return,0.99255
+Average Return(annual),2.0549010598
+Return Vol(annual),6.15921032509
+Sharp ratio,0.333630603818
+Skewness(annual),1.55100876553
+Max Draw Down,-0.08355
+Max Draw Down Duration(days),15.0
+Average Draw Down,-0.0176802056555
+Average Draw Down Duration(days),2.35561268209
+Gross Win,471.92
+Gross Loss,-273.41
+Profit Factor,1.7260524487
+Total Trades,3501
+Win Trades,1641
+Loss Trades,1860
+Winning Percentage,0.468723221937
+Average Number Trades(per day),39.7840909091
+Average Profit(per trade),0.0567009425878
+Average Win(per trade),0.287580743449
+Average Loss(per trade),-0.146994623656
+Win-Loss ratio(per trade),1.95640314113
+Best Winning Trade,share                             -1
+openDate         2014-04-10 00:00:00
+openTime                    3.51e+07
+openPrice                     187.09
+closeDate        2014-04-10 00:00:00
+closeTime                    4.5e+07
+closePrice                    184.82
+win?                            True
+raw_profit                      2.27
+commission                         0
+slippage_cost                      0
+profit                          2.27
+Name: (2014-04-10 00:00:00, 35100000.0), dtype: object
+Worst Lossing Trade,share                             -1
+openDate         2014-03-20 00:00:00
+openTime                   3.546e+07
+openPrice                     185.95
+closeDate        2014-03-20 00:00:00
+closeTime                  3.834e+07
+closePrice                    187.12
+win?                           False
+raw_profit                     -1.17
+commission                         0
+slippage_cost                      0
+profit                         -1.17
+Name: (2014-03-20 00:00:00, 35460000.0), dtype: object

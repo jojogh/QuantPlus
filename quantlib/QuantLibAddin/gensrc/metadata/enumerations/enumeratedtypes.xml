@@ -219,6 +219,10 @@
           <string>NullCalendar</string>
           <value>QuantLib::NullCalendar()</value>
         </EnumeratedType>
+        <EnumeratedType>
+          <string>WeekendsOnly</string>
+          <value>QuantLib::WeekendsOnly()</value>
+        </EnumeratedType>
 
         <EnumeratedType>
           <string>TARGET</string>
