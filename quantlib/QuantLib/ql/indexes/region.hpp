@@ -58,8 +58,8 @@ namespace QuantLib {
     //! \relates Region
     bool operator!=(const Region&, const Region&);
 
-	
-   //! Custom geographical/economic region
+
+    //! Custom geographical/economic region
     /*! This class allows one to create an instance of a particular
         region without having to define and compile a corresponding
         class.
@@ -69,6 +69,7 @@ namespace QuantLib {
         CustomRegion(const std::string& name,
                      const std::string& code);
     };
+
 
     //! Australia as geographical/economic region
     class AustraliaRegion : public Region {
@@ -100,6 +101,11 @@ namespace QuantLib {
         USRegion();
     };
 
+    //! South Africa as geographical/economic region
+    class ZARegion : public Region {
+    public:
+        ZARegion();
+    };
 
 
     // inline definitions

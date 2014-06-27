@@ -3813,6 +3813,9 @@
     <ClInclude Include="ql\indexes\ibor\fedfunds.hpp">
       <Filter>indexes\ibor</Filter>
     </ClInclude>
+    <ClInclude Include="ql\indexes\inflation\zacpi.hpp">
+      <Filter>indexes\inflation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ql\methods\montecarlo\brownianbridge.cpp">

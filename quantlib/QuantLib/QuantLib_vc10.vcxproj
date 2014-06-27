@@ -578,6 +578,7 @@
     <ClInclude Include="ql\indexes\ibor\fedfunds.hpp" />
     <ClInclude Include="ql\indexes\ibor\repochina.h" />
     <ClInclude Include="ql\indexes\ibor\shibor.hpp" />
+    <ClInclude Include="ql\indexes\inflation\zacpi.hpp" />
     <ClInclude Include="ql\instruments\bonds\cpibond.hpp" />
     <ClInclude Include="ql\instruments\bonds\ctbfixedbond.h" />
     <ClInclude Include="ql\instruments\bonds\ctbzerobond.h" />
