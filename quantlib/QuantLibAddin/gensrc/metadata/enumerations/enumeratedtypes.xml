@@ -664,6 +664,14 @@
           <value>QuantLib::ModifiedFollowing</value>
         </EnumeratedType>
         <EnumeratedType>
+          <string>Half-Month Modified Following</string>
+          <value>QuantLib::HalfMonthModifiedFollowing</value>
+        </EnumeratedType>
+        <EnumeratedType>
+          <string>HMMF</string>
+          <value>QuantLib::HalfMonthModifiedFollowing</value>
+        </EnumeratedType>
+        <EnumeratedType>
           <string>Preceding</string>
           <value>QuantLib::Preceding</value>
         </EnumeratedType>
