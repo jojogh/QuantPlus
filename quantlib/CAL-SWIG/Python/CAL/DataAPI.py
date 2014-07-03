@@ -31,6 +31,9 @@ def __getConn__():
     domain = Config.__server_config__[Config.__server__]['host']
     port = Config.__server_config__[Config.__server__]['port']
     return httplib.HTTPConnection(domain, port)
+
+def __formatDate__(inputDate):
+    return inputDate
     
 def MarketDataGetHistDailyQuotes(securityID, fields, startDate, endDate):
     '''
@@ -62,8 +65,8 @@ def MarketDataGetHistDailyQuotes(securityID, fields, startDate, endDate):
     else:
         if fields != None:
             requestString += fields
-    requestString += "&startDate=" +startDate
-    requestString += "&endDate=" +endDate
+    requestString += "&startDate=" + __formatDate__(startDate)
+    requestString += "&endDate=" + __formatDate__(endDate)
     
     csvString = __getCSV__(requestString, httpClient)
     
@@ -77,7 +80,7 @@ def MarketDataGetHistDailyQuotes(securityID, fields, startDate, endDate):
         myIO.close()
                     
     # try to read as bonds
-    return BondDBUtilities.HistBondPrice(securityID, startDate, endDate, fields)
+    # return BondDBUtilities.HistBondPrice(securityID, startDate, endDate, fields)
 
 
 def MarketDataGetHistTicks(securityID, specificDate, fields = None):
@@ -109,7 +112,7 @@ def MarketDataGetHistTicks(securityID, specificDate, fields = None):
     else:
         if fields != None:
             requestString += fields
-    requestString += "&date=" + specificDate
+    requestString += "&date=" + __formatDate__(specificDate)
 
     csvString = __getCSV__(requestString, httpClient)
     
@@ -157,7 +160,7 @@ def MarketDataGetDaySnapShot(securityIDs, specificDate, fields):
     else:
         if fields != None:
             requestString += fields
-    requestString += "&date=" + specificDate
+    requestString += "&date=" + __formatDate__(specificDate)
     csvString = __getCSV__(requestString, httpClient)
     try:
         myIO = StringIO.StringIO(csvString)
@@ -166,7 +169,6 @@ def MarketDataGetDaySnapShot(securityIDs, specificDate, fields):
         return pdFrame
     finally:
         myIO.close()
-    pass
 
 def FundamentalBalanceSheetRange(securityID,
                                  startDate,
@@ -195,8 +197,8 @@ def FundamentalBalanceSheetRange(securityID,
     
     requestString = Config.__function_config__[functionName][Config.__server__]['api']
     requestString += "stockID=" + securityID
-    requestString += "&startDate=" +startDate
-    requestString += "&endDate=" + endDate
+    requestString += "&startDate=" + __formatDate__(startDate)
+    requestString += "&endDate=" + __formatDate__(endDate)
     requestString += '&reportType=' + reportType
     requestString += "&field="
     if hasattr(fields, '__iter__'):
@@ -215,7 +217,6 @@ def FundamentalBalanceSheetRange(securityID,
         return pdFrame
     finally:
         myIO.close()
-    pass
     
 def SecurityCategory(standard,
                      level = 1,
@@ -229,7 +230,7 @@ def SecurityCategory(standard,
     requestString += "standard=" + standard + str(level)
     requestString += "&date="
     if date != None:
-        requestString += str(date)
+        requestString += __formatDate__(str(date))
     requestString += "&field="
     if hasattr(fields, '__iter__'):
         if fields != None:
@@ -247,7 +248,6 @@ def SecurityCategory(standard,
         return pdFrame
     finally:
         myIO.close()
-    pass
 
 def lowcase_keys(d):
     result = {}
