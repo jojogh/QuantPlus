@@ -1,0 +1,333 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import CAL"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# This sample has been translated from C++ from QuantLib examples\n",
+      "# Bloomberg OAS1: \"N\" model (Hull White)\n",
+      "# varying volatility parameter\n",
+      " \n",
+      "# The curve entered into Bloomberg OAS1 is a flat curve,\n",
+      "# at constant yield = 5.5%, semiannual compounding.\n",
+      "# Assume here OAS1 curve uses an ACT/ACT day counter,\n",
+      "# as documented in PFC1 as a \"default\" in the latter case.\n",
+      "today = CAL.Date(16, CAL.October, 2007)\n",
+      "CAL.Settings.instance().setEvaluationDate(today)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "bbCurveRate = 0.055;\n",
+      "bbDayCounter = CAL.ActualActual(CAL.ActualActual.Bond)\n",
+      "bbIR = CAL.InterestRate(bbCurveRate,bbDayCounter,CAL.Compounded,CAL.Semiannual)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "termStructure = CAL.YieldTermStructureHandle(CAL.FlatForward(today, bbIR.rate(), bbIR.dayCounter(), bbIR.compounding(), bbIR.frequency()))"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# set up the call schedule\n",
+      "# call for every 3 months\n",
+      "callSchedule = CAL.CallabilitySchedule()\n",
+      "callPrice = 100.0\n",
+      "numberOfCallDates = 24\n",
+      "callDate = CAL.Date(15,CAL.September,2006)\n",
+      "nullCalendar = CAL.NullCalendar();\n",
+      "for i in xrange(numberOfCallDates):\n",
+      "    myPrice = CAL.CallabilityPrice(callPrice, CAL.CallabilityPrice.Clean)\n",
+      "    callSchedule.push_back(CAL.Callability(myPrice, CAL.Callability.Call, callDate))\n",
+      "    callDate = nullCalendar.advance(callDate, 3, CAL.Months);"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# set up the callable bond\n",
+      "dated = CAL.Date(16,CAL.September,2004)\n",
+      "issue = dated\n",
+      "maturity = CAL.Date(15,CAL.September,2012)\n",
+      "settlementDays = 3\n",
+      "bondCalendar = CAL.UnitedStates(CAL.UnitedStates.GovernmentBond)\n",
+      "coupon = .0465;\n",
+      "frequency = CAL.Quarterly;\n",
+      "redemption = 100.0;\n",
+      "faceAmount = 100.0;\n",
+      "bondDayCounter = CAL.ActualActual(CAL.ActualActual.Bond);\n",
+      "accrualConvention = CAL.Unadjusted;\n",
+      "paymentConvention = CAL.Unadjusted;\n",
+      "sch = CAL.Schedule(dated, maturity, CAL.Period(frequency), bondCalendar,\n",
+      "                     accrualConvention, accrualConvention,\n",
+      "                     CAL.DateGeneration.Backward, False);"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "maxIterations = 1000\n",
+      "accuracy = 1e-8\n",
+      "gridIntervals = 40\n",
+      "reversionParameter = .03"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# output price/yield results for varying volatility parameter\n",
+      "# Scenario 0 vol\n",
+      "sigma = 1e-15\n",
+      "hw0 = CAL.HullWhite(termStructure,reversionParameter,sigma)\n",
+      "engine0 = CAL.TreeCallableFixedRateBondEngine(hw0,gridIntervals)\n",
+      "callableBond = CAL.CallableFixedRateBond(settlementDays, faceAmount, sch,\n",
+      "                                           [coupon],\n",
+      "                                           bondDayCounter, callSchedule, paymentConvention,\n",
+      "                                           redemption, issue)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "callableBond.setPricingEngine(engine0)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.cleanPrice() "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "96.4679458423\n"
+       ]
+      }
+     ],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.bondYield(bondDayCounter, CAL.Compounded, frequency, accuracy, maxIterations)*100"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "5.47533321381\n"
+       ]
+      }
+     ],
+     "prompt_number": 11
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Scenario 3.00% vol\n",
+      "sigma = 0.03\n",
+      "hw1 = CAL.HullWhite(termStructure,reversionParameter,sigma)\n",
+      "engine1 = CAL.TreeCallableFixedRateBondEngine(hw1,gridIntervals)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 12
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "callableBond.setPricingEngine(engine1)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 13
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.cleanPrice() "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "92.3067337615\n"
+       ]
+      }
+     ],
+     "prompt_number": 14
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.bondYield(bondDayCounter, CAL.Compounded, frequency, accuracy, maxIterations)*100"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "6.49300798893\n"
+       ]
+      }
+     ],
+     "prompt_number": 15
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "# Scenario 12.00% vol\n",
+      "sigma = 0.12\n",
+      "hw2 = CAL.HullWhite(termStructure,reversionParameter,sigma)\n",
+      "engine2 = CAL.TreeCallableFixedRateBondEngine(hw2,gridIntervals)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 16
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "callableBond.setPricingEngine(engine2)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 17
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.cleanPrice() "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "77.3365971627\n"
+       ]
+      }
+     ],
+     "prompt_number": 18
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "print callableBond.bondYield(bondDayCounter, CAL.Compounded, frequency, accuracy, maxIterations)*100"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "10.6376387955\n"
+       ]
+      }
+     ],
+     "prompt_number": 19
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 19
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}

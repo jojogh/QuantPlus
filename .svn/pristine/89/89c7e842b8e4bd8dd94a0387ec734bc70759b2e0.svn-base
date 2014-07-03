@@ -1,0 +1,165 @@
+commit 2540ab4959abfbe7b60b5c58605b2d84390d913c
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Sat, 22 Jun 2013 18:24:25 +0200
+
+    Compatibility with latest SWIG versions.
+    
+    We were using a wrong construct into an %extend directive that
+    was accepted by SWIG up to release 2.0.8, but was rejected in
+    the latest versions.
+
+commit 07266e4a09fdb15e9b423f895e25e7e0bb7c3b60
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Sat, 22 Jun 2013 17:50:55 +0200
+
+    Changed test results according to changes in the C++ library.
+    
+    The corresponding behavior was modified in revision c1423128.
+
+commit 71946938fc77e9570b0560d8c35bb16b29007feb
+Author: Dirk Eddelbuettel <edd@debian.org>
+Date:   Sun, 16 Jun 2013 16:27:00 -0500
+
+    expanded european-option example
+    
+    now matches the more extensive Python example
+
+commit 082357dd62fc0cbd99065060a918fbcd3083f70c
+Author: Dirk Eddelbuettel <edd@debian.org>
+Date:   Sat, 15 Jun 2013 16:32:33 -0500
+
+    QuantLib SWIG bonds example for R
+    
+    Modeled after bonds.py which it replicates
+
+commit 3248d216d33b963a4c8ba96588a62106d09c0661
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Fri, 14 Jun 2013 17:39:41 +0200
+
+    Bug fix for R example.
+
+commit 0c3ca1c0f45c369e22730129e49ff34fc47a92d3
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 13 Jun 2013 15:08:21 +0200
+
+    Updated VC# projects.
+
+commit 12b40582927538b247f52e161d9b63f39bb45903
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Tue, 4 Jun 2013 20:24:30 +0000
+
+    some improvements for the R Bates volatility surface example (thanks to Dirk Eddelbuettel)
+
+commit d86493309f179da8de0ee1967d48f8caf8720d11
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Thu, 9 May 2013 11:08:29 +0000
+
+    added Bates implied volatility surface example for R
+
+commit b518800fd38d34ad52e97461965f2e798daa898e
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Thu, 9 May 2013 10:03:55 +0000
+
+    added Bates implied volatility surface example for R
+
+commit 8fe68e950dd2a8667b0223a02443d0e04e2f1dcb
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 17:30:11 +0000
+
+    Fixed %rename directives for Scheme dialects.
+
+commit 3c9d59a539877c2d956f8ae995375469e326ff41
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:06:27 +0000
+
+    Overloaded operators for date algebra and comparisons in C#.
+    
+    Thanks to Simon Shakeshaft.
+
+commit d935818df973e65901a54b5fa0b24285fabe74c0
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:06:10 +0000
+
+    Exported BondFunctions class (thanks to Simon Shakeshaft).
+
+commit c582367ee3ff6b9d45c29bca32e2b5271534e904
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Mon, 4 Mar 2013 14:04:55 +0000
+
+    Exported a couple of functions to SWIG (thanks to Sergio Villar de María).
+
+commit cb3032a78fde4635c109f708f3bb3aa2ab0e42a5
+Author: Joseph Wang <drjoe@users.sf.net>
+Date:   Fri, 21 Dec 2012 02:01:21 +0000
+
+    fix R definition for nullOrInt / nullOrDouble
+
+commit 4a2d8cf99436eb18bffe17676c7e205fffa2d446
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 29 Nov 2012 14:39:34 +0000
+
+    Added possibility to manually disable build for specific modules.
+
+commit de5a104662f7718676c3012689fd30f440b8a70b
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 29 Nov 2012 14:38:24 +0000
+
+    Cleaned up warnings.
+
+commit 9731fe57b536ce74416b904af422e54435fb5b80
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 29 Nov 2012 14:38:06 +0000
+
+    Added FRA interface and Java example.
+    
+    Thanks to Tawanda Gwena and Francis Duffy.
+
+commit e99ce4c430ae2c689b4aba919fb627de9ecdfbdb
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 29 Nov 2012 14:37:41 +0000
+
+    Reworked check rule for Makefile.
+    
+    This will make it easier to add further examples.
+
+commit 748dae3902bc17a01d868337abe25e6e379a8679
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 29 Nov 2012 14:37:22 +0000
+
+    Removed incorrect compilation option.
+
+commit e440add963ccf7dd38c0ad3238fbaa481667e8a6
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 25 Mar 2012 00:32:34 +0000
+
+    added Scala version of a Heston Vanilla Option Monte-Carlo example
+
+commit 9f0a54e1a91b0f82113121f08c1758d8950aa106
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 25 Mar 2012 00:26:25 +0000
+
+    added Scala version of a Heston Vanilla Option Monte-Carlo example
+
+commit 142b00b6ee8295167b8c64737dd449ddcb088d56
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Mon, 19 Mar 2012 21:55:49 +0000
+
+    added HestonModelHelper and calibration example in Scala
+
+commit 303b169ba21f054068327715d87a7d4964923337
+Author: Klaus Spanderen <klaus@spanderen.de>
+Date:   Sun, 18 Mar 2012 21:40:22 +0000
+
+    changed indent
+
+commit b03fdd0f240108f10757d8ec64e490d71fd43e82
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Thu, 8 Mar 2012 07:57:18 +0000
+
+    Increased version number to 1.3.
+
+commit d1e6a3bca55197f6899f903207cf021892e3576a
+Author: Luigi Ballabio <luigi.ballabio@gmail.com>
+Date:   Wed, 7 Mar 2012 08:28:41 +0000
+
+    Merged R01020x-branch/QuantLib-SWIG

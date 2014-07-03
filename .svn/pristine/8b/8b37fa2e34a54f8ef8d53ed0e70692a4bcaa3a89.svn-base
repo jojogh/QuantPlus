@@ -1,0 +1,253 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "1. \u5982\u4f55\u83b7\u53d6\u5e02\u573a\u65e5\u7ebf\u6570\u636e\uff1f\u4f7f\u7528MarketDataGet\uff01"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from CAL.PyCAL import *\n",
+      "import pandas as pd\n",
+      "defaultFigSize = (8,7)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res =  MarketDataGetHistDailyQuotes(securityID = \"000002.XSHE\", \n",
+      "                                    fields = [\"shortNM\", \"closePrice\"], \n",
+      "                                    startDate = \"20000106\", \n",
+      "                                    endDate = \"20140110\")"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(res, settings = {'x':'tradeDate','y':'closePrice', 'title':u'\u4e07\u79d1\u5386\u53f2\u6536\u76d8\u4ef7\u683c', 'figsize':defaultFigSize})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "closePrice = res['closePrice']\n",
+      "dailyReturn = closePrice[:-1].values / closePrice[1:] - 1\n",
+      "res['return'] = dailyReturn"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res[:10]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(res, settings = {'x':'closePrice', 'y':'return', 'kind':'Scatter', 'title':u'\u4ef7\u683c vs. \u6536\u76ca\u7387\uff08\u6563\u70b9\u56fe', 'figsize':defaultFigSize})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "2. \u4f7f\u7528\u5411\u91cf\u51fd\u6570\u8ba1\u7b97\u4e07\u79d1\u80a1\u7968\u865a\u62df\u5728\u503c\u770b\u6da8\u671f\u6743"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "priceList = BSMPrice(optionType = 1, \n",
+      "                     strike = res['closePrice'] + 1.0, \n",
+      "                     spot = res['closePrice'], \n",
+      "                     riskFree = 0.00, \n",
+      "                     dividend = 0.00, \n",
+      "                     volatility = 0.25, \n",
+      "                     maturity = 2.0)\n",
+      "priceList['strike'] = res['closePrice'] + 1.0\n",
+      "priceList['stockPrice'] = res['closePrice']"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "priceList[:10]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(priceList, settings = {'y':['price'], \"title\":u\"\u4e07\u79d1\u671f\u6743\u4ef7\u683c 2010~2014\", 'figsize':defaultFigSize})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "3. \u83b7\u53d6\u8d22\u62a5\u6570\u636e\uff1f\u4f7f\u7528FundamentalBalanceSheetRange"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res = FundamentalBalanceSheetRange(securityID = '600110',\n",
+      "                                   startDate = '20050101',\n",
+      "                                   endDate = '20140101',\n",
+      "                                   reportType = 'Q')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res[:10]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(res, settings= {'x':u'END_DATE', 'y':[u'TOTAL_ASSETS',u'TOTAL_LIAB', u'TOTAL_EQUITY'], 'kind':'Bar', 'title':u'\u6d66\u53d1\u94f6\u884c2007~2013\u5b63\u5ea6\u62a5\u8868', 'figsize':defaultFigSize})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "heading",
+     "level": 2,
+     "metadata": {},
+     "source": [
+      "4. \u83b7\u53d6\u80a1\u7968\u5206\u7c7b\u9759\u6001\u6570\u636e"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res = SecurityCategory(standard = 'SW', level = 1)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "countDF = res.groupby('industryName')"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "res[:10]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "ticker = pd.DataFrame(countDF['ticker'].count())"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "ticker.columns = ['No. of Corp.']\n",
+      "ticker[:10]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "Plot(ticker, settings = {'x':'No. of Corp.', 'kind':'Pie','title':u'\u7533\u4e07\u4e00\u7ea7\u884c\u4e1a\u5206\u7c7b\u7edf\u8ba1', 'figsize':defaultFigSize})"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
