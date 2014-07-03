@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<!--#include virtual="qlmeta.inc"-->
+<meta name="author" content="Ferdinando Ametrano">
+<meta name="copyright" content=
+"Ferdinando Ametrano (c) 2000, 2001, 2002, 2003">
+<meta name="description" content="QuantLib license">
+<link rel="stylesheet" href="./styles/nosplash.css" type="text/css">
+<title>QuantLib License</title>
+</head>
+<body>
+<div id="container">
+<!--#include virtual="header.inc"-->
+<div id="menu">
+<!--#include virtual="usermenu.inc"-->
+</div>
+<div id="content">
+
+<h1 class="center">QuantLib License</h1>
+<p>QuantLib is <a href=
+"http://www.gnu.org/philosophy/categories.html#Non-CopyleftedFreeSoftware">
+Non-Copylefted Free Software</a> released under the <a href=
+"http://www.opensource.org/licenses/bsd-license.html">modified BSD
+License</a> (also known as XFree86-style license).</p>
+<p>QuantLib is <a href=
+"http://www.opensource.org/docs/definition.html">Open Source</a>
+because of its license: it is <a href=
+"http://www.opensource.org/docs/certification_mark.html">OSI
+Certified Open Source Software</a>. OSI Certified is a
+certification mark of the <a href="http://www.opensource.org">Open
+Source Initiative</a>.</p>
+<p>The modified BSD License is GPL compatible as confirmed by the
+<a href="http://www.gnu.org/philosophy/bsd.html">Free Software
+Foundation</a>.</p>
+<p>This License has been adopted to allow free use of QuantLib and
+its source, to make QuantLib flourish as a
+free-software/open-source project. It allows proprietary extensions
+to be commercialized.</p>
+<p>The license:</p>
+<pre>
+QuantLib is
+    Copyright (C) 2000, 2001, 2002, 2003 RiskMap srl
+    Copyright (C) 2003, 2004, 2005, 2006, 2007 StatPro Italia srl
+    Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 Ferdinando Ametrano
+
+    Copyright (C) 2001, 2002, 2003 Nicolas Di Césaré
+    Copyright (C) 2001, 2002, 2003 Sadruddin Rejeb
+
+    Copyright (C) 2002, 2003, 2004 Decillion Pty(Ltd)
+
+    Copyright (C) 2003, 2004, 2007 Neil Firth
+    Copyright (C) 2003, 2004 Roman Gitlin
+    Copyright (C) 2003 Niels Elken Sønderby
+    Copyright (C) 2003 Kawanishi Tomoya
+
+    Copyright (C) 2004 FIMAT Group
+    Copyright (C) 2004 M-Dimension Consulting Inc.
+    Copyright (C) 2004 Mike Parker
+    Copyright (C) 2004 Walter Penschke
+    Copyright (C) 2004 Gianni Piolanti
+    Copyright (C) 2004, 2005, 2006, 2007 Klaus Spanderen
+    Copyright (C) 2004 Jeff Yu
+
+    Copyright (C) 2005, 2006 Toyin Akin
+    Copyright (C) 2005 Sercan Atalik
+    Copyright (C) 2005, 2006 Theo Boafo
+    Copyright (C) 2005, 2006 Piter Dias
+    Copyright (C) 2005 Gary Kennedy
+    Copyright (C) 2005, 2006, 2007 Joseph Wang
+    Copyright (C) 2005 Charles Whitmore
+
+    Copyright (C) 2006, 2007 Banca Profilo S.p.A.
+    Copyright (C) 2006, 2007 Marco Bianchetti
+    Copyright (C) 2006 Yiping Chen
+    Copyright (C) 2006, 2007 Warren Chou
+    Copyright (C) 2006, 2007 Cristina Duminuco
+    Copyright (C) 2006, 2007 Giorgio Facchinetti
+    Copyright (C) 2006, 2007 Chiara Fornarola
+    Copyright (C) 2006 Silvia Frasson
+    Copyright (C) 2006 Richard Gould
+    Copyright (C) 2006, 2007 Mark Joshi
+    Copyright (C) 2006 Allen Kuo
+    Copyright (C) 2006 Roland Lichters
+    Copyright (C) 2006, 2007 Katiuscia Manzoni
+    Copyright (C) 2006, 2007 Mario Pucci
+    Copyright (C) 2006 François du Vignaud
+
+    Copyright (C) 2007 Affine Group Limited
+
+QuantLib includes code taken from Peter Jäckel's book "Monte Carlo
+Methods in Finance".
+
+QuantLib includes software developed by the University of Chicago,
+as Operator of Argonne National Laboratory.
+
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+
+    Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    Neither the names of the copyright holders nor the names of the QuantLib
+    Group and its contributors may be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</pre>
+
+</div>
+
+<div id="menuafter">
+<!--#include virtual="usermenu.inc"-->
+</div>
+
+<div class="footer">
+<!--#include virtual="footer.inc"-->
+</div>
+
+</div>
+
+</body>
+</html>

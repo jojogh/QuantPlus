@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<!--#include virtual="qlmeta.inc"-->
+<meta name="author" content="StatPro Italia srl">
+<meta name="copyright" content="StatPro Italia srl (c) 2004">
+<meta name="description" content="QuantLib Documentation">
+<link rel="stylesheet" href="./styles/nosplash.css" type="text/css">
+<title>QuantLib Documentation</title>
+</head>
+<body>
+<div id="container">
+<!--#include virtual="header.inc"-->
+<div id="menu">
+<!--#include virtual="usermenu.inc"-->
+</div>
+<div id="content">
+
+<h1 class="center">Official QuantLib Documentation</h1>
+<ul>
+<li><strong>QuantLib reference manual</strong> [<a href=
+"reference/index.html">HTML</a>]
+</ul>
+The reference manual is also available for offline reading from the
+SourceForge <a href=
+"http://sourceforge.net/project/showfiles.php?group_id=12740">download
+page</a>.
+
+<h1 class="center">Other information</h1>
+
+<h2 class="center">Books</h2>
+<ul>
+<li><strong>Implementing QuantLib</strong> (in progress)<br>
+Ballabio, L.<br>
+Available from <a href="http://implementingquantlib.blogspot.com/">the
+accompanying blog</a>.
+</li>
+</ul>
+
+<h2 class="center">Slides</h2>
+<ul>
+<li><strong>Dimitri Reiswich</strong> contributed the slides he used
+during a course he taught, along with the corresponding code:<br>
+<em>Boost introduction</em>
+[<a href="slides/dima-boost-intro.pdf">PDF</a>]<br>
+<em>QuantLib introduction, part I</em>
+[<a href="slides/dima-ql-intro-1.pdf">PDF</a>]<br>
+<em>QuantLib introduction, part II</em>
+[<a href="slides/dima-ql-intro-2.pdf">PDF</a>]<br>
+<em>code samples</em>
+[<a href="slides/dima-code.zip">ZIP</a>]<br>
+</li>
+<li><strong>Marco Marchioro</strong> has made available the slides for
+his derivatives class at Milan University, in which he uses QuantLibXL
+for teaching.  They can be downloaded from the <em>Advanced
+Derivatives</em> page on his
+site, <a href="http://www.marchioro.org/">http://www.marchioro.org/</a>,
+along with the corresponding spreadsheets and additional material.
+</li>
+</ul>
+
+<h2 class="center" id="qlws13">QuantLib User Meeting 2013</h2>
+
+The QuantLib User Meeting was held in D&uuml;sseldorf on November 13th
+and 14th, 2013, thanks to the sponsorship of
+<a href="http://www.ikb.de/">IKB</a>,
+<a href="http://www.quaternionrisk.com/">Quaternion</a> and
+<a href="http://www.d-fine.com/">d-fine</a>.  Most presentations from
+the meeting are available:
+<ul>
+<li><strong>Luigi Ballabio</strong>'s
+<a href="https://vimeo.com/79724861">opening keynote</a>;
+</li>
+<li><strong>Michael von den Driesch</strong>'s talk,
+<a href="slides/qlws13/von-den-driesch.pdf">
+<em>QuantLib at IKB</em></a>;
+</li>
+<li><strong>Roland Lichters</strong>'s talk,
+<a href="slides/qlws13/lichters.pdf">
+<em>Cross Asset CVA Application</em></a>;
+</li>
+<li><strong>Andr&eacute; Miemiec</strong>'s talk,
+<a href="slides/qlws13/miemiec.pdf">
+<em>Pricing of Accreting Swaptions using QuantLib</em></a>;
+</li>
+<li><strong>Peter Caspers</strong>'s talk,
+<a href="slides/qlws13/caspers.pdf">
+<em>Markov Functional Model</em></a>;
+</li>
+<li><strong>Sarp Kaya Acar</strong>'s talk,
+<a href="slides/qlws13/acar.pdf">
+<em>Inflation Modeling</em></a>;
+</li>
+<li><strong>Henning Segger</strong>'s talk,
+<a href="slides/qlws13/segger.pdf">
+<em>(J)CIR(++) Hazard Rate Model</em></a>;
+</li>
+<li><strong>Martin Dietrich</strong>'s talk,
+<a href="slides/qlws13/dietrich.pdf">
+<em>QuantLib Integration into Scala and Excel</em></a>;
+</li>
+<li><strong>Klaus Spanderen</strong>'s talk,
+<a href="slides/qlws13/spanderen.pdf">
+<em>Beyond Simple Monte-Carlo: Parallel Computing with QuantLib</em></a>;
+</li>
+<li><strong>Sebastian Schlenkrich</strong>'s talk,
+<a href="slides/qlws13/schlenkrich.pdf">
+<em>Design Patterns for Algorithmic Differentiation</em></a>.
+</li>
+</ul>
+
+<h2 class="center">First QuantLib Forum</h2>
+
+The first QuantLib forum was held in London on January 18th, 2011,
+thanks to the sponsorship of <a href="http://www.statpro.com/">StatPro</a>.
+<ul>
+<li>Slides of <strong>Ferdinando Ametrano</strong>'s
+presentation, <em>Yield curves for forward Euribor estimation and
+CSA-discounting</em>, are available here [<a href=
+"slides/rate-curves.pdf">PDF</a>].
+</li>
+<li>Slides of <strong>Marco Marchioro</strong>'s
+presentation, <em>Risk simulations for a bond in QuantLibXL</em>, are
+available from the <em>Conferences</em> page on his
+site, <a href="http://www.marchioro.org/">http://www.marchioro.org/</a>,
+along with the corresponding spreadsheet.
+</li>
+<li>A screencast of <strong>Luigi Ballabio</strong>'s
+presentation, <em>Code Arbitrage: or, how to get features for free in
+QuantLib</em>, is available
+at <a href="http://archive.org/details/FirstQuantlibForum">http://archive.org/details/FirstQuantlibForum</a>.
+</li>
+<li>The brochure of the forum (just a historical curiosity by now) is
+available [<a href= "press/first-quantlib-forum.pdf">PDF</a>].
+</li>
+</ul>
+
+<h2 class="center">Blogs</h2>
+<ul>
+<li>Useful QuantLib-related posts appear in a few blogs, such as:<br>
+<strong>Klaus Spanderen's</strong> <a href="http://hpcquantlib.wordpress.com/">blog</a>;<br>
+<strong>Bojan Nikolic's</strong> <a href="http://www.bnikolic.co.uk/blog/">blog</a>;<br>
+<strong>&Eacute;douard Tallent's</strong> <a href="http://quantcorner.wordpress.com/">blog</a>;<br>
+<strong>Cogito Learning's</strong> <a href="http://cogitolearning.co.uk/?tag=quantlib-2">blog</a>;<br>
+<strong>Mick Hittesdorf's</strong> <a href="http://mhittesdorf.wordpress.com/category/quantlib/">blog</a>.<br>
+</li>
+</ul>
+
+
+<h2 class="center">Papers</h2>
+<ul>
+<li><strong>Option Engine: A Grid-Enabled Software Package to Evaluate
+Financial Options</strong> [<a href=
+"http://www.hpcwire.com/features/Option-Engine-A-Grid-Enabled-Software-Package-to-Evaluate-Financial-Options-59669252.html?viewAll=y">HTML</a>]<br>
+Francesca Mariani, Maria Cristina Recchioni, Francesco Zirilli<br>
+HPCwire (September 2009)</li>
+<li><strong>Bootstrapping the Illiquidity: Multiple Yield Curves
+Construction for Market Coherent Forward Rates Estimation</strong>
+[<a href= "http://ssrn.com/abstract=1371311">abstract</a>]<br>
+Ferdinando Ametrano, Marco Bianchetti<br>
+In <a href="http://riskbooks.com/Quantitative%20Analysis/modelling-interest-rates-.php"><i>Modelling
+Interest Rates</i></a>, Fabio Mercurio, ed., Risk Books, Incisive
+Media, 2009.</li>
+<li><strong>Smooth Simultaneous Calibration of the LMM to Caplets and Coterminal Swaptions</strong>
+[<a href= "http://ssrn.com/abstract=1092665">abstract/download</a>]<br>
+Ferdinando Ametrano, Mark S. Joshi (2008)</li>
+<li><strong>Why Use QuantLib?</strong> [<a href=
+"http://www.quantlib.co.uk/publications/quantlib.pdf">PDF</a>]<br>
+Firth, N.P. (2004)</li>
+</ul>
+
+<h2 class="center">Press</h2>
+<ul>
+<li><strong>Four years of open source financial models</strong> [<a href=
+"press/WilmottQuantLib.pdf">PDF</a>]<br>
+Wilmott Magazine (September 2004)</li>
+</ul>
+
+</div>
+
+<div id="menuafter">
+<!--#include virtual="usermenu.inc"-->
+</div>
+
+<div class="footer">
+<!--#include virtual="footer.inc"-->
+</div>
+
+</div>
+
+</body>
+</html>

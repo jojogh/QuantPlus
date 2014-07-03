@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<!--#include virtual="qlmeta.inc"-->
+<meta name="author" content="Ferdinando Ametrano">
+<meta name="copyright" content=
+"Ferdinando Ametrano (c) 2000, 2001, 2002, 2003">
+<meta name="description" content=
+"QuantLib: a free/open-source library for quantitative finance">
+<link rel="stylesheet" href="./styles/splash.css" type="text/css">
+<title>QuantLib: a free/open-source library for quantitative
+finance</title>
+</head>
+<body>
+<div id="container">
+<!--#include virtual="header.inc"-->
+<!--#include virtual="banner.inc"-->
+<div id="menu">
+<!--#include virtual="usermenu.inc"-->
+</div>
+<div id="content">
+
+<p>The QuantLib project is aimed at providing a comprehensive
+software framework for quantitative finance. QuantLib is a <em><a
+href= "http://www.gnu.org/philosophy/free-sw.html">free</a>/<a href=
+"http://www.opensource.org/">open-source</a></em> library for modeling,
+trading, and risk management in real-life.</p> <p>QuantLib is written in
+C++ with a clean object model, and is then exported to different languages
+such as C#, Objective Caml, Java, Perl, Python, GNU R, Ruby, and Scheme.
+The <a href= "http://www.quantlibaddin.org">QuantLibAddin</a>/<a
+href= "http://www.quantlibxl.org">QuantLibXL</a> project uses <a
+href= "http://www.objecthandler.org">ObjectHandler</a> to export an
+object-oriented QuantLib interface to a variety of end-user platforms
+including Microsoft Excel and OpenOffice.org Calc.  Bindings to
+other languages and porting to Gnumeric, Matlab/Octave, S-PLUS/<a
+href= "http://dirk.eddelbuettel.com/code/rquantlib.html">R</a>,
+<a href= "http://www.nielses.dk/quantlib/mma/">Mathematica</a>,
+COM/CORBA/SOAP architectures, FpML, are under consideration. See
+the <a href="extensions.shtml">extensions</a> page for details.</p>
+<p>Appreciated by quantitative analysts and developers, it is intended
+for academics and practitioners alike, eventually promoting a stronger
+interaction between them. QuantLib offers tools that are useful both for
+practical implementation and for advanced modeling, with features such
+as market conventions, yield curve models, solvers, PDEs, Monte Carlo
+(low-discrepancy included), exotic options, VAR, and so on.</p>
+
+<p>Finance is an area where well-written open-source projects could
+make a tremendous difference:</p>
+<ul>
+<li>any financial institution needs a solid, time-effective,
+operative implementation of cutting edge pricing models and hedging
+tools. However, to get there, one is currently forced to re-invent
+the wheel every time. Even standard decade-old models, such as
+Black-Scholes, still lack a public robust implementation. As a
+consequences many good quants are wasting their time writing C++
+classes which have been already written thousands of times.</li>
+<li>By designing and building these tools in the open, QuantLib
+will both encourage peer review of the tools themselves, and
+demonstrate how this ought to be done for scientific and commercial
+software. Dan Gezelter's <a href=
+"http://www.openscience.org/talks/bnl/index.html">talk</a> at the
+first Open Source/Open Science conference discussed how the
+scientific tradition of peer review fits well with the philosophy
+of the Open Source movement. Open standards are the only fair way
+for science and technology to evolve.</li>
+</ul>
+<p>The library could be exploited across different research and
+regulatory institutions, banks, software companies, and so on.
+Being a free/open-source project, quants contributing to the
+library would not need to start from scratch every time.</p>
+<ul>
+<li>Students could master a library that is actually used in the
+real world and contribute to it in a meaningful way. This would
+potentially place them in a privileged position on the job
+market.</li>
+<li>Researchers would have a framework at hand, which vastly
+reduces the amount of low-level work necessary to build models, so
+to be able to focus on more complex and interesting problems.</li>
+<li>Financial firms could exploit QuantLib as base code and/or
+benchmark, while being able to engage in creating more innovative
+solutions that would make them more competitive on the market.</li>
+<li>Regulatory institutions may have a tool for standard pricing
+and risk management practices.</li>
+</ul>
+<p>The QuantLib <a href="license.shtml">license</a> is a modified
+BSD license suitable for use in both free software and proprietary
+applications, imposing no constraints at all on the use of the
+library.</p>
+<p>A few companies have committed significant resources to the
+development of this library; notably <a href=
+"http://www.statpro.com">StatPro</a>, a leading international
+risk-management provider, where the QuantLib
+project was born.</p>
+
+</div>
+
+<div class="footer">
+<!--#include virtual="footer.inc"-->
+</div>
+
+</div>
+
+</body>
+</html>

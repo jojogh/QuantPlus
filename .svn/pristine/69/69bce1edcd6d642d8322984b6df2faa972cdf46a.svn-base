@@ -1,0 +1,54 @@
+div.cell {
+    border: 1px solid transparent;
+    .vbox();
+
+    &.selected {
+        .corner-all;
+        border : thin @border_color solid;
+    }
+    
+    &.edit_mode {
+        .corner-all;
+        border : thin green solid;
+    }
+}
+
+div.cell {
+    width: 100%;
+    padding: 5px 5px 5px 0px;
+    /* This acts as a spacer between cells, that is outside the border */
+    margin: 0px;
+    outline: none;
+}
+
+div.prompt {
+    /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+    min-width: 11ex;
+    /* This padding is tuned to match the padding on the CodeMirror editor. */
+    padding: @code_padding;
+    margin: 0px;
+    font-family: @monoFontFamily;
+    text-align: right;
+    /* This has to match that of the the CodeMirror class line-height below */	
+    line-height: @code_line_height;
+}
+
+div.inner_cell {
+    .vbox();
+    .box-flex1();
+}
+
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+    border: 1px solid @light_border_color;
+    .corner-all;
+    background: @cell_background;
+}
+
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+    padding-top: 0;
+    padding-bottom: 0;
+}
