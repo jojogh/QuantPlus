@@ -26,6 +26,7 @@
 %include cashflows.i
 %include interestrate.i
 %include indexes.i
+%include inflation.i
 
 %{
 using QuantLib::Bond;
