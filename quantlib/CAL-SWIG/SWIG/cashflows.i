@@ -168,11 +168,13 @@ class FixedRateCouponPtr : public CouponPtr {
                            Rate rate, const DayCounter& dayCounter,
                            const Date& startDate, const Date& endDate,
                            const Date& refPeriodStart = Date(),
-                           const Date& refPeriodEnd = Date()) {
+                           const Date& refPeriodEnd = Date(),
+                           const Date& exCouponDate = Date()) {
             return new FixedRateCouponPtr(
                 new FixedRateCoupon(paymentDate, nominal, rate,
                                     dayCounter, startDate, endDate,
-                                    refPeriodStart, refPeriodEnd));
+                                    refPeriodStart, refPeriodEnd,
+                                    exCouponDate));
         }
         InterestRate interestRate() {
             return boost::dynamic_pointer_cast<FixedRateCoupon>(*self)

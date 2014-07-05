@@ -53,7 +53,7 @@
 %{
 #include <ql/version.hpp>
 const int    __hexversion__ = QL_HEX_VERSION;
-const char* __version__    = "0.1.r1327";
+const char* __version__    = "0.1.r1349";
 %}
 
 const int __hexversion__;
