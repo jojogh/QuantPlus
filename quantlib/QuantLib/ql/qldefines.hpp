@@ -160,5 +160,6 @@
 #define QL_DEPRECATED
 #endif
 
+//#define BOOST_SP_ENABLE_DEBUG_HOOKS 1
 
 #endif

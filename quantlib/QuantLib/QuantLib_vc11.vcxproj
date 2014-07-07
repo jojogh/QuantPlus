@@ -2151,6 +2151,7 @@
     <ClCompile Include="ql\models\equity\hestonmodel.cpp" />
     <ClCompile Include="ql\models\equity\hestonmodelhelper.cpp" />
     <ClCompile Include="ql\models\equity\piecewisetimedependenthestonmodel.cpp" />
+    <ClCompile Include="ql\patterns\observable.cpp" />
     <ClCompile Include="ql\pricingengines\asian\fdblackscholesasianengine.cpp" />
     <ClCompile Include="ql\pricingengines\barrier\fdblackscholesbarrierengine.cpp" />
     <ClCompile Include="ql\pricingengines\barrier\fdblackscholesrebateengine.cpp" />

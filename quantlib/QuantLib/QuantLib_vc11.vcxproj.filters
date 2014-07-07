@@ -6153,5 +6153,8 @@
     <ClCompile Include="ql\indexes\ibor\fedfunds.cpp">
       <Filter>indexes\ibor</Filter>
     </ClCompile>
+    <ClCompile Include="ql\patterns\observable.cpp">
+      <Filter>patterns</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

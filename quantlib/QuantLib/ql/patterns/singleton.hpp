@@ -35,6 +35,10 @@
 #endif
 #include <map>
 
+#if defined(QL_ENABLE_TSS)
+#include <boost/thread/tss.hpp>
+#endif
+
 #if (_MANAGED == 1) || (_M_CEE == 1)
 // One of the Visual C++ /clr modes. In this case, the global instance
 // map must be declared as a static data member of the class.
@@ -98,7 +102,13 @@ namespace QuantLib {
 
     template <class T>
     T& Singleton<T>::instance() {
-        #if (QL_MANAGED == 0)
+		#if defined(QL_ENABLE_TSS)
+		static boost::thread_specific_ptr<T> tss_instance_;
+		if (!tss_instance_.get())
+			tss_instance_.reset(new T); // not active on this thread, activate
+		return *tss_instance_;
+		#else
+        #if (QL_MANAGED == 0)           
         static std::map<Integer, boost::shared_ptr<T> > instances_;
         #endif
         #if defined(QL_ENABLE_SESSIONS)
@@ -110,6 +120,7 @@ namespace QuantLib {
         if (!instance)
             instance = boost::shared_ptr<T>(new T);
         return *instance;
+		#endif
     }
 
     // reverts the change above

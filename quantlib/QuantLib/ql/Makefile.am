@@ -76,7 +76,7 @@ libQuantLib_la_SOURCES = \
 	timegrid.cpp
 
 lib_LTLIBRARIES = libQuantLib.la
-libQuantLib_la_LDFLAGS = -version-info 0:0:0
+libQuantLib_la_LDFLAGS = -lboost_system -lboost_thread -version-info 0:0:0
 
 libQuantLib_la_LIBADD = \
     cashflows/libCashFlows.la \
@@ -88,6 +88,7 @@ libQuantLib_la_LIBADD = \
     math/libMath.la \
     methods/libMethods.la \
     models/libModels.la \
+    patterns/libPatterns.la \
     pricingengines/libPricingEngines.la \
     processes/libProcesses.la \
     quotes/libQuotes.la \
